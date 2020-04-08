@@ -1,9 +1,8 @@
 # coding=utf-8
-
-
 import os
 import random
 import json5
+import time
 import numpy as np
 import tensorflow as tf
 from datetime import datetime
@@ -13,21 +12,25 @@ from .utils.logger import Logger
 from .utils.params import validate_params
 from .model import Model
 from .interface import Interface
-
+from curLine_file import curLine
 
 class Trainer:
     def __init__(self, args):
         self.args = args
         self.log = Logger(self.args)
 
-    def train(self):
+    def train(self, experiment_times):
         start_time = datetime.now()
-        train = load_data(self.args.data_dir, 'train')
-        dev = load_data(self.args.data_dir, self.args.eval_file)
+        startTime = time.time()
+        data_dir = self.args.data_dir
+        train = load_data(data_dir, 'train')
+        dev = load_data(data_dir, self.args.eval_file)
         self.log(f'train ({len(train)}) | {self.args.eval_file} ({len(dev)})')
 
         tf.reset_default_graph()
+
         with tf.Graph().as_default():
+            break_flag = False
             config = tf.ConfigProto()
             config.gpu_options.allow_growth = True
             config.allow_soft_placement = True
@@ -37,44 +40,50 @@ class Trainer:
                 train_batches = interface.pre_process(train)
                 dev_batches = interface.pre_process(dev, training=False)
                 self.log('setup complete: {}s.'.format(str(datetime.now() - start_time).split(".")[0]))
-                try:
-                    for epoch in range(states['start_epoch'], self.args.epochs + 1):
-                        states['epoch'] = epoch
-                        self.log.set_epoch(epoch)
+                eval_per_updates = self.args.eval_per_updates \
+                    if model.updates > self.args.eval_warmup_steps else self.args.eval_per_updates_warmup
+                print(curLine(), "eval_per_updates=", eval_per_updates)
+                for epoch in range(states['start_epoch'], self.args.epochs + 1):
+                    if break_flag:
+                        break
+                    print(curLine(), "epoch=%d/%d, experiment_times=%d"%(epoch, self.args.epochs, experiment_times))
+                    states['epoch'] = epoch
+                    self.log.set_epoch(epoch)
+                    batches = interface.shuffle_batch(train_batches)
+                    for batch_id, batch in enumerate(batches):
+                        stats = model.update(sess, batch)
+                        self.log.update(stats)
+                        if model.updates % eval_per_updates == 0 \
+                                or (self.args.eval_epoch and batch_id + 1 == len(batches)):
+                            score, dev_stats = model.evaluate(sess, dev_batches)
+                            cost_minutes = (time.time()-startTime)/60.0
+                            dev_stats["cost_time"] =cost_minutes
+                            if score > states['best_eval']:
+                                states['best_eval'], states['best_epoch'], states['best_step'] = \
+                                    score, epoch, model.updates
+                                if self.args.save:
+                                    model.save(states, name=model.best_model_name)
+                            self.log.log_eval(dev_stats)
+                            if self.args.save_all:
+                                model.save(states)
+                                model.save(states, name='last')
+                            if model.updates - states['best_step'] > self.args.early_stopping \
+                                    and model.updates > self.args.min_steps:
+                                print(curLine(), "Tolerance reached. Training is stopped early.")
+                                break_flag = True
+                                break
+                        if stats['loss'] > self.args.max_loss:
+                            print(curLine(), "Loss exceeds tolerance. Unstable training is stopped early.")
+                            break_flag = True
+                            break
+                            # raise EarlyStop('[Loss exceeds tolerance. Unstable training is stopped early.]')
+                        if stats['lr'] < self.args.min_lr - 1e-6:
+                            print(curLine(), "Learning rate has decayed below min_lr. Training is stopped early.")
+                            break_flag = True
+                            break
+                    self.log.newline()
+                self.log('Training complete.')
 
-                        batches = interface.shuffle_batch(train_batches)
-                        for batch_id, batch in enumerate(batches):
-                            stats = model.update(sess, batch)
-                            self.log.update(stats)
-                            eval_per_updates = self.args.eval_per_updates \
-                                if model.updates > self.args.eval_warmup_steps else self.args.eval_per_updates_warmup
-                            if model.updates % eval_per_updates == 0 \
-                                    or (self.args.eval_epoch and batch_id + 1 == len(batches)):
-                                score, dev_stats = model.evaluate(sess, dev_batches)
-                                if score > states['best_eval']:
-                                    states['best_eval'], states['best_epoch'], states['best_step'] = \
-                                        score, epoch, model.updates
-                                    if self.args.save:
-                                        model.save(states, name=model.best_model_name)
-                                self.log.log_eval(dev_stats)
-                                if self.args.save_all:
-                                    model.save(states)
-                                    model.save(states, name='last')
-                                if model.updates - states['best_step'] > self.args.early_stopping \
-                                        and model.updates > self.args.min_steps:
-                                    raise EarlyStop('[Tolerance reached. Training is stopped early.]')
-                            if stats['loss'] > self.args.max_loss:
-                                raise EarlyStop('[Loss exceeds tolerance. Unstable training is stopped early.]')
-                            if stats['lr'] < self.args.min_lr - 1e-6:
-                                raise EarlyStop('[Learning rate has decayed below min_lr. Training is stopped early.]')
-                        self.log.newline()
-                    self.log('Training complete.')
-                except KeyboardInterrupt:
-                    self.log.newline()
-                    self.log(f'Training interrupted. Stopped early.')
-                except EarlyStop as e:
-                    self.log.newline()
-                    self.log(str(e))
                 self.log(f'best dev score {states["best_eval"]} at step {states["best_step"]} '
                          f'(epoch {states["best_epoch"]}).')
                 self.log(f'best eval stats [{self.log.best_eval_str}]')
@@ -82,7 +91,7 @@ class Trainer:
                 self.log(f'Training time: {training_time}.')
         states['start_time'] = str(start_time).split('.')[0]
         states['training_time'] = training_time
-        return states
+        return states, self.log.best_eval
 
     def build_model(self, sess):
         states = {}

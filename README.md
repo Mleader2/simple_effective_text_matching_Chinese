@@ -1,9 +1,9 @@
 # RE2
+git clone https://github.com/Mleader2/simple_effective_text_matching_Chinese.git
 
 This is the Tensorflow implementation for Chinese corpus of the ACL 2019 paper [Simple and Effective Text Matching with Richer Alignment Features](https://www.aclweb.org/anthology/P19-1465). Pytorch implementation: https://github.com/alibaba-edu/simple-effective-text-matching-pytorch.
-Up to now, based on Chinese corpus, LCQMC. Use Chinese character vector.
+Up to now, based on Chinese corpus LCQMC. Use Chinese character vector.
 
-git clone https://github.com/Mleader2/simple_effective_text_matching_Chinese.git
 
 ## Quick Links
 

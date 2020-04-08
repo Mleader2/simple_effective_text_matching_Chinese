@@ -22,7 +22,7 @@ class Logger:
             log.addHandler(ch)
         self.log = log
         # setup TensorBoard
-        if args.tensorboard:
+        if False:  # TODO args.tensorboard:
             import tensorflow as tf
             from tensorboardX import SummaryWriter
             summary_dir = os.path.join(args.summary_dir, 'viz')
@@ -32,7 +32,7 @@ class Logger:
         else:
             self.writer = None
             self.eval_writer = None
-        self.log_per_updates = args.log_per_updates
+        self.log_per_updates = 50 # TODO args.log_per_updates
         self.grad_clipping = args.grad_clipping
         self.clips = 0
         self.train_meters = {}

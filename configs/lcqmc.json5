@@ -1,24 +1,26 @@
 {
-    data_dir: 'data/lcqmc',
+    data_dir: 'lcqmc',
     output_dir: 'lcqmc',
     metric: 'acc',
 
     model: {
         alignment: 'identity',
-        enc_layers: 3,
-        blocks: 2,
+        enc_layers: 2,
+        blocks: 1,
         hidden_size: 200,
     },
 
     routine: {
-        epochs: 80,
+        epochs: 40,
         log_per_samples: 1280,
         eval_per_samples: 6400,
     },
 
-    optim: { // fixed learning rate
+    optim: {
         lr: 0.001,
+        min_lr: 6e-5,
+        lr_decay_samples: 256000,
+        batch_size: 128,
         lr_warmup_samples: 0,
-        lr_decay_rate: 1.0,
-    },
+    }
 }

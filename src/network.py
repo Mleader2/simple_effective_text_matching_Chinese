@@ -1,6 +1,4 @@
 # coding=utf-8
-
-
 import tensorflow as tf
 from .modules.embedding import Embedding
 from .modules.encoder import Encoder

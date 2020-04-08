@@ -1,0 +1,148 @@
+[train.py:12]  argv: ['train.py', 'configs/main.json5']
+[params.py:25]  config: {'name': 'benchmark', '__parents__': ['default', 'quora'], '__repeat__': 10, 'eval_file': 'test'}
+04/03/2020 10:54:37 train (384348) | test (10000)
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:30: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:36: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:39: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-04-03 10:54:37.715479: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-03 10:54:37.736020: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3600000000 Hz
+2020-04-03 10:54:37.736568: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x592cef0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-03 10:54:37.736594: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-03 10:54:37.737890: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2020-04-03 10:54:37.737908: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2020-04-03 10:54:37.737934: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (data-OptiPlex-7050): /proc/driver/nvidia/version does not exist
+04/03/2020 10:54:37 #classes: 2; #vocab: 84166
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:32: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:34: The name tf.assign_add is deprecated. Please use tf.compat.v1.assign_add instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:39: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:41: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/util/dispatch.py:180: calling expand_dims (from tensorflow.python.ops.array_ops) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the `axis` argument instead
+[model.py:52]  <class 'list'> devices: ['/device:CPU:0']
+[model.py:59]  <class 'list'> devices: ['/device:CPU:0'] splits: 1
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:77: The name tf.add_to_collection is deprecated. Please use tf.compat.v1.add_to_collection instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:77: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:77: The name tf.assign is deprecated. Please use tf.compat.v1.assign instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:79: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:88: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:88: The name tf.get_variable_scope is deprecated. Please use tf.compat.v1.get_variable_scope instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:88: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/embedding.py:27: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/__init__.py:35: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/alignment.py:26: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/alignment.py:30: calling softmax (from tensorflow.python.ops.nn_ops) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+dim is deprecated, use axis instead
+WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/ops/array_ops.py:1475: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:96: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:120: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:125: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:128: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:128: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:104: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+2020-04-03 10:54:39.834185: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 100999200 exceeds 10% of system memory.
+2020-04-03 10:54:41.815076: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 100999200 exceeds 10% of system memory.
+2020-04-03 10:54:41.859461: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 100999200 exceeds 10% of system memory.
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:241: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+04/03/2020 10:54:41 trainable params: 1,283,605
+04/03/2020 10:54:41 trainable params (exclude embeddings): 1,283,605
+04/03/2020 10:54:41 { '__index__': 0,
+  '__parents__': ['default', 'quora'],
+  '__repeat__': 10,
+  'alignment': 'linear',
+  'batch_size': 128,
+  'beta1': 0.9,
+  'beta2': 0.999,
+  'blocks': 1,
+  'connection': 'aug',
+  'data_dir': '/home/cloudminds/Mywork/corpus/English/data/quora',
+  'dropout_keep_prob': 0.8,
+  'early_stopping': 20000,
+  'embedding_dim': 300,
+  'embedding_mode': 'freq',
+  'enc_layers': 2,
+  'epochs': 30,
+  'eval_epoch': True,
+  'eval_file': 'test',
+  'eval_per_samples': 12800,
+  'eval_per_samples_warmup': 512000,
+  'eval_per_updates': 100,
+  'eval_per_updates_warmup': 4000,
+  'eval_warmup_samples': 3584000,
+  'eval_warmup_steps': 28000,
+  'fusion': 'full',
+  'grad_clipping': 5,
+  'hidden_size': 200,
+  'kernel_size': 3,
+  'log_file': 'log.txt',
+  'log_per_samples': 5120,
+  'log_per_updates': 40,
+  'lower_case': True,
+  'lr': 0.0012,
+  'lr_decay_rate': 0.95,
+  'lr_decay_samples': 256000,
+  'lr_decay_steps': 2000,
+  'lr_warmup_samples': 0,
+  'lr_warmup_steps': 0,
+  'max_checkpoints': 1,
+  'max_len': 100,
+  'max_loss': 999.0,
+  'max_vocab': 999999,
+  'metric': 'acc',
+  'min_df': 5,
+  'min_len': 1,
+  'min_lr': 6e-05,
+  'min_samples': 5120000,
+  'min_steps': 40000,
+  'multi_gpu': False,
+  'name': 'benchmark-0',
+  'num_classes': 2,
+  'num_vocab': 84166,
+  'output_dir': 'models/quora',
+  'padding': 0,
+  'prediction': 'symmetric',
+  'pretrained_embeddings': '/home/cloudminds/Word2Vector/glove.840B.300d.txt',
+  'save': True,
+  'save_all': False,
+  'seed': None,
+  'sort_by_len': False,
+  'summary_dir': 'models/quora/benchmark-0',
+  'tensorboard': True,
+  'tolerance_samples': 2560000,
+  'watch_metrics': ['auc', 'f1', 'acc']}
+04/03/2020 10:54:46 setup complete: 0:00:09s.
+[trainer.py:47]  eval_per_updates= 4000
+[trainer.py:49]  epoch=1/30
+04/03/2020 10:54:46 Epoch: 1
+2020-04-03 10:54:49.656710: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 23040000 exceeds 10% of system memory.
+2020-04-03 10:54:49.661710: W tensorflow/core/framework/cpu_allocator_impl.cc:81] Allocation of 23040000 exceeds 10% of system memory.
+04/03/2020 10:55:13 > epoch 1 updates 50 loss: 0.5191 lr: 0.0012 gnorm: 0.256504/03/2020 10:55:35 > epoch 1 updates 100 loss: 0.4666 lr: 0.0012 gnorm: 0.427504/03/2020 10:55:58 > epoch 1 updates 150 loss: 0.4025 lr: 0.0012 gnorm: 0.366004/03/2020 10:56:21 > epoch 1 updates 200 loss: 0.5157 lr: 0.0012 gnorm: 0.440904/03/2020 10:56:44 > epoch 1 updates 250 loss: 0.5500 lr: 0.0012 gnorm: 0.6055

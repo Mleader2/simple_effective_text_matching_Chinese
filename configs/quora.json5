@@ -5,7 +5,7 @@
 
     model: {
         enc_layers: 2,
-        blocks: 2,
+        blocks: 1,
         prediction: 'symmetric',
         hidden_size: 200,
         max_len: 100,
@@ -23,7 +23,7 @@
         lr: 0.0012,
         min_lr: 6e-5,
         lr_decay_samples: 256000,
-        batch_size: 512,
+        batch_size: 128,
         lr_warmup_samples: 0,
     },
 }

@@ -11,11 +11,11 @@ import tensorflow as tf
 from tensorflow.python.ops.lookup_ops import HashTable
 from tensorflow.python.ops.lookup_ops import TextFileIdTableInitializer
 from tensorflow.python.client import device_lib
-
+import time
 from .network import Network
 from .utils.vocab import Vocab
 from .utils.metrics import registry as metrics
-
+from curLine_file import curLine
 
 class Model:
     prefix = 'checkpoint'
@@ -55,6 +55,7 @@ class Model:
             splits = 1
         else:
             splits = [tf.shape(self.q1)[0] // len(devices)] * (len(devices) - 1) + [-1]  # handle uneven split
+        print(curLine(), type(devices), "devices:", devices, "splits:", splits)
         q1 = tf.split(self.q1, splits)
         q2 = tf.split(self.q2, splits)
         q1_mask = tf.split(q1_mask, splits)
@@ -149,6 +150,7 @@ class Model:
         targets = []
         probabilities = []
         losses = []
+        start_time = time.time()
         for batch in data:
             feed_dict = self.process_data(batch, training=False)
             loss, pred, prob = sess.run(
@@ -159,15 +161,18 @@ class Model:
             predictions.extend(pred.tolist())
             targets.extend(feed_dict[self.y])
             probabilities.extend(prob.tolist())
+        inference_time = (time.time()-start_time) / len(losses) * 1000.0
         outputs = {
             'target': targets,
             'prob': probabilities,
             'pred': predictions,
             'args': self.args,
         }
+        total_loss = sum(losses[:-1]) / (len(losses) - 1) if len(losses) > 1 else sum(losses)
         stats = {
-            'updates': self.updates,
-            'loss': sum(losses[:-1]) / (len(losses) - 1) if len(losses) > 1 else sum(losses),
+            'updates': float(self.updates),
+            'loss': float(total_loss),
+            'inference_time': inference_time
         }
         for metric in self.args.watch_metrics:
             if metric not in stats:  # multiple metrics could be computed by the same function
@@ -250,4 +255,4 @@ class Model:
     @staticmethod
     def get_available_gpus():
         local_device_protos = device_lib.list_local_devices()
-        return [x.name for x in local_device_protos if x.device_type == 'GPU']
+        return [x.name for x in local_device_protos if 'GPU' in x.device_type]

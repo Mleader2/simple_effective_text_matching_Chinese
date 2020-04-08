@@ -1,6 +1,4 @@
 # coding=utf-8
-
-
 import math
 import tensorflow as tf
 from functools import partial
@@ -29,10 +27,10 @@ class Alignment:
             attention = attention_mask * attention + (1 - attention_mask) * tf.float32.min
             attention_a = tf.nn.softmax(attention, dim=1)
             attention_b = tf.nn.softmax(attention, dim=2)
-            attention_a = tf.identity(attention_a, name='attention_a')
+            attention_a = tf.identity(attention_a, name='attention_a')  #与attention_a=attention_a类似，但y=x仅仅是tensor的一个简单赋值，tf.identity是定义一个operation
             attention_b = tf.identity(attention_b, name='attention_b')
-            tf.summary.histogram('attention_a', tf.boolean_mask(attention_a, tf.cast(attention_mask, tf.bool)))
-            tf.summary.histogram('attention_b', tf.boolean_mask(attention_b, tf.cast(attention_mask, tf.bool)))
+            # tf.summary.histogram('attention_a', tf.boolean_mask(attention_a, tf.cast(attention_mask, tf.bool)))
+            # tf.summary.histogram('attention_b', tf.boolean_mask(attention_b, tf.cast(attention_mask, tf.bool)))
 
             feature_b = tf.matmul(attention_a, a, transpose_a=True)
             feature_a = tf.matmul(attention_b, b)

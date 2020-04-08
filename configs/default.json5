@@ -9,11 +9,11 @@
         data_dir: null,
         min_df: 5,
         max_vocab: 999999, // capacity for words including out of embedding words
-        max_len: 999, // large enough number, treated as unlimited
+        max_len: 20, // large enough number, treated as unlimited
         min_len: 1,
         lower_case: true, // whether to treat the data and embedding as lowercase.
         sort_by_len: false,
-        pretrained_embeddings: 'resources/glove.840B.300d.txt',
+        pretrained_embeddings: 'charVector_DbqaSmpLog',
         embedding_dim: 300,
         embedding_mode: 'freq', // (options: 'freq', 'last', 'avg', 'strict') what to do when duplicated embedding tokens (after normalization) are found.
     },
@@ -21,7 +21,7 @@
     model: {
         hidden_size: 150,
         dropout_keep_prob: 0.8,
-        blocks: 2,
+        blocks: 1,
         encoder: {
             enc_layers: 2,
             kernel_size: 3,
@@ -29,8 +29,7 @@
         alignment: 'linear', // linear, identity
         fusion: 'full', // full, simple
         connection: 'aug', // aug, residual
-        prediction: 'full', // full, symmetric, simple
-
+        prediction: 'simple', // full, symmetric, simple
     },
 
     logging: {
@@ -41,7 +40,7 @@
 
     training: {
         epochs: 30,
-        batch_size: 128,
+        batch_size: 64,
         grad_clipping: 5,
         lr: 1e-3,
         beta1: 0.9,

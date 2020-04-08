@@ -17,13 +17,16 @@
 import os
 from tqdm import tqdm
 
-
-print('processing quora')
+raw_folder = "/home/cloudminds/Mywork/corpus/English/glue_corpus"
+print('processing quora, folder:%s' % raw_folder)
 os.makedirs('quora', exist_ok=True)
 # use the partition on https://zhiguowang.github.io
 for split in ('train', 'dev', 'test'):
-    with open('orig/Quora_question_pair_partition/{}.tsv'.format(split)) as f, \
-            open('quora/{}.txt'.format(split), 'w') as fout:
+    raw_file_name = '%s/Quora_question_pair_partition/%s.tsv' % (raw_folder,split)
+    save_file_name = '%s/quora/%s.txt' % (raw_folder, split)
+    print("raw_file_name:", raw_file_name, "save_file_name:", save_file_name)
+    with open(raw_file_name) as f, \
+            open(save_file_name, 'w') as fout:
         n_lines = 0
         for _ in f:
             n_lines += 1

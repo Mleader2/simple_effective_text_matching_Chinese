@@ -1,8 +1,7 @@
 # coding=utf-8
-
-
 from collections import Counter
-
+import json, os
+from curLine_file import curLine
 
 class Indexer:
     def __init__(self):
@@ -129,7 +128,16 @@ class Vocab(RobustIndexer):
     def build(cls, words, lower=False, min_df=1, max_tokens=float('inf'), pretrained_embeddings=None,
               dump_filtered=None, log=print):
         if pretrained_embeddings:
-            wv_vocab = cls.load_embedding_vocab(pretrained_embeddings, lower)
+            # wv_vocab = cls.load_embedding_vocab(pretrained_embeddings, lower)  # English
+            #  Chinese Char vocab
+            vocab_file = os.path.join(pretrained_embeddings, "char2idChinese_DbqaSmpLog.json")
+            with open (vocab_file, "r") as fr:
+                vocab_map = json.load(fr)
+            wv_vocab = set()
+            for token in vocab_map:
+                if lower:
+                    token = token.lower()
+                wv_vocab.add(token)
         else:
             wv_vocab = set()
         if lower:

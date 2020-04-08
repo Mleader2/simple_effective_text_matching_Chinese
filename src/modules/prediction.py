@@ -15,7 +15,7 @@ class Prediction:
     def __init__(self, args):
         self.args = args
 
-    def _features(self, a, b):
+    def _features(self, a, b):  # simple mode
         return tf.concat([a, b], axis=-1)
 
     def __call__(self, a, b, dropout_keep_prob, name='prediction'):
@@ -31,7 +31,7 @@ class Prediction:
 @register('full')
 class AdvancedPrediction(Prediction):
     def _features(self, a, b):
-        return tf.concat([a, b, a * b, a - b], axis=-1)
+        return tf.concat([a, b, a * b, a - b], axis=-1) # TODO  really need   a - b  ？？
 
 
 @register('symmetric')

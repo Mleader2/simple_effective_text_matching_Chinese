@@ -30,7 +30,7 @@ def tokenize(string):
     return string.strip()
 
 
-os.makedirs('scitail', exist_ok=True)
+os.makedirs('lcqmc', exist_ok=True)
 
 
 for split in ['train', 'dev', 'test']:

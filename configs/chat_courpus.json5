@@ -1,0 +1,26 @@
+{
+    data_dir: 'chat_courpus',
+    output_dir: 'chat_courpus',
+    metric: 'acc',
+
+    model: {
+        alignment: 'identity',
+        enc_layers: 2,
+        blocks: 1,
+        hidden_size: 200,
+    },
+
+    routine: {
+        epochs: 40,
+        log_per_samples: 1280,
+        eval_per_samples: 6400,
+    },
+
+    optim: {
+        lr: 0.005,
+        min_lr: 6e-5,
+        lr_decay_samples: 256000,
+        batch_size: 384,
+        lr_warmup_samples: 0,
+    }
+}

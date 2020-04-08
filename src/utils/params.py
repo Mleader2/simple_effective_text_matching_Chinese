@@ -6,7 +6,7 @@ import math
 import shutil
 from datetime import datetime
 import json5
-
+from curLine_file import curLine
 
 class Object:
     """
@@ -16,12 +16,13 @@ class Object:
 
 
 def parse(config_file):
-    root = os.path.dirname(config_file)  # __parent__ in config is a relative path
+    root = os.path.dirname(config_file) # os.path.join(,"data")  # __parent__ in config is a relative path
     config_group = _load_param('', config_file)
     if type(config_group) is dict:
         config_group = [config_group]
     configs = []
     for config in config_group:
+        print(curLine(), "config:", config)
         try:
             choice = config.pop('__iter__')
             assert len(choice) == 1, 'only support iterating over 1 variable'
@@ -70,8 +71,8 @@ def _add_param(args, x: dict):
             setattr(args, k, v)
 
 
-def _load_param(root, file: str):
-    file = os.path.join(root, file)
+def _load_param(root, file_name: str):
+    file = os.path.join(root, file_name)
     if not file.endswith('.json5'):
         file += '.json5'
     with open(file) as f:
@@ -90,11 +91,13 @@ def _post_process(args: Object):
         shutil.rmtree(args.summary_dir)
     os.makedirs(args.summary_dir)
     data_config_file = os.path.join(args.output_dir, 'data_config.json5')
+    # print(curLine(), "data_config_file:", data_config_file)
     if os.path.exists(data_config_file):
         with open(data_config_file) as f:
             config = json5.load(f)
             for k, v in config.items():
                 if not hasattr(args, k) or getattr(args, k) != v:
+                    print(curLine(),"wrong for K:",k, ",v:",v)
                     print('ERROR: Data configurations are different. Please use another output_dir or '
                           'remove the older one manually.')
                     exit()

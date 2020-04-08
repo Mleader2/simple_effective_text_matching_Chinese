@@ -1,12 +1,10 @@
 # coding=utf-8
-
-
 import os
 import random
 import msgpack
 from .utils.vocab import Vocab, Indexer
-from .utils.loader import load_data, load_embeddings
-
+from .utils.loader import load_data, load_embeddings_English, load_embeddings_Chinese
+from curLine_file import curLine
 
 class Interface:
     def __init__(self, args, log=None):
@@ -18,9 +16,17 @@ class Interface:
             data = load_data(self.args.data_dir)
             self.target_map = Indexer.build((sample['target'] for sample in data), log=log)
             self.target_map.save(target_map_file)
-            self.vocab = Vocab.build((word for sample in data
-                                      for text in (sample['text1'], sample['text2'])
-                                      for word in text.split()[:self.args.max_len]),
+
+            if self.args.language.lower() == "chinese":
+                words = [word for sample in data   # Chinese
+                                          for text in (sample['text1'], sample['text2'])
+                                          for word in list(text)[:self.args.max_len]]
+            else:
+                words = [word for sample in data  # English
+                                          for text in (sample['text1'], sample['text2'])
+                                          for word in text.split()[:self.args.max_len]]
+            # print(curLine(), type(words), "words:", len(words), words[-1])
+            self.vocab = Vocab.build(words,
                                      lower=args.lower_case, min_df=self.args.min_df, log=log,
                                      pretrained_embeddings=args.pretrained_embeddings,
                                      dump_filtered=os.path.join(args.output_dir, 'filtered_words.txt'))
@@ -36,9 +42,14 @@ class Interface:
         """generate embeddings suited for the current vocab or load previously cached ones."""
         embedding_file = os.path.join(self.args.output_dir, 'embedding.msgpack')
         if not os.path.exists(embedding_file):
-            embeddings = load_embeddings(self.args.pretrained_embeddings, self.vocab,
+            if self.args.language == "chinese":
+                embeddings = load_embeddings_Chinese(self.args.pretrained_embeddings, self.vocab,
                                          self.args.embedding_dim, mode=self.args.embedding_mode,
                                          lower=self.args.lower_case)
+            else:
+                embeddings = load_embeddings_English(self.args.pretrained_embeddings, self.vocab,
+                                             self.args.embedding_dim, mode=self.args.embedding_mode,
+                                             lower=self.args.lower_case)
             with open(embedding_file, 'wb') as f:
                 msgpack.dump(embeddings, f)
         else:
@@ -62,10 +73,15 @@ class Interface:
         if self.args.lower_case:
             text1 = text1.lower()
             text2 = text2.lower()
-        processed = {
-            'text1': [self.vocab.index(w) for w in text1.split()[:self.args.max_len]],
-            'text2': [self.vocab.index(w) for w in text2.split()[:self.args.max_len]],
-        }
+
+        if self.args.language.lower() == "chinese":
+            processed = {
+                'text1': [self.vocab.index(w) for w in list(text1)[:self.args.max_len]],
+                'text2': [self.vocab.index(w) for w in list(text2)[:self.args.max_len]]}
+        else:
+            processed = {
+                'text1': [self.vocab.index(w) for w in text1.split()[:self.args.max_len]],
+                'text2': [self.vocab.index(w) for w in text2.split()[:self.args.max_len]]}
         processed['len1'] = len(processed['text1'])
         processed['len2'] = len(processed['text2'])
         if 'target' in sample and with_target:
