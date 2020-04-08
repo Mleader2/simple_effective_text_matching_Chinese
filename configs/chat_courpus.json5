@@ -5,8 +5,8 @@
 
     model: {
         alignment: 'identity',
-        enc_layers: 2,
-        blocks: 1,
+        enc_layers: 1,
+        blocks: 2,
         hidden_size: 200,
     },
 

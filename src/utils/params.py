@@ -22,7 +22,6 @@ def parse(config_file):
         config_group = [config_group]
     configs = []
     for config in config_group:
-        print(curLine(), "config:", config)
         try:
             choice = config.pop('__iter__')
             assert len(choice) == 1, 'only support iterating over 1 variable'

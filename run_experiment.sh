@@ -81,9 +81,9 @@ export config_json=configs/main.json5
 
 # 闲聊的匹配模型
 #echo "python train.py" ${masker_ranker} "GPU:" ${gpu} "chat_courpus_log.txt"
-#CUDA_VISIBLE_DEVICES=${gpu} nohup python -u train.py ${config_json} ${host_name} > chat_courpus_log.txt 2>&1 &
+CUDA_VISIBLE_DEVICES=${gpu} nohup python -u train.py ${config_json} ${host_name} > chat_courpus_log.txt 2>&1 &
 #tail -f chat_courpus_log.txt
-# python train.py ${config_json} ${host_name}
+#python train.py ${config_json} ${host_name}
 
 #blocks=1,  enc_layers=2  batch_size=128 lr=0.001, prediction':'simple'    'fusion': 'full',  maxlen=20
 # experiment_times=5/5, ave_test_score=0.802228, max_test_score=0.808940
@@ -96,8 +96,19 @@ export config_json=configs/main.json5
 # 降低学习率  准确率降低到75%-76%
 #blocks=1,  enc_layers=2  batch_size=384   lr=0.0001, prediction':'simple'    'fusion': 'full',  maxlen=20
 
-# 提高学习率 lr: 0.005
+# 提高学习率 lr: 0.005 较好
+#blocks=1,  enc_layers=2  batch_size=384   lr=0.005, prediction':'simple'    'fusion': 'full',  maxlen=20
+#experiment_times=5/5, ave_test_score=0.803851, max_test_score=0.815180
+
+#block=2 enc_layers=2 inference_time=19.337797 ms （慢了一倍） 81.7%  acc提高1%
+#04/08/2020 10:12:37 Training time: 0:15:57.
+#[train.py:29]  experiment_times=5/5, ave_test_score=0.817319, max_test_score=0.825341
+#stats: {'inference_time': 1.1077707639851133, 'auc': 0.8672013396287949, 'f1': 0.786558313200088, 'acc': 0.7834477226134237}  微调后cpu测试
 
 
+#block=2 enc_layers=1 inference_time=17.902684 ms （慢了接近一倍）
 
+# 接下来想要改成计算第一层block时enc_layers=2，将text1和若干text2拼接起来处理,后面enc_layers=1按照正常逻辑处理
 ########   python demo.py configs/main.json5  cloudminds
+
+##   python evaluate.py $model_path $data_file

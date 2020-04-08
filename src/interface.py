@@ -57,14 +57,15 @@ class Interface:
                 embeddings = msgpack.load(f)
         return embeddings
 
-    def pre_process(self, data, training=True):
+    def pre_process(self, data, training=True, batch_size=None):
         result = [self.process_sample(sample) for sample in data]
         if training:
             result = list(filter(lambda x: x['len1'] < self.args.max_len and x['len2'] < self.args.max_len, result))
             if not self.args.sort_by_len:
                 return result
             result = sorted(result, key=lambda x: (x['len1'], x['len2'], x['text1']))
-        batch_size = self.args.batch_size
+        if batch_size is None:
+            batch_size = self.args.batch_size
         return [self.make_batch(result[i:i + batch_size]) for i in range(0, len(data), batch_size)]
 
     def process_sample(self, sample, with_target=True):
