@@ -1,4 +1,4 @@
-# RE2
+# 为提高推理速度优化代码，并在中文语料上复现RE2模型
 git clone https://github.com/Mleader2/simple_effective_text_matching_Chinese.git
 
 This is the Tensorflow implementation for Chinese corpus of the ACL 2019 paper [Simple and Effective Text Matching with Richer Alignment Features](https://www.aclweb.org/anthology/P19-1465). Pytorch implementation: https://github.com/alibaba-edu/simple-effective-text-matching-pytorch.
@@ -31,13 +31,6 @@ The paper reports the average and standard deviation of 10 runs and the results 
 Inference time (in seconds) is measured by processing a batch of 8 pairs of length 20 on Intel i7 CPUs.
 The computation time of POS features used by CSRAN and DIIN is not included.
 
-|Model|SNLI|SciTail|Quora|WikiQA|Inference Time|
-|---|---|---|---|---|---|
-|[BiMPM](https://github.com/zhiguowang/BiMPM)|86.9|-|88.2|0.731|0.05|
-|[ESIM](https://github.com/lukecq1231/nli)|88.0|70.6|-|-|-|
-|[DIIN](https://github.com/YichenGong/Densely-Interactive-Inference-Network)|88.0|-|89.1|-|1.79|
-|[CSRAN](https://github.com/vanzytay/EMNLP2018_NLI)|88.7|86.7|89.2|-|0.28|
-|RE2|88.9±0.1|86.0±0.6|89.2±0.2|0.7618 ±0.0040|0.03~0.05|
 
 Refer to the paper for more details of the components and experiment results.
 
@@ -49,35 +42,7 @@ Refer to the paper for more details of the components and experiment results.
 [here](https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/gpu/tensorflow_gpu-1.4.1-cp36-cp36m-linux_x86_64.whl))
 - Download [GloVe word vectors](https://nlp.stanford.edu/projects/glove/) (glove.840B.300d) to `resources/`
 
-Data used in the paper are prepared as follows:
 
-### SNLI
-
-- Download and unzip [SNLI](https://www.dropbox.com/s/0r82spk628ksz70/SNLI.zip?dl=0) 
-(pre-processed by [Tay et al.](https://github.com/vanzytay/EMNLP2018_NLI)) to `data/orig`. 
-- Unzip all zip files in the "data/orig/SNLI" folder. (`cd data/orig/SNLI && gunzip *.gz`)
-- `cd data && python prepare_snli.py` 
-
-### SciTail
-
-- Download and unzip [SciTail](http://data.allenai.org.s3.amazonaws.com/downloads/SciTailV1.1.zip) 
-dataset to `data/orig`.
-- `cd data && python prepare_scitail.py`
-
-### Quora
-
-- Download and unzip [Quora](https://drive.google.com/file/d/0B0PlTAo--BnaQWlsZl9FZ3l1c28/view?usp=sharing)
-dataset (pre-processed by [Wang et al.](https://github.com/zhiguowang/BiMPM)) to `data/orig`.
-- `cd data && python prepare_quora.py`
-
-### WikiQA
-
-- Download and unzip [WikiQA](https://www.microsoft.com/en-us/download/details.aspx?id=52419)
-to `data/orig`.
-- `cd data && python prepare_wikiqa.py`
-- Download and unzip [evaluation scripts](http://cs.stanford.edu/people/mengqiu/data/qg-emnlp07-data.tgz). 
-Use the `make -B` command to compile the source files in `qg-emnlp07-data/eval/trec_eval-8.0`.
-Move the binary file "trec_eval" to `resources/`.
 
 ## Usage
 

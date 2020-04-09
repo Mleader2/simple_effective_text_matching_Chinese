@@ -11,47 +11,51 @@ from curLine_file import curLine
 def main():
     argv = sys.argv
     host_name = sys.argv[2]
-    model_id = "benchmark-4"
+    model_id = sys.argv[3] # "benchmark-0"
     out_dir = "/home/%s/Mywork/corpus/Chinese_QA/" % host_name
     checkpoint_dir = "/home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/models/%s" % model_id # % host_name
     print(curLine(), "argv:", argv, "host_name:", host_name)
 
-    if len(argv) == 3:
-        arg_groups = params.parse(sys.argv[1])
+    arg_groups = params.parse(sys.argv[1])
 
-        args,config = arg_groups[0]
-        print(curLine(), args, "config:", config)
+    args,config = arg_groups[0]
+    print(curLine(), args, "config:", config)
 
-        args.data_dir = os.path.join(out_dir, args.data_dir)
+    args.data_dir = os.path.join(out_dir, args.data_dir)
 
-        args.pretrained_embeddings = os.path.join("/home/%s/Word2Vector/Chinese" % host_name,
-                                                  args.pretrained_embeddings)
-        demoer = Demoer(args, checkpoint_dir)
-        predictions, probabilities, inference_time = demoer.serve(dev=[{'text1':'谁有狂三这张高清的', 'text2': '这张高清图，谁有'}])
-        test(args, config, demoer) # 批量测试
+    args.pretrained_embeddings = os.path.join("/home/%s/Word2Vector/Chinese" % host_name,
+                                              args.pretrained_embeddings)
+    demoer = Demoer(args, checkpoint_dir)
+    sample = {'text1':'谁有狂三这张高清的', 'text2': '这张高清图，谁有狂三这张高清的'}
+    predictions, probabilities, inference_time = demoer.serve(dev=[sample,sample])
+    # test(args, config, demoer) # 批量测试
 
-        # corpus_list = []
-        # predict_batchsize = 30
-        # for i in range(predict_batchsize):
-        #     corpus_list.append({'text1':'谁有狂三这张高清的', 'text2': '这张高清图，谁有'})
-        #     batch = corpus_list
-        #
-        # inference_time_sum =0
-        # cishu = 10
-        # for i in range(cishu):
-        #     predictions, probabilities, inference_time = demoer.serve(dev=batch)
-        #     inference_time_sum += inference_time
-        #     print(curLine(), inference_time)
-        #     print(curLine(), "predictions:",predictions[0])
-        #     print(curLine(), "probabilities:", probabilities[0])
-        # print(curLine(), "inference_time=%f ms" % (inference_time_sum/cishu ))
+    infer_flag = True
+    text2_list = []
+    predict_batchsize = 30
+    for i in range(predict_batchsize):
+        text2_list.append(sample['text2'])
+    batch = [{'text1': sample['text1'], 'text2_list': text2_list}]
 
-    elif len(argv) == 4 and '--dry' in argv:
-        argv.remove('--dry')
-        arg_groups = params.parse(sys.argv[1])
-        pprint([args.__dict__ for args, _ in arg_groups])
-    else:
-        print(curLine(), 'Usage: "python train.py configs/xxx.json5 host_name"')
+
+    # infer_flag = False
+    # batch = []
+    # predict_batchsize = 30
+    # for i in range(predict_batchsize):
+    #     batch.append({'text1': sample['text1'], 'text2': sample['text2']})
+
+
+
+    inference_time_sum =0
+    cishu = 100
+    for i in range(cishu):
+        predictions, probabilities, inference_time = demoer.serve(dev=batch, infer_flag=infer_flag)
+        inference_time_sum += inference_time
+        # print(curLine(), inference_time)
+        # print(curLine(), "predictions:",predictions[0])
+        # print(curLine(), "probabilities:", probabilities[0])
+    print(curLine(), "inference_time=%f ms" % (inference_time_sum/cishu ))
+
 
 def test(args, config, demoer):
 

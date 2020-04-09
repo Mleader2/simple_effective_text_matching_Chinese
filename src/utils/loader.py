@@ -12,7 +12,6 @@ def load_data(data_dir, split=None):
             split += '.txt'
         files = [os.path.join(data_dir, f'{split}')]
     for file in files:
-        print(curLine(), file)
         with open(file) as f:
             for line in f:
                 text1, text2, label = line.rstrip().split('\t')

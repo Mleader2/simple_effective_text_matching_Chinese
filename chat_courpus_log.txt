@@ -1,0 +1,190 @@
+[train.py:13]  argv: ['train.py', 'configs/main.json5', 'cloudminds'] host_name: cloudminds
+04/09/2020 08:53:00 train (338053) | test (22438)
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:30: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:34: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:37: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
+
+2020-04-09 08:53:00.681092: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
+2020-04-09 08:53:00.703434: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3600000000 Hz
+2020-04-09 08:53:00.704003: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x427b310 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
+2020-04-09 08:53:00.704050: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
+2020-04-09 08:53:00.705387: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
+2020-04-09 08:53:00.705401: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
+2020-04-09 08:53:00.705430: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (data-OptiPlex-7050): /proc/driver/nvidia/version does not exist
+04/09/2020 08:53:00 #classes: 2; #vocab: 5012
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:32: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:34: The name tf.assign_add is deprecated. Please use tf.compat.v1.assign_add instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:39: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:41: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
+
+WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/util/dispatch.py:180: calling expand_dims (from tensorflow.python.ops.array_ops) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+Use the `axis` argument instead
+[model.py:60]  <class 'list'> devices: ['/device:CPU:0'] splits: 1
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:78: The name tf.add_to_collection is deprecated. Please use tf.compat.v1.add_to_collection instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:78: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:78: The name tf.assign is deprecated. Please use tf.compat.v1.assign instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:80: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:89: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:89: The name tf.get_variable_scope is deprecated. Please use tf.compat.v1.get_variable_scope instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:89: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/embedding.py:27: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
+Instructions for updating:
+Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/__init__.py:35: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
+Instructions for updating:
+keep_dims is deprecated, use keepdims instead
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/alignment.py:24: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/alignment.py:28: calling softmax (from tensorflow.python.ops.nn_ops) with dim is deprecated and will be removed in a future version.
+Instructions for updating:
+dim is deprecated, use axis instead
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:98: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
+
+WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use tf.where in 2.0, which has the same broadcast rule as np.where
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:122: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:127: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:130: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:130: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:106: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
+
+WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:247: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
+
+04/09/2020 08:53:02 trainable params: 2,064,806
+04/09/2020 08:53:02 trainable params (exclude embeddings): 2,064,806
+04/09/2020 08:53:02 { '__index__': 0,
+  '__parents__': ['default', 'chat_courpus'],
+  '__repeat__': 5,
+  'alignment': 'identity',
+  'batch_size': 384,
+  'beta1': 0.9,
+  'beta2': 0.999,
+  'blocks': 2,
+  'connection': 'aug',
+  'data_dir': '/home/cloudminds/Mywork/corpus/Chinese_QA/chat_courpus',
+  'dropout_keep_prob': 0.8,
+  'early_stopping': 1042,
+  'embedding_dim': 300,
+  'embedding_mode': 'freq',
+  'enc_layers': 1,
+  'epochs': 40,
+  'eval_epoch': True,
+  'eval_file': 'test',
+  'eval_per_samples': 6400,
+  'eval_per_samples_warmup': 40000,
+  'eval_per_updates': 17,
+  'eval_per_updates_warmup': 105,
+  'eval_warmup_samples': 0,
+  'eval_warmup_steps': 0,
+  'fusion': 'full',
+  'grad_clipping': 5,
+  'hidden_size': 200,
+  'kernel_size': 3,
+  'language': 'chinese',
+  'log_file': 'log.txt',
+  'log_per_samples': 1280,
+  'log_per_updates': 4,
+  'lower_case': True,
+  'lr': 0.005,
+  'lr_decay_rate': 0.95,
+  'lr_decay_samples': 256000,
+  'lr_decay_steps': 667,
+  'lr_warmup_samples': 0,
+  'lr_warmup_steps': 0,
+  'max_checkpoints': 1,
+  'max_len': 20,
+  'max_loss': 999.0,
+  'max_vocab': 999999,
+  'metric': 'acc',
+  'min_df': 5,
+  'min_len': 1,
+  'min_lr': 6e-05,
+  'min_samples': 0,
+  'min_steps': 0,
+  'multi_gpu': False,
+  'name': 'benchmark-0',
+  'num_classes': 2,
+  'num_vocab': 5012,
+  'output_dir': 'models/chat_courpus',
+  'padding': 0,
+  'prediction': 'simple',
+  'pretrained_embeddings': '/home/cloudminds/Word2Vector/Chinese/charVector_DbqaSmpLog',
+  'save': True,
+  'save_all': False,
+  'seed': None,
+  'sort_by_len': False,
+  'summary_dir': 'models/chat_courpus/benchmark-0',
+  'tensorboard': True,
+  'tolerance_samples': 400000,
+  'watch_metrics': ['auc', 'f1', 'acc']}
+04/09/2020 08:53:06 setup complete: 0:00:06s.
+[trainer.py:45]  eval_per_updates= 105
+[trainer.py:49]  epoch=1/40, experiment_times=0
+04/09/2020 08:53:06 Epoch: 1
+04/09/2020 08:54:04 > epoch 1 updates 50 loss: 0.4825 lr: 0.0050 gnorm: 0.247004/09/2020 08:55:00 > epoch 1 updates 100 loss: 0.4625 lr: 0.0050 gnorm: 0.357504/09/2020 08:55:30 
+04/09/2020 08:55:30 train loss: 0.4725 lr: 0.0050 gnorm: 0.3025 clip: 0
+04/09/2020 08:55:30 valid loss: 0.5764 inference_time: 417.7500 auc: 0.7694 f1: 0.6663 acc: 0.6884 cost_time: 2.5008 [NEW BEST]
+04/09/2020 08:56:21 > epoch 1 updates 150 loss: 0.3863 lr: 0.0050 gnorm: 0.287904/09/2020 08:57:18 > epoch 1 updates 200 loss: 0.3549 lr: 0.0050 gnorm: 0.3241WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
+Instructions for updating:
+Use standard file APIs to delete files with this prefix.
+04/09/2020 08:57:55 
+04/09/2020 08:57:55 train loss: 0.3706 lr: 0.0050 gnorm: 0.3061 clip: 0
+04/09/2020 08:57:55 valid loss: 0.5492 inference_time: 432.7479 auc: 0.8051 f1: 0.7344 acc: 0.7135 cost_time: 4.9188 [NEW BEST]
+04/09/2020 08:58:43 > epoch 1 updates 250 loss: 0.4040 lr: 0.0050 gnorm: 0.471804/09/2020 08:59:41 > epoch 1 updates 300 loss: 0.4480 lr: 0.0050 gnorm: 0.575704/09/2020 09:00:26 
+04/09/2020 09:00:26 train loss: 0.4261 lr: 0.0050 gnorm: 0.5240 clip: 0
+04/09/2020 09:00:26 valid loss: 0.5408 inference_time: 450.9502 auc: 0.8061 f1: 0.7312 acc: 0.7178 cost_time: 7.4354 [NEW BEST]
+04/09/2020 09:01:08 > epoch 1 updates 350 loss: 0.4529 lr: 0.0050 gnorm: 0.224204/09/2020 09:02:10 > epoch 1 updates 400 loss: 0.3748 lr: 0.0050 gnorm: 0.215704/09/2020 09:02:59 
+04/09/2020 09:02:59 train loss: 0.4137 lr: 0.0050 gnorm: 0.2199 clip: 0
+04/09/2020 09:02:59 valid loss: 0.5442 inference_time: 432.1661 auc: 0.8150 f1: 0.7388 acc: 0.7253 cost_time: 9.9904 [NEW BEST]
+04/09/2020 09:03:35 > epoch 1 updates 450 loss: 0.3934 lr: 0.0050 gnorm: 0.419104/09/2020 09:04:34 > epoch 1 updates 500 loss: 0.3552 lr: 0.0050 gnorm: 0.325404/09/2020 09:05:30 
+04/09/2020 09:05:30 train loss: 0.3742 lr: 0.0050 gnorm: 0.3720 clip: 0
+04/09/2020 09:05:30 valid loss: 0.5249 inference_time: 439.8076 auc: 0.8301 f1: 0.7559 acc: 0.7390 cost_time: 12.4927 [NEW BEST]
+04/09/2020 09:06:00 > epoch 1 updates 550 loss: 0.4277 lr: 0.0050 gnorm: 0.626804/09/2020 09:06:59 > epoch 1 updates 600 loss: 0.3738 lr: 0.0050 gnorm: 0.227804/09/2020 09:08:02 
+04/09/2020 09:08:02 train loss: 0.4006 lr: 0.0050 gnorm: 0.4263 clip: 0
+04/09/2020 09:08:02 valid loss: 0.5022 inference_time: 444.9854 auc: 0.8396 f1: 0.7576 acc: 0.7532 cost_time: 15.0300 [NEW BEST]
+04/09/2020 09:08:26 > epoch 1 updates 650 loss: 0.3757 lr: 0.0050 gnorm: 0.313104/09/2020 09:09:27 > epoch 1 updates 700 loss: 0.3205 lr: 0.0047 gnorm: 0.174104/09/2020 09:10:34 
+04/09/2020 09:10:34 train loss: 0.3479 lr: 0.0049 gnorm: 0.2432 clip: 0
+04/09/2020 09:10:34 valid loss: 0.5158 inference_time: 445.2784 auc: 0.8423 f1: 0.7620 acc: 0.7433 cost_time: 17.5647 [BEST: 0.7532]
+04/09/2020 09:10:52 > epoch 1 updates 750 loss: 0.3287 lr: 0.0047 gnorm: 0.173304/09/2020 09:12:08 
+04/09/2020 09:12:08 train loss: 0.3287 lr: 0.0047 gnorm: 0.1733 clip: 0
+04/09/2020 09:12:08 valid loss: 0.5275 inference_time: 445.9348 auc: 0.8473 f1: 0.7659 acc: 0.7392 cost_time: 19.1356 [BEST: 0.7532]
+04/09/2020 09:12:08 
+[trainer.py:49]  epoch=2/40, experiment_times=0
+04/09/2020 09:12:08 Epoch: 2
+04/09/2020 09:12:19 > epoch 2 updates 800 loss: 0.3020 lr: 0.0047 gnorm: 0.108604/09/2020 09:13:32 
+04/09/2020 09:13:32 train loss: 0.3020 lr: 0.0047 gnorm: 0.1086 clip: 0
+04/09/2020 09:13:32 valid loss: 0.5438 inference_time: 437.6694 auc: 0.8451 f1: 0.7664 acc: 0.7414 cost_time: 20.5409 [BEST: 0.7532]
+04/09/2020 09:13:44 > epoch 2 updates 850 loss: 0.3522 lr: 0.0047 gnorm: 0.271204/09/2020 09:14:44 > epoch 2 updates 900 loss: 0.3429 lr: 0.0047 gnorm: 0.288004/09/2020 09:16:07 
+04/09/2020 09:16:07 train loss: 0.3475 lr: 0.0047 gnorm: 0.2797 clip: 0
+04/09/2020 09:16:07 valid loss: 0.4905 inference_time: 454.5211 auc: 0.8596 f1: 0.7767 acc: 0.7535 cost_time: 23.1074 [NEW BEST]
+04/09/2020 09:16:12 > epoch 2 updates 950 loss: 0.3207 lr: 0.0047 gnorm: 0.178304/09/2020 09:17:10 > epoch 2 updates 1000 loss: 0.3748 lr: 0.0047 gnorm: 0.441504/09/2020 09:18:10 > epoch 2 updates 1050 loss: 0.3690 lr: 0.0047 gnorm: 0.140604/09/2020 09:18:36 
+04/09/2020 09:18:36 train loss: 0.3550 lr: 0.0047 gnorm: 0.2533 clip: 0
+04/09/2020 09:18:36 valid loss: 0.4886 inference_time: 434.8840 auc: 0.8472 f1: 0.7657 acc: 0.7599 cost_time: 25.5907 [NEW BEST]
+04/09/2020 09:19:35 > epoch 2 updates 1100 loss: 0.3179 lr: 0.0047 gnorm: 0.211804/09/2020 09:20:33 > epoch 2 updates 1150 loss: 0.3737 lr: 0.0047 gnorm: 0.252304/09/2020 09:21:05 
+04/09/2020 09:21:05 train loss: 0.3459 lr: 0.0047 gnorm: 0.2321 clip: 0
+04/09/2020 09:21:05 valid loss: 0.4859 inference_time: 436.2794 auc: 0.8649 f1: 0.7845 acc: 0.7652 cost_time: 28.0841 [NEW BEST]
+04/09/2020 09:22:02 > epoch 2 updates 1200 loss: 0.3141 lr: 0.0047 gnorm: 0.149704/09/2020 09:23:01 > epoch 2 updates 1250 loss: 0.2911 lr: 0.0047 gnorm: 0.086604/09/2020 09:23:38 
+04/09/2020 09:23:38 train loss: 0.3025 lr: 0.0047 gnorm: 0.1180 clip: 0
+04/09/2020 09:23:38 valid loss: 0.4757 inference_time: 434.7766 auc: 0.8575 f1: 0.7723 acc: 0.7672 cost_time: 30.6388 [NEW BEST]
+04/09/2020 09:24:27 > epoch 2 updates 1300 loss: 0.3613 lr: 0.0047 gnorm: 0.174104/09/2020 09:25:28 > epoch 2 updates 1350 loss: 0.3523 lr: 0.0045 gnorm: 0.144804/09/2020 09:26:14 
+04/09/2020 09:26:14 train loss: 0.3568 lr: 0.0046 gnorm: 0.1594 clip: 0
+04/09/2020 09:26:14 valid loss: 0.4955 inference_time: 469.7144 auc: 0.8572 f1: 0.7714 acc: 0.7574 cost_time: 33.2279 [BEST: 0.7672]
+04/09/2020 09:26:57 > epoch 2 updates 1400 loss: 0.3413 lr: 0.0045 gnorm: 0.113304/09/2020 09:27:57 > epoch 2 updates 1450 loss: 0.3967 lr: 0.0045 gnorm: 0.2068

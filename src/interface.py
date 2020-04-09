@@ -57,39 +57,56 @@ class Interface:
                 embeddings = msgpack.load(f)
         return embeddings
 
-    def pre_process(self, data, training=True, batch_size=None):
-        result = [self.process_sample(sample) for sample in data]
-        if training:
-            result = list(filter(lambda x: x['len1'] < self.args.max_len and x['len2'] < self.args.max_len, result))
-            if not self.args.sort_by_len:
-                return result
-            result = sorted(result, key=lambda x: (x['len1'], x['len2'], x['text1']))
-        if batch_size is None:
-            batch_size = self.args.batch_size
-        return [self.make_batch(result[i:i + batch_size]) for i in range(0, len(data), batch_size)]
-
-    def process_sample(self, sample, with_target=True):
-        text1 = sample['text1']
-        text2 = sample['text2']
-        if self.args.lower_case:
-            text1 = text1.lower()
-            text2 = text2.lower()
-
-        if self.args.language.lower() == "chinese":
-            processed = {
-                'text1': [self.vocab.index(w) for w in list(text1)[:self.args.max_len]],
-                'text2': [self.vocab.index(w) for w in list(text2)[:self.args.max_len]]}
+    def pre_process(self, data, training=True, batch_size=None, infer_flag=False):
+        if infer_flag:
+            batch_result = []
+            for sample in data:
+                processed_text1, processed_len1 = self.process_sample(sample["text1"])
+                processed_text2_list = []
+                processed_len2_list = []
+                for text2 in sample["text2_list"]:
+                    processed_text2, processed_len2 = self.process_sample(text2)
+                    processed_text2_list.append(processed_text2)
+                    processed_len2_list.append(processed_len2)
+                process_sample_dict = {"text1": [processed_text1], "len1": [processed_len1],
+                                       "text2":processed_text2_list, "len2": processed_len2_list}
+                min_len = max(processed_len1, max(processed_len2_list))
+                batch = {key: self.padding(value, min_len=min_len) if key.startswith('text') else value
+                         for key, value in process_sample_dict.items()}
+                batch_result.append(batch)
         else:
-            processed = {
-                'text1': [self.vocab.index(w) for w in text1.split()[:self.args.max_len]],
-                'text2': [self.vocab.index(w) for w in text2.split()[:self.args.max_len]]}
-        processed['len1'] = len(processed['text1'])
-        processed['len2'] = len(processed['text2'])
-        if 'target' in sample and with_target:
-            target = sample['target']
-            assert target in self.target_map
-            processed['target'] = self.target_map.index(target)
-        return processed
+            result = []
+            for sample in data:
+                processed_text1, processed_len1 = self.process_sample(sample["text1"])
+
+                processed_text2, processed_len2 = self.process_sample(sample["text2"])
+                process_sample_dict = {"text1": processed_text1, "len1": processed_len1,
+                                       "text2":processed_text2, "len2": processed_len2}
+                if 'target' in sample:
+                    target = sample['target']
+                    assert target in self.target_map
+                    process_sample_dict['target'] = self.target_map.index(target)
+                result.append(process_sample_dict)
+            if training:
+                result = list(filter(lambda x: x['len1'] < self.args.max_len and x['len2'] < self.args.max_len, result))
+                if not self.args.sort_by_len:
+                    return result
+                result = sorted(result, key=lambda x: (x['len1'], x['len2'], x['text1']))
+            if batch_size is None:
+                batch_size = self.args.batch_size
+            batch_result = [self.make_batch(result[i:i + batch_size]) for i in range(0, len(data), batch_size)]
+        return batch_result
+
+    def process_sample(self, text):
+        if self.args.lower_case:
+            text = text.lower()
+        if self.args.language.lower() == "chinese":
+            processed_text = [self.vocab.index(w) for w in list(text)[:self.args.max_len]]
+        else:
+            processed_text = [self.vocab.index(w) for w in text.split()[:self.args.max_len]],
+        processed_len = len(processed_text)
+
+        return processed_text, processed_len
 
     def shuffle_batch(self, data):
         data = random.sample(data, len(data))
@@ -103,7 +120,12 @@ class Interface:
         batch = {key: [sample[key] for sample in batch] for key in batch[0].keys()}
         if 'target' in batch and not with_target:
             del batch['target']
-        batch = {key: self.padding(value, min_len=self.args.min_len) if key.startswith('text') else value
+
+        # TODO TODO
+        min_len = max(max(map(len, batch["text1"])), self.args.min_len)
+        min_len = max(max(map(len, batch["text2"])), min_len)
+        # print(curLine(), "min_len =", min_len) # TODO TODO
+        batch = {key: self.padding(value, min_len=min_len) if key.startswith('text') else value
                  for key, value in batch.items()}
         return batch
 

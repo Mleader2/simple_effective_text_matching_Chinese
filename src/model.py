@@ -44,10 +44,12 @@ class Model:
         self.q2_len = tf.placeholder(tf.int32, [None], name='q2_len')
         self.y = tf.placeholder(tf.int32, [None], name='y')
         self.dropout_keep_prob = tf.placeholder(tf.float32, (), name='dropout_keep_prob')
-
-        q1_mask = tf.expand_dims(tf.sequence_mask(self.q1_len, dtype=tf.float32), dim=-1)
-        q2_mask = tf.expand_dims(tf.sequence_mask(self.q2_len, dtype=tf.float32), dim=-1)
-
+        self.batchsize_a = tf.shape(self.q1_len)[0]
+        self.batchsize_b = tf.shape(self.q2_len)[0]
+        self.maxlen = tf.reduce_max(self.q1_len)
+        self.maxlen = tf.maximum(self.maxlen, tf.reduce_max(self.q2_len))
+        q1_mask = tf.expand_dims(tf.sequence_mask(self.q1_len, maxlen=self.maxlen, dtype=tf.float32), dim=-1)
+        q2_mask = tf.expand_dims(tf.sequence_mask(self.q2_len, maxlen=self.maxlen, dtype=tf.float32), dim=-1)
         devices = self.get_available_gpus() or ['/device:CPU:0']
         if not args.multi_gpu:
             devices = devices[:1]
@@ -88,7 +90,8 @@ class Model:
             for i, device in enumerate(devices):
                 with tf.device(device):
                     with tf.name_scope(tower_names[i]) as scope:
-                        logits = self.network(q1[i], q2[i], q1_mask[i], q2_mask[i], self.dropout_keep_prob)
+                        logits = self.network(q1[i], q2[i], q1_mask[i], q2_mask[i],
+                                self.dropout_keep_prob, batchsize_a=self.batchsize_a, batchsize_b=self.batchsize_b)
                         tower_logits.append(logits)
                         loss = self.get_loss(logits, y[i])
                         tf.get_variable_scope().reuse_variables()

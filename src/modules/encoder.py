@@ -6,12 +6,15 @@ from . import conv1d
 
 
 class Encoder:
-    def __init__(self, args):
+    def __init__(self, args, enc_layers=None):
         self.args = args
+        self.enc_layers = enc_layers
+        if self.enc_layers is None:
+            self.enc_layers = self.args.enc_layers
 
     def __call__(self, x, mask, dropout_keep_prob, name='encoder'):
         with tf.variable_scope(name, reuse=tf.AUTO_REUSE):
-            for i in range(self.args.enc_layers):
+            for i in range(self.enc_layers):
                 x = mask * x
                 if i > 0:
                     x = tf.nn.dropout(x, dropout_keep_prob)

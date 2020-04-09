@@ -32,14 +32,8 @@ class Demoer:
                     saver = tf.train.import_meta_graph("{}.meta".format(ckpt.model_checkpoint_path))
                     saver.restore(self.sess, ckpt.model_checkpoint_path)
 
-                # print(curLine(), "checkpoint_file:", checkpoint_file)
-                # self.model.saver.restore(self.sess, checkpoint_file)
-                                #          os.path.join(self.args.summary_dir, self.prefix),
-                                # global_step=self.updates)
-
-    def serve(self, dev, batch_size=30):
-        self.log(f'eval {self.args.eval_file} ({len(dev)})')
-        dev_batches = self.interface.pre_process(dev, training=False, batch_size=batch_size)
+    def serve(self, dev, batch_size=60, infer_flag=False):
+        dev_batches = self.interface.pre_process(dev, training=False, batch_size=batch_size, infer_flag=infer_flag)
         predictions = []
         probabilities = []
         start_time = time.time()

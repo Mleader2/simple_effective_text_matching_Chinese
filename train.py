@@ -14,7 +14,6 @@ def main():
     out_dir = "/home/%s/Mywork/corpus/Chinese_QA/" % host_name
     if len(argv) == 3:
         arg_groups = params.parse(sys.argv[1])
-        print(curLine(), len(arg_groups), "arg_groups:", arg_groups)
         test_score_sum = 0.0
         max_test_score = 0.0
         experiment_times = 0
