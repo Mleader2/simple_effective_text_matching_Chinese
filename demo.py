@@ -13,8 +13,10 @@ def main():
     host_name = sys.argv[2]
     model_id = sys.argv[3] # "benchmark-0"
     out_dir = "/home/%s/Mywork/corpus/Chinese_QA/" % host_name
-    checkpoint_dir = "/home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/models/%s" % model_id # % host_name
-    print(curLine(), "argv:", argv, "host_name:", host_name)
+    # checkpoint_dir = "./models/chat_courpus/%s" % (model_id)
+    checkpoint_dir = "/home/%s/Mywork/model/qa_model_dir/chat_courpus--good/%s" \
+                     % (host_name, model_id)
+    print(curLine(), "argv:", argv)
 
     arg_groups = params.parse(sys.argv[1])
 
@@ -26,35 +28,37 @@ def main():
     args.pretrained_embeddings = os.path.join("/home/%s/Word2Vector/Chinese" % host_name,
                                               args.pretrained_embeddings)
     demoer = Demoer(args, checkpoint_dir)
-    sample = {'text1':'谁有狂三这张高清的', 'text2': '这张高清图，谁有狂三这张高清的'}
-    predictions, probabilities, inference_time = demoer.serve(dev=[sample,sample])
-    # test(args, config, demoer) # 批量测试
+    sample = {'text1':"请问谁有狂三这张高清的电影资源？", 'text2': '这张高清图，谁有狂三这张高清的请问谁有狂三这张高清的电影资源？'}
+    predictions, probabilities, inference_time = demoer.serve(dev=[sample])
+    test(args, config, demoer) # 批量测试
 
-    infer_flag = True
-    text2_list = []
+
     predict_batchsize = 30
-    for i in range(predict_batchsize):
-        text2_list.append(sample['text2'])
-    batch = [{'text1': sample['text1'], 'text2_list': text2_list}]
+    infer_flag = True # False  #
+    print(curLine(), "infer_flag:", infer_flag, ",predict_batchsize=", predict_batchsize)
+    if infer_flag:
+        text2_list = []
+        for i in range(predict_batchsize):
+            text2_list.append(sample['text2'])
+        batch = [{'text1': sample['text1'], 'text2_list': text2_list}]
+    else:
+        batch = []
+        for i in range(predict_batchsize):
+            batch.append({'text1': sample['text1'], 'text2': sample['text2']})
 
-
-    # infer_flag = False
-    # batch = []
-    # predict_batchsize = 30
-    # for i in range(predict_batchsize):
-    #     batch.append({'text1': sample['text1'], 'text2': sample['text2']})
-
-
-
+    inference_time_sum1 = 0
+    for i in range(20):
+        predictions, probabilities, inference_time = demoer.serve(dev=batch, infer_flag=infer_flag)
+        inference_time_sum1 += inference_time
     inference_time_sum =0
-    cishu = 100
+    cishu = 400
     for i in range(cishu):
         predictions, probabilities, inference_time = demoer.serve(dev=batch, infer_flag=infer_flag)
         inference_time_sum += inference_time
         # print(curLine(), inference_time)
-        # print(curLine(), "predictions:",predictions[0])
+        # print(curLine(), "predictions:",predictions)
         # print(curLine(), "probabilities:", probabilities[0])
-    print(curLine(), "inference_time=%f ms" % (inference_time_sum/cishu ))
+    print(curLine(), "inference_time1=%f ms, inference_time=%f ms" % (inference_time_sum1/20, inference_time_sum/cishu ))
 
 
 def test(args, config, demoer):

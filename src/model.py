@@ -86,7 +86,7 @@ class Model:
         summaries = []
         loss = 0
 
-        with tf.variable_scope(tf.get_variable_scope(), reuse=tf.AUTO_REUSE):
+        with tf.variable_scope(tf.get_variable_scope()):
             for i, device in enumerate(devices):
                 with tf.device(device):
                     with tf.name_scope(tower_names[i]) as scope:
@@ -209,8 +209,9 @@ class Model:
         return tf.reduce_mean(losses)
 
     def save(self, states, name=None):
-        self.saver.save(self.sess, os.path.join(self.args.summary_dir, self.prefix),
-                        global_step=self.updates)
+        model_file = os.path.join(self.args.summary_dir, self.prefix)
+        self.saver.save(self.sess, model_file, global_step=self.updates)
+        print(curLine(), "have saved model to %s" % model_file)
         if not name:
             name = str(self.updates)
         # noinspection PyTypeChecker

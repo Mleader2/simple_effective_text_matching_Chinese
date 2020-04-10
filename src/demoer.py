@@ -28,25 +28,34 @@ class Demoer:
                 if ckpt is None:
                     print(curLine(), "%s中没有模型" % checkpoint_dir)
                 else:
-                    print(curLine(), "restore from %s" % ckpt.model_checkpoint_path)
-                    saver = tf.train.import_meta_graph("{}.meta".format(ckpt.model_checkpoint_path))
-                    saver.restore(self.sess, ckpt.model_checkpoint_path)
+                    file_name = ckpt.model_checkpoint_path.split("/")[-1]
+                    model_checkpoint_file = os.path.join(checkpoint_dir, file_name)
+                    # ckpt.model_checkpoint_path = ckpt.model_checkpoint_path.replace("wzk", host_name)
+                    print(curLine(), "restore from %s" % model_checkpoint_file)
+                    # saver = tf.train.import_meta_graph("{}.meta".format(ckpt.model_checkpoint_path)) # 用这个saver比self.model.saver推理更慢
+                    self.model.saver.restore(self.sess, model_checkpoint_file)
 
     def serve(self, dev, batch_size=60, infer_flag=False):
         dev_batches = self.interface.pre_process(dev, training=False, batch_size=batch_size, infer_flag=infer_flag)
         predictions = []
         probabilities = []
-        start_time = time.time()
+        total_inference_time = 0.0
         with self.sess.as_default():
             for batch in dev_batches:
                 feed_dict = self.model.process_data(batch, training=False)
+                # infer_flag = self.sess.run(
+                #     [self.model.network.infer_flag],
+                #     feed_dict=feed_dict)
+                # print(curLine(), "infer_flag:", infer_flag)
+                start_time = time.time()
                 pred, prob = self.sess.run(
                     [self.model.pred, self.model.prob],
                     feed_dict=feed_dict)
+                inference_time = (time.time() - start_time) * 1000.0
                 predictions.extend(pred.tolist())
                 probabilities.extend(prob.tolist())
-        inference_time = (time.time() - start_time) * 1000.0
-        return predictions, probabilities, inference_time
+                total_inference_time += inference_time
+        return predictions, probabilities, total_inference_time
 
     def build_model(self, sess):
         states = {}

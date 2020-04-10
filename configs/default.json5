@@ -29,7 +29,7 @@
         alignment: 'linear', // linear, identity
         fusion: 'full', // full, simple
         connection: 'aug', // aug, residual
-        prediction: 'simple', // full, symmetric, simple
+        prediction: 'full', // full, symmetric, simple
     },
 
     logging: {

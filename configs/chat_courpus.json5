@@ -5,9 +5,9 @@
 
     model: {
         alignment: 'identity',
-        enc_layers: 1,
-        blocks: 2,
-        hidden_size: 200,
+        enc_layers: 2,
+        blocks: 1,
+        hidden_size: 300,
     },
 
     routine: {
@@ -20,7 +20,7 @@
         lr: 0.005,
         min_lr: 6e-5,
         lr_decay_samples: 256000,
-        batch_size: 384,
+        batch_size: 256,
         lr_warmup_samples: 0,
     }
 }

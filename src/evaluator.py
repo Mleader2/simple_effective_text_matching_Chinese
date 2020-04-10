@@ -1,6 +1,4 @@
 # coding=utf-8
-
-
 import os
 from pprint import pprint
 import tensorflow as tf

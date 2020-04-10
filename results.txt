@@ -1,84 +1,3 @@
-#　成都
-####### pyenv activate python373tf115
-host_name=$1
-#export gpu=-1
-
-
-# 23.6
-# pyenv activate python36tf150
-#export gpu=1
-
-
-# 房山  全量数据会使得内存不足，运行很慢
-# pyenv activate python363tf111
-# tensorflow-gpu              1.15.0    版本太高，CUdNN不支持
-export gpu=0
-
-
-export generate_base_model="generate_epoch2_batch189999"
-export masker_base_model="epoch0_batch609999_acc_0.634"
-
-# 受到显存限制，batchsize从512降低到256
-
-export config_json=configs/main.json5
-
-#echo "python train.py" ${masker_ranker} "GPU:" ${gpu} "quora_log.txt"
-#CUDA_VISIBLE_DEVICES=${gpu} nohup python -u train.py ${config_json}  > quora_log.txt 2>&1 &
-#nohup python train.py ${config_json}
-#
-#python train.py configs/main.json5
-
-
-
-#quora
-#blocks=2,  enc_layers=2  batch_size=256  vocab=84166
-#04/03/2020 12:08:50 > epoch 28 updates 42000 loss: 0.0877 lr: 1.4650e-04 gnorm: 0.3595
-#04/03/2020 12:08:50 train loss: 0.1074 lr: 1.4866e-04 gnorm: 0.3694 clip: 0
-#04/03/2020 12:08:50 valid loss: 0.3190 auc: 0.9596 f1: 0.8954 acc: 0.8951 [BEST: 0.8968]
-
-#04/03/2020 11:50:26 > epoch 22 updates 32000 loss: 0.2358 lr: 2.4469e-04 gnorm: 0.4625
-#04/03/2020 11:50:26 train loss: 0.1761 lr: 2.4469e-04 gnorm: 0.3688 clip: 0
-#04/03/2020 11:50:26 valid loss: 0.2881 auc: 0.9550 f1: 0.8926 acc: 0.8889 cost_time: 56.1453 [NEW BEST]
-
-#04/03/2020 10:54:17 Training complete.
-#04/03/2020 10:54:17 best dev score 0.8917 at step 36048 (epoch 24).
-#04/03/2020 10:54:17 best eval stats [loss: 0.2769 auc: 0.9576 f1: 0.8947 acc: 0.8917 cost_time: 64.2978]
-
-#echo "python train.py" ${masker_ranker} "GPU:" ${gpu} "lcqmc_log.txt"
-##CUDA_VISIBLE_DEVICES=${gpu} nohup python -u train.py ${config_json} ${host_name} > lcqmc_log.txt 2>&1 &
-#python train.py ${config_json} ${host_name}
-##tail -f lcqmc_log.txt
-
-#blocks=1,  enc_layers=2  batch_size=256    'lr': 0.0006, prediction': 'full'    'fusion': 'full',
-#04/03/2020 01:39:52 trainable params: 1,183,205
-#04/03/2020 01:39:52 trainable params (exclude embeddings): 1,183,205
-#average acc=(0.82+0.85+0.84+0.82+0.82+0.85+0.84+0.84+0.82+0.82+0.84)/11=0.83273
-
-#blocks=1,  enc_layers=2  batch_size=256    'lr': 0.0006, prediction':'simple'    'fusion': 'full',
-#04/07/2020 10:20:21 trainable params: 1,103,205
-#04/07/2020 10:20:21 trainable params (exclude embeddings): 1,103,205
-#experiment_times=5/5, test_score_sum=0.833840  稍微好一点点
-#04/07/2020 12:24:27 Training time: 0:07:54.   inference_time: 9.2-11.7ms  CPU上纯推理延迟63.6890ms
-#[train.py:28]  experiment_times=5/5, ave_test_score=0.824016, max_test_score=0.839600
-
-
-#blocks=1,  enc_layers=2  batch_size=256    'lr': 0.0006, prediction':'simple  fusion':full  , 换词向量Zero
-#04/07/2020 11:20:36 trainable params: 1,103,205
-#04/07/2020 11:20:36 trainable params (exclude embeddings): 1,103,205
-#04/07/2020 11:28:17 Training time: 0:07:44.
-#[train.py:26]  experiment_times=5/5, test_score_sum=0.832352
-
-
-#blocks=1,  enc_layers=2  batch_size=256    'lr': 0.0006, prediction':'simple  fusion':simple   参数少了接近一半
-#04/07/2020 11:34:00 trainable params: 582,005
-#04/07/2020 11:34:00 trainable params (exclude embeddings): 582,005
-#[train.py:26]  experiment_times=5/5, test_score_sum=0.806512   下降明显
-
-
-#LCQMC SCORE
-#dev score:  BERT 89.4  ALBERT：87
-#test score:  BERT 86.9  ALBERT：86.3
-
 # 闲聊的匹配模型
 #echo "python train.py" ${masker_ranker} "GPU:" ${gpu} "chat_courpus_log.txt"
 CUDA_VISIBLE_DEVICES=${gpu} nohup python -u train.py ${config_json} ${host_name} > chat_courpus_log.txt 2>&1 &
@@ -116,13 +35,145 @@ tail -f chat_courpus_log.txt
 #[train.py:30]  experiment_times=5/5, ave_test_score=0.820127, max_test_score=0.824048
 # run again  experiment_times=5/5, ave_test_score=0.811712, max_test_score=0.815848
 # [train.py:29]  experiment_times=1/5, ave_test_score=0.801765, max_test_score=0.801765
+inference_time ms
+batchsize    30          50
+优化前 ms     27.6       39.6
+优化后 ms     25.4       36.1
+
 
 #block=2 enc_layers=2 block2_layer2_full 变差了
 #[train.py:29]  experiment_times=5/5, ave_test_score=0.805981, max_test_score=0.810901   Training time: 0:09:01.
 #experiment_times=5/5, ave_test_score=0.802986, max_test_score=0.813620  Training time: 0:08:04.
 #experiment_times=5/5, ave_test_score=0.808842, max_test_score=0.814377  Training time: 0:14:00.
+
+inference_time ms
+batchsize    30          50
+优化前 ms     26.45        45.4
+优化后 ms     24.3       36.5
+
+
+
 # 试试symmetric   block2_layer2_symmetric
 #experiment_times=5/5, ave_test_score=0.798503, max_test_score=0.812550
+inference_time=37.586354 ms   inference_time=38.655164 ms  inference_time=38.126519 ms
+inference_time ms
+batchsize    30          50
+优化前 ms     26.45        45.4
+优化后 ms     23.8       37.5
+
+prediction:simple block2_layer2_simple
+experiment_times=5/5, best_experiment_times=4, ave_test_score=0.799465, max_test_score=0.808049
+inference_time ms
+batchsize    30          50     100
+优化前 ms     18.2      29.0       84.9
+优化后 ms     16.7       23.9      77.4
+
+block=1 layer=2 hidden_size=400 prediction:full
+
+
+
+
+inference_time ms  block=1 layer=2  hidden=200
+#[train.py:30]  experiment_times=5/5, ave_test_score=0.820127, max_test_score=0.824048
+batchsize    30          50
+优化前 ms     17.39      29.0
+优化后 ms     15.4       23.7
+
+inference_time ms  block=1 layer=2  hidden=400  显存不足  CPU推理也慢了不少
+04/09/2020 04:54:56 best dev score 0.8113468223549336 at step 6336 (epoch 8).
+04/09/2020 04:54:56 best eval stats [loss: 0.4403 inference_time: 42.6206 auc: 0.9068 f1: 0.8234 acc: 0.8113 cost_time: 15.1283]
+[train.py:37]  experiment_times=5/5, best_experiment_times=1, ave_test_score=0.804599, max_test_score=0.811347
+batchsize    30          50
+优化前 ms     41.68      67.31
+优化后 ms     36.1       59.2
+
+inference_time ms  block=1 layer=2  hidden=300  房山  较好
+04/09/2020 06:37:14 Training time: 0:10:41.
+[train.py:37]  experiment_times=5/5, best_experiment_times=2, ave_test_score=0.809635, max_test_score=0.822845
+[demo.py:89]  stats: {'inference_time': 0.9978332348670623, 'auc': 0.9068339527862, 'f1': 0.8272114757661378, 'acc': 0.8228451733666102}
+[demo.py:38]  infer_flag: True ,predict_batchsize= 30
+[demo.py:61]  inference_time1=24.401224 ms, inference_time=23.994634 ms
+batchsize    30          50
+优化前 ms     27.4       44.5
+优化后 ms     24.0       37.8
+
+inference_time ms  block=1 layer=3  hidden=400  本地
+04/09/2020 05:54:51 trainable params: 4,127,205
+[train.py:38]  experiment_times=5/5, best_experiment_times=4, ave_test_score=0.796657, max_test_score=0.810767
+[train.py:47]  eval_score_list: [0.7923611730100723, 0.789954541402977, 0.7916480969783403, 0.798556021035743, 0.8107674480791515] 4
+[demo.py:38]  infer_flag: True ,predict_batchsize= 30
+[demo.py:61]  inference_time1=39.286757 ms, inference_time=38.814596 ms
+[demo.py:61]  inference_time1=42.803967 ms, inference_time=41.222696 ms
+[demo.py:38]  infer_flag: True ,predict_batchsize= 50
+[demo.py:61]  inference_time1=60.126448 ms, inference_time=60.603931 ms
+[demo.py:61]  inference_time1=65.088594 ms, inference_time=62.463285 ms
+
+[demo.py:38]  infer_flag: False ,predict_batchsize= 30
+[demo.py:61]  inference_time1=49.417663 ms, inference_time=47.830650 ms
+[demo.py:61]  inference_time1=53.199601 ms, inference_time=47.482363 ms
+[demo.py:38]  infer_flag: False ,predict_batchsize= 50
+[demo.py:61]  inference_time1=69.589388 ms, inference_time=69.067456 ms
+[demo.py:61]  inference_time1=69.666946 ms, inference_time=69.120533 ms
+batchsize    30          50
+优化前 ms     47.5       69.1
+优化后 ms     38.8       60.6
+
+
+inference_time ms  block=1 layer=3  hidden=300  房山
+04/10/2020 09:18:21 Training time: 0:07:14.
+[train.py:37]  experiment_times=5/5, best_experiment_times=3, ave_test_score=0.801569, max_test_score=0.813441
+
+
+
+#block=2 enc_layers=2 block=2 layer=2
+experiment_times=5/5, ave_test_score=0.808842, max_test_score=0.814377  Training time: 0:14:00.
+batchsize    30          50     100
+优化前 ms     18.2      29.0       84.9
+优化后 ms     16.7       23.9      77.4
+
+
+
+
+[demo.py:38]  infer_flag: False ,predict_batchsize= 100
+[demo.py:59]  inference_time=41.652980 ms
+
+[demo.py:38]  infer_flag: True ,predict_batchsize= 100
+[demo.py:59]  inference_time=36.435516 ms
+
+[demo.py:38]  infer_flag: True ,predict_batchsize= 100
+[demo.py:59]  inference_time=49.93 ms
+[demo.py:38]  infer_flag: False ,predict_batchsize= 100
+[demo.py:59]  inference_time=53.980533 ms
+
+[demo.py:38]  infer_flag: True ,predict_batchsize= 100
+[demo.py:61]  inference_time1=54.388463 ms, inference_time=51.567709 ms
+[demo.py:38]  infer_flag: True ,predict_batchsize= 100
+[demo.py:61]  inference_time1=55.565810 ms, inference_time=56.355667 ms
+[demo.py:38]  infer_flag: True ,predict_batchsize= 100
+[demo.py:61]  inference_time1=52.851069 ms, inference_time=53.652096 ms
+[demo.py:38]  infer_flag: True ,predict_batchsize= 100
+[demo.py:61]  inference_time1=51.090300 ms, inference_time=52.383467 ms
+[demo.py:38]  infer_flag: True ,predict_batchsize= 100
+[demo.py:61]  inference_time1=49.942648 ms, inference_time=49.684069 ms
+
+
+[demo.py:38]  infer_flag: False ,predict_batchsize= 100
+[demo.py:61]  inference_time1=61.680663 ms, inference_time=56.739576 ms
+[demo.py:38]  infer_flag: False ,predict_batchsize= 100
+[demo.py:61]  inference_time1=53.338659 ms, inference_time=52.637645 ms
+[demo.py:38]  infer_flag: False ,predict_batchsize= 100
+[demo.py:61]  inference_time1=53.442144 ms, inference_time=52.512710 ms
+
+[demo.py:38]  infer_flag: False ,predict_batchsize= 30
+[demo.py:61]  inference_time1=17.575490 ms, inference_time=17.016582 ms
+[demo.py:38]  infer_flag: False ,predict_batchsize= 30
+[demo.py:61]  inference_time1=20.082664 ms, inference_time=19.406968 ms
+
+[demo.py:38]  infer_flag: True ,predict_batchsize= 30
+[demo.py:61]  inference_time1=18.918300 ms, inference_time=17.164890 ms
+[demo.py:38]  infer_flag: True ,predict_batchsize= 30
+[demo.py:61]  inference_time1=19.240046 ms, inference_time=16.757571 ms
+
 
 
 ########   python demo.py configs/main.json5  cloudminds  benchmark-0
