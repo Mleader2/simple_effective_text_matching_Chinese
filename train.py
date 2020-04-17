@@ -11,21 +11,16 @@ def main():
     argv = sys.argv
     host_name = sys.argv[2]
     print(curLine(), "argv:", argv, "host_name:", host_name)
-    out_dir = "/home/%s/Mywork/corpus/Chinese_QA/" % host_name
-
     if len(argv) == 3:
-        arg_groups = params.parse(sys.argv[1])
+        arg_groups = params.parse(sys.argv[1], host_name)
         test_score_sum = 0.0
         max_test_score = 0.0
         experiment_times = 0
         eval_score_list = []
         best_experiment_times = None
         for args, config in arg_groups:
-            args.summary_dir = args.summary_dir.replace("models", "/home/%s/Mywork/model/qa_model_dir" %host_name)
-            print(curLine(), "args.summary_dir:", args.summary_dir)
             if not os.path.exists(args.summary_dir):
                 os.makedirs(args.summary_dir)
-            args.data_dir = os.path.join(out_dir, args.data_dir)
             args.pretrained_embeddings= os.path.join("/home/%s/Word2Vector/Chinese"% host_name, args.pretrained_embeddings)
             trainer = Trainer(args)
             states,best_eval_score = trainer.train(experiment_times)
@@ -45,11 +40,6 @@ def main():
                 }))
                 f.write('\n')
             print(curLine(), "eval_score_list:", eval_score_list, eval_score_list.index(max_test_score))
-
-    elif len(argv) == 4 and '--dry' in argv:
-        argv.remove('--dry')
-        arg_groups = params.parse(sys.argv[1])
-        pprint([args.__dict__ for args, _ in arg_groups])
     else:
         print(curLine(), 'Usage: "python train.py configs/xxx.json5 host_name"')
 

@@ -1,8 +1,10 @@
-# 为提高推理速度优化代码，并在中文语料上复现RE2模型
+#为提高推理速度优化代码，并在中文语料上复现RE2模型
+#目前是以point—wise的方式训练的，适合召回；如果想用于重排序，最好用pair-wise方式训练模型。
+
 This is the Tensorflow implementation for Chinese corpus of the ACL 2019 paper [Simple and Effective Text Matching with Richer Alignment Features](https://www.aclweb.org/anthology/P19-1465). Pytorch implementation: https://github.com/alibaba-edu/simple-effective-text-matching-pytorch.
 Up to now, based on Chinese corpus LCQMC. Use Chinese character vector.
 
-
+if you want to demo, please use commant such as "python demo.py configs/main.json5  wzk  benchmark-0"
 ## Quick Links
 
 - [About](#simple-and-effective-text-matching)
@@ -38,7 +40,6 @@ Refer to the paper for more details of the components and experiment results.
 - `pip install -r requirements.txt`
 - install Tensorflow 1.4 or above (the wheel file for Tensorflow 1.4 gpu version under python 3.6 can be found 
 [here](https://mirrors.tuna.tsinghua.edu.cn/tensorflow/linux/gpu/tensorflow_gpu-1.4.1-cp36-cp36m-linux_x86_64.whl))
-- Download [GloVe word vectors](https://nlp.stanford.edu/projects/glove/) (glove.840B.300d) to `resources/`
 
 
 
@@ -86,7 +87,7 @@ The instructions to write your own configuration files:
 To check the configurations only, use
 
 ```bash
-python train.py $config_file.json5 --dry
+python train.py $config_file.json5
 ```
 
 ## Citation

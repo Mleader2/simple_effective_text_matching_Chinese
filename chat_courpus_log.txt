@@ -1,1389 +1,0 @@
-[train.py:13]  argv: ['train.py', 'configs/main.json5', 'cloudminds'] host_name: cloudminds
-[train.py:25]  args.summary_dir: /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0
-04/09/2020 05:54:49 train (338053) | test (22438)
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:30: The name tf.reset_default_graph is deprecated. Please use tf.compat.v1.reset_default_graph instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:34: The name tf.ConfigProto is deprecated. Please use tf.compat.v1.ConfigProto instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:37: The name tf.Session is deprecated. Please use tf.compat.v1.Session instead.
-
-2020-04-09 17:54:49.588735: I tensorflow/core/platform/cpu_feature_guard.cc:142] Your CPU supports instructions that this TensorFlow binary was not compiled to use: AVX2 FMA
-2020-04-09 17:54:49.611306: I tensorflow/core/platform/profile_utils/cpu_utils.cc:94] CPU Frequency: 3600000000 Hz
-2020-04-09 17:54:49.611990: I tensorflow/compiler/xla/service/service.cc:168] XLA service 0x58e36c0 initialized for platform Host (this does not guarantee that XLA will be used). Devices:
-2020-04-09 17:54:49.612009: I tensorflow/compiler/xla/service/service.cc:176]   StreamExecutor device (0): Host, Default Version
-2020-04-09 17:54:49.613270: W tensorflow/stream_executor/platform/default/dso_loader.cc:55] Could not load dynamic library 'libcuda.so.1'; dlerror: libcuda.so.1: cannot open shared object file: No such file or directory
-2020-04-09 17:54:49.613286: E tensorflow/stream_executor/cuda/cuda_driver.cc:318] failed call to cuInit: UNKNOWN ERROR (303)
-2020-04-09 17:54:49.613301: I tensorflow/stream_executor/cuda/cuda_diagnostics.cc:156] kernel driver does not appear to be running on this host (data-OptiPlex-7050): /proc/driver/nvidia/version does not exist
-04/09/2020 05:54:49 #classes: 2; #vocab: 5012
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:32: The name tf.get_variable is deprecated. Please use tf.compat.v1.get_variable instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:34: The name tf.assign_add is deprecated. Please use tf.compat.v1.assign_add instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:39: The name tf.placeholder is deprecated. Please use tf.compat.v1.placeholder instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:41: The name tf.placeholder_with_default is deprecated. Please use tf.compat.v1.placeholder_with_default instead.
-
-WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/util/dispatch.py:180: calling expand_dims (from tensorflow.python.ops.array_ops) with dim is deprecated and will be removed in a future version.
-Instructions for updating:
-Use the `axis` argument instead
-[model.py:60]  <class 'list'> devices: ['/device:CPU:0'] splits: 1
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:78: The name tf.add_to_collection is deprecated. Please use tf.compat.v1.add_to_collection instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:78: The name tf.GraphKeys is deprecated. Please use tf.compat.v1.GraphKeys instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:78: The name tf.assign is deprecated. Please use tf.compat.v1.assign instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:80: The name tf.train.AdamOptimizer is deprecated. Please use tf.compat.v1.train.AdamOptimizer instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:89: The name tf.variable_scope is deprecated. Please use tf.compat.v1.variable_scope instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:89: The name tf.get_variable_scope is deprecated. Please use tf.compat.v1.get_variable_scope instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/embedding.py:23: The name tf.AUTO_REUSE is deprecated. Please use tf.compat.v1.AUTO_REUSE instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/embedding.py:27: calling dropout (from tensorflow.python.ops.nn_ops) with keep_prob is deprecated and will be removed in a future version.
-Instructions for updating:
-Please use `rate` instead of `keep_prob`. Rate should be set to `rate = 1 - keep_prob`.
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/__init__.py:35: calling reduce_sum_v1 (from tensorflow.python.ops.math_ops) with keep_dims is deprecated and will be removed in a future version.
-Instructions for updating:
-keep_dims is deprecated, use keepdims instead
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/alignment.py:24: The name tf.summary.histogram is deprecated. Please use tf.compat.v1.summary.histogram instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/modules/alignment.py:28: calling softmax (from tensorflow.python.ops.nn_ops) with dim is deprecated and will be removed in a future version.
-Instructions for updating:
-dim is deprecated, use axis instead
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:98: The name tf.get_collection is deprecated. Please use tf.compat.v1.get_collection instead.
-
-WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/ops/math_grad.py:1424: where (from tensorflow.python.ops.array_ops) is deprecated and will be removed in a future version.
-Instructions for updating:
-Use tf.where in 2.0, which has the same broadcast rule as np.where
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:122: The name tf.summary.scalar is deprecated. Please use tf.compat.v1.summary.scalar instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:127: The name tf.summary.merge is deprecated. Please use tf.compat.v1.summary.merge instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:130: The name tf.train.Saver is deprecated. Please use tf.compat.v1.train.Saver instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:130: The name tf.global_variables is deprecated. Please use tf.compat.v1.global_variables instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/trainer.py:106: The name tf.global_variables_initializer is deprecated. Please use tf.compat.v1.global_variables_initializer instead.
-
-WARNING:tensorflow:From /home/cloudminds/PycharmProjects/simple_effective_text_matching_Chinese/src/model.py:248: The name tf.trainable_variables is deprecated. Please use tf.compat.v1.trainable_variables instead.
-
-04/09/2020 05:54:51 trainable params: 4,127,205
-04/09/2020 05:54:51 trainable params (exclude embeddings): 4,127,205
-04/09/2020 05:54:51 { '__index__': 0,
-  '__parents__': ['default', 'chat_courpus'],
-  '__repeat__': 5,
-  'alignment': 'identity',
-  'batch_size': 256,
-  'beta1': 0.9,
-  'beta2': 0.999,
-  'blocks': 1,
-  'connection': 'aug',
-  'data_dir': '/home/cloudminds/Mywork/corpus/Chinese_QA/chat_courpus',
-  'dropout_keep_prob': 0.8,
-  'early_stopping': 1563,
-  'embedding_dim': 300,
-  'embedding_mode': 'freq',
-  'enc_layers': 3,
-  'epochs': 40,
-  'eval_epoch': True,
-  'eval_file': 'test',
-  'eval_per_samples': 6400,
-  'eval_per_samples_warmup': 40000,
-  'eval_per_updates': 25,
-  'eval_per_updates_warmup': 157,
-  'eval_warmup_samples': 0,
-  'eval_warmup_steps': 0,
-  'fusion': 'full',
-  'grad_clipping': 5,
-  'hidden_size': 400,
-  'kernel_size': 3,
-  'language': 'chinese',
-  'log_file': 'log.txt',
-  'log_per_samples': 1280,
-  'log_per_updates': 5,
-  'lower_case': True,
-  'lr': 0.005,
-  'lr_decay_rate': 0.95,
-  'lr_decay_samples': 256000,
-  'lr_decay_steps': 1000,
-  'lr_warmup_samples': 0,
-  'lr_warmup_steps': 0,
-  'max_checkpoints': 1,
-  'max_len': 20,
-  'max_loss': 999.0,
-  'max_vocab': 999999,
-  'metric': 'acc',
-  'min_df': 5,
-  'min_len': 1,
-  'min_lr': 6e-05,
-  'min_samples': 0,
-  'min_steps': 0,
-  'multi_gpu': False,
-  'name': 'benchmark-0',
-  'num_classes': 2,
-  'num_vocab': 5012,
-  'output_dir': 'models/chat_courpus',
-  'padding': 0,
-  'prediction': 'full',
-  'pretrained_embeddings': '/home/cloudminds/Word2Vector/Chinese/charVector_DbqaSmpLog',
-  'save': True,
-  'save_all': False,
-  'seed': None,
-  'sort_by_len': False,
-  'summary_dir': '/home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0',
-  'tensorboard': True,
-  'tolerance_samples': 400000,
-  'watch_metrics': ['auc', 'f1', 'acc']}
-04/09/2020 05:54:55 setup complete: 0:00:05s.
-[trainer.py:45]  eval_per_updates= 157
-[trainer.py:49]  epoch=1/40, experiment_times=0
-04/09/2020 05:54:55 Epoch: 1
-04/09/2020 05:55:45 > epoch 1 updates 50 loss: 0.5645 lr: 0.0050 gnorm: 0.607304/09/2020 05:56:36 > epoch 1 updates 100 loss: 0.5308 lr: 0.0050 gnorm: 0.379504/09/2020 05:57:24 > epoch 1 updates 150 loss: 0.3971 lr: 0.0050 gnorm: 0.2574[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 05:58:06 
-04/09/2020 05:58:06 train loss: 0.4969 lr: 0.0050 gnorm: 0.4136 clip: 0
-04/09/2020 05:58:06 valid loss: 0.5798 inference_time: 390.9399 auc: 0.7940 f1: 0.7316 acc: 0.7008 cost_time: 3.2772 [NEW BEST]
-04/09/2020 05:58:50 > epoch 1 updates 200 loss: 0.4603 lr: 0.0050 gnorm: 0.320404/09/2020 05:59:40 > epoch 1 updates 250 loss: 0.4374 lr: 0.0050 gnorm: 0.315604/09/2020 06:00:31 > epoch 1 updates 300 loss: 0.4325 lr: 0.0050 gnorm: 0.392004/09/2020 06:01:21 
-04/09/2020 06:01:21 train loss: 0.4433 lr: 0.0050 gnorm: 0.3429 clip: 0
-04/09/2020 06:01:21 valid loss: 0.5755 inference_time: 404.7053 auc: 0.8113 f1: 0.7432 acc: 0.6988 cost_time: 6.5445 [BEST: 0.7008]
-04/09/2020 06:01:59 > epoch 1 updates 350 loss: 0.4006 lr: 0.0050 gnorm: 0.180304/09/2020 06:02:51 > epoch 1 updates 400 loss: 0.3837 lr: 0.0050 gnorm: 0.152904/09/2020 06:03:42 > epoch 1 updates 450 loss: 0.4437 lr: 0.0050 gnorm: 0.1355WARNING:tensorflow:From /home/cloudminds/.pyenv/versions/python373tf115/lib/python3.7/site-packages/tensorflow_core/python/training/saver.py:963: remove_checkpoint (from tensorflow.python.training.checkpoint_management) is deprecated and will be removed in a future version.
-Instructions for updating:
-Use standard file APIs to delete files with this prefix.
-[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 06:04:36 
-04/09/2020 06:04:36 train loss: 0.4095 lr: 0.0050 gnorm: 0.1561 clip: 0
-04/09/2020 06:04:36 valid loss: 0.5857 inference_time: 377.8479 auc: 0.8254 f1: 0.7560 acc: 0.7138 cost_time: 9.7916 [NEW BEST]
-04/09/2020 06:05:05 > epoch 1 updates 500 loss: 0.3048 lr: 0.0050 gnorm: 0.166704/09/2020 06:05:55 > epoch 1 updates 550 loss: 0.4265 lr: 0.0050 gnorm: 0.170404/09/2020 06:06:47 > epoch 1 updates 600 loss: 0.3662 lr: 0.0050 gnorm: 0.1182[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 06:07:49 
-04/09/2020 06:07:49 train loss: 0.3660 lr: 0.0050 gnorm: 0.1516 clip: 0
-04/09/2020 06:07:49 valid loss: 0.5445 inference_time: 385.7098 auc: 0.8356 f1: 0.7607 acc: 0.7313 cost_time: 13.0088 [NEW BEST]
-04/09/2020 06:08:12 > epoch 1 updates 650 loss: 0.3445 lr: 0.0050 gnorm: 0.140704/09/2020 06:09:02 > epoch 1 updates 700 loss: 0.4241 lr: 0.0050 gnorm: 0.128004/09/2020 06:09:56 > epoch 1 updates 750 loss: 0.3318 lr: 0.0050 gnorm: 0.162904/09/2020 06:11:07 
-04/09/2020 06:11:07 train loss: 0.3668 lr: 0.0050 gnorm: 0.1440 clip: 0
-04/09/2020 06:11:07 valid loss: 0.5740 inference_time: 403.3165 auc: 0.8316 f1: 0.7602 acc: 0.7289 cost_time: 16.3078 [BEST: 0.7313]
-04/09/2020 06:11:23 > epoch 1 updates 800 loss: 0.3834 lr: 0.0050 gnorm: 0.135104/09/2020 06:12:15 > epoch 1 updates 850 loss: 0.4284 lr: 0.0050 gnorm: 0.224604/09/2020 06:13:04 > epoch 1 updates 900 loss: 0.3551 lr: 0.0050 gnorm: 0.251004/09/2020 06:14:21 
-04/09/2020 06:14:21 train loss: 0.3889 lr: 0.0050 gnorm: 0.2039 clip: 0
-04/09/2020 06:14:21 valid loss: 0.5692 inference_time: 383.4851 auc: 0.8429 f1: 0.7615 acc: 0.7193 cost_time: 19.5390 [BEST: 0.7313]
-04/09/2020 06:14:29 > epoch 1 updates 950 loss: 0.3784 lr: 0.0050 gnorm: 0.123304/09/2020 06:15:24 > epoch 1 updates 1000 loss: 0.3821 lr: 0.0050 gnorm: 0.102704/09/2020 06:16:18 > epoch 1 updates 1050 loss: 0.3620 lr: 0.0047 gnorm: 0.1328[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 06:17:43 
-04/09/2020 06:17:43 train loss: 0.3741 lr: 0.0049 gnorm: 0.1196 clip: 0
-04/09/2020 06:17:43 valid loss: 0.4960 inference_time: 392.1514 auc: 0.8550 f1: 0.7765 acc: 0.7565 cost_time: 22.9009 [NEW BEST]
-04/09/2020 06:17:44 > epoch 1 updates 1100 loss: 0.3836 lr: 0.0047 gnorm: 0.096504/09/2020 06:18:40 > epoch 1 updates 1150 loss: 0.3547 lr: 0.0047 gnorm: 0.1175[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 06:19:56 
-04/09/2020 06:19:56 train loss: 0.3691 lr: 0.0047 gnorm: 0.1070 clip: 0
-04/09/2020 06:19:56 valid loss: 0.4824 inference_time: 388.7294 auc: 0.8604 f1: 0.7784 acc: 0.7630 cost_time: 25.1164 [NEW BEST]
-04/09/2020 06:19:56 
-[trainer.py:49]  epoch=2/40, experiment_times=0
-04/09/2020 06:19:56 Epoch: 2
-04/09/2020 06:20:10 > epoch 2 updates 1200 loss: 0.3060 lr: 0.0047 gnorm: 0.110504/09/2020 06:21:01 > epoch 2 updates 1250 loss: 0.3869 lr: 0.0047 gnorm: 0.145204/09/2020 06:21:42 
-04/09/2020 06:21:42 train loss: 0.3467 lr: 0.0047 gnorm: 0.1280 clip: 0
-04/09/2020 06:21:42 valid loss: 0.4910 inference_time: 396.1831 auc: 0.8519 f1: 0.7734 acc: 0.7619 cost_time: 26.8943 [BEST: 0.7630]
-04/09/2020 06:22:29 > epoch 2 updates 1300 loss: 0.3063 lr: 0.0047 gnorm: 0.090804/09/2020 06:23:20 > epoch 2 updates 1350 loss: 0.3603 lr: 0.0047 gnorm: 0.120304/09/2020 06:24:12 > epoch 2 updates 1400 loss: 0.3354 lr: 0.0047 gnorm: 0.104904/09/2020 06:25:00 
-04/09/2020 06:25:00 train loss: 0.3341 lr: 0.0047 gnorm: 0.1054 clip: 0
-04/09/2020 06:25:00 valid loss: 0.4995 inference_time: 390.0603 auc: 0.8484 f1: 0.7666 acc: 0.7620 cost_time: 30.1894 [BEST: 0.7630]
-04/09/2020 06:25:39 > epoch 2 updates 1450 loss: 0.3579 lr: 0.0047 gnorm: 0.105504/09/2020 06:26:31 > epoch 2 updates 1500 loss: 0.3651 lr: 0.0047 gnorm: 0.091804/09/2020 06:27:23 > epoch 2 updates 1550 loss: 0.3526 lr: 0.0047 gnorm: 0.1148[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 06:28:20 
-04/09/2020 06:28:20 train loss: 0.3585 lr: 0.0047 gnorm: 0.1041 clip: 0
-04/09/2020 06:28:20 valid loss: 0.4946 inference_time: 403.8500 auc: 0.8536 f1: 0.7748 acc: 0.7667 cost_time: 33.5169 [NEW BEST]
-04/09/2020 06:28:52 > epoch 2 updates 1600 loss: 0.2860 lr: 0.0047 gnorm: 0.125104/09/2020 06:29:44 > epoch 2 updates 1650 loss: 0.3355 lr: 0.0047 gnorm: 0.113004/09/2020 06:30:37 > epoch 2 updates 1700 loss: 0.4207 lr: 0.0047 gnorm: 0.113004/09/2020 06:31:40 
-04/09/2020 06:31:40 train loss: 0.3478 lr: 0.0047 gnorm: 0.1170 clip: 0
-04/09/2020 06:31:40 valid loss: 0.5045 inference_time: 387.6253 auc: 0.8618 f1: 0.7780 acc: 0.7520 cost_time: 36.8533 [BEST: 0.7667]
-04/09/2020 06:32:04 > epoch 2 updates 1750 loss: 0.3609 lr: 0.0047 gnorm: 0.100504/09/2020 06:32:56 > epoch 2 updates 1800 loss: 0.3051 lr: 0.0047 gnorm: 0.205004/09/2020 06:33:46 > epoch 2 updates 1850 loss: 0.3394 lr: 0.0047 gnorm: 0.116504/09/2020 06:34:54 
-04/09/2020 06:34:54 train loss: 0.3351 lr: 0.0047 gnorm: 0.1407 clip: 0
-04/09/2020 06:34:54 valid loss: 0.4877 inference_time: 378.9482 auc: 0.8726 f1: 0.7875 acc: 0.7637 cost_time: 40.0804 [BEST: 0.7667]
-04/09/2020 06:35:10 > epoch 2 updates 1900 loss: 0.3442 lr: 0.0047 gnorm: 0.140604/09/2020 06:36:03 > epoch 2 updates 1950 loss: 0.3968 lr: 0.0047 gnorm: 0.166504/09/2020 06:36:53 > epoch 2 updates 2000 loss: 0.3212 lr: 0.0047 gnorm: 0.091204/09/2020 06:38:07 
-04/09/2020 06:38:07 train loss: 0.3540 lr: 0.0047 gnorm: 0.1326 clip: 0
-04/09/2020 06:38:07 valid loss: 0.5090 inference_time: 375.7290 auc: 0.8692 f1: 0.7847 acc: 0.7588 cost_time: 43.3063 [BEST: 0.7667]
-04/09/2020 06:38:16 > epoch 2 updates 2050 loss: 0.3767 lr: 0.0045 gnorm: 0.182304/09/2020 06:39:06 > epoch 2 updates 2100 loss: 0.3469 lr: 0.0045 gnorm: 0.099504/09/2020 06:39:56 > epoch 2 updates 2150 loss: 0.2941 lr: 0.0045 gnorm: 0.126404/09/2020 06:41:18 
-04/09/2020 06:41:18 train loss: 0.3390 lr: 0.0045 gnorm: 0.1359 clip: 0
-04/09/2020 06:41:18 valid loss: 0.5104 inference_time: 369.3174 auc: 0.8674 f1: 0.7859 acc: 0.7617 cost_time: 46.4894 [BEST: 0.7667]
-04/09/2020 06:41:20 > epoch 2 updates 2200 loss: 0.2954 lr: 0.0045 gnorm: 0.092004/09/2020 06:42:10 > epoch 2 updates 2250 loss: 0.3087 lr: 0.0045 gnorm: 0.096404/09/2020 06:43:02 > epoch 2 updates 2300 loss: 0.3198 lr: 0.0045 gnorm: 0.094904/09/2020 06:43:52 > epoch 2 updates 2350 loss: 0.2988 lr: 0.0045 gnorm: 0.1631[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 06:44:30 
-04/09/2020 06:44:30 train loss: 0.3057 lr: 0.0045 gnorm: 0.1119 clip: 0
-04/09/2020 06:44:30 valid loss: 0.4859 inference_time: 373.5503 auc: 0.8715 f1: 0.7899 acc: 0.7680 cost_time: 49.6922 [NEW BEST]
-04/09/2020 06:45:25 
-04/09/2020 06:45:25 valid loss: 0.5163 inference_time: 378.0997 auc: 0.8646 f1: 0.7850 acc: 0.7637 cost_time: 50.5968 [BEST: 0.7680]
-04/09/2020 06:45:25 
-[trainer.py:49]  epoch=3/40, experiment_times=0
-04/09/2020 06:45:25 Epoch: 3
-04/09/2020 06:45:49 > epoch 3 updates 2400 loss: 0.2827 lr: 0.0045 gnorm: 0.085604/09/2020 06:46:41 > epoch 3 updates 2450 loss: 0.3582 lr: 0.0045 gnorm: 0.211104/09/2020 06:47:30 > epoch 3 updates 2500 loss: 0.3464 lr: 0.0045 gnorm: 0.120104/09/2020 06:48:15 
-04/09/2020 06:48:15 train loss: 0.3293 lr: 0.0045 gnorm: 0.1390 clip: 0
-04/09/2020 06:48:15 valid loss: 0.5100 inference_time: 373.3159 auc: 0.8689 f1: 0.7833 acc: 0.7549 cost_time: 53.4333 [BEST: 0.7680]
-04/09/2020 06:48:53 > epoch 3 updates 2550 loss: 0.3496 lr: 0.0045 gnorm: 0.098604/09/2020 06:49:44 > epoch 3 updates 2600 loss: 0.4073 lr: 0.0045 gnorm: 0.131604/09/2020 06:50:35 > epoch 3 updates 2650 loss: 0.4057 lr: 0.0045 gnorm: 0.153704/09/2020 06:51:27 
-04/09/2020 06:51:27 train loss: 0.3877 lr: 0.0045 gnorm: 0.1281 clip: 0
-04/09/2020 06:51:27 valid loss: 0.5057 inference_time: 366.5113 auc: 0.8682 f1: 0.7852 acc: 0.7650 cost_time: 56.6302 [BEST: 0.7680]
-04/09/2020 06:51:58 > epoch 3 updates 2700 loss: 0.3048 lr: 0.0045 gnorm: 0.077104/09/2020 06:52:48 > epoch 3 updates 2750 loss: 0.3290 lr: 0.0045 gnorm: 0.128504/09/2020 06:53:38 > epoch 3 updates 2800 loss: 0.3380 lr: 0.0045 gnorm: 0.1528[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 06:54:37 
-04/09/2020 06:54:37 train loss: 0.3240 lr: 0.0045 gnorm: 0.1197 clip: 0
-04/09/2020 06:54:37 valid loss: 0.4931 inference_time: 363.0736 auc: 0.8712 f1: 0.7897 acc: 0.7713 cost_time: 59.7977 [NEW BEST]
-04/09/2020 06:55:01 > epoch 3 updates 2850 loss: 0.3616 lr: 0.0045 gnorm: 0.122704/09/2020 06:55:52 > epoch 3 updates 2900 loss: 0.2991 lr: 0.0045 gnorm: 0.086804/09/2020 06:56:42 > epoch 3 updates 2950 loss: 0.3318 lr: 0.0045 gnorm: 0.105204/09/2020 06:57:48 
-04/09/2020 06:57:48 train loss: 0.3307 lr: 0.0045 gnorm: 0.1048 clip: 0
-04/09/2020 06:57:48 valid loss: 0.5047 inference_time: 377.3809 auc: 0.8716 f1: 0.7897 acc: 0.7660 cost_time: 62.9924 [BEST: 0.7713]
-04/09/2020 06:58:05 > epoch 3 updates 3000 loss: 0.3215 lr: 0.0045 gnorm: 0.108204/09/2020 06:58:56 > epoch 3 updates 3050 loss: 0.3184 lr: 0.0043 gnorm: 0.122504/09/2020 06:59:46 > epoch 3 updates 3100 loss: 0.3190 lr: 0.0043 gnorm: 0.116304/09/2020 07:00:59 
-04/09/2020 07:00:59 train loss: 0.3196 lr: 0.0044 gnorm: 0.1157 clip: 0
-04/09/2020 07:00:59 valid loss: 0.5079 inference_time: 371.2960 auc: 0.8665 f1: 0.7854 acc: 0.7622 cost_time: 66.1784 [BEST: 0.7713]
-04/09/2020 07:01:10 > epoch 3 updates 3150 loss: 0.2927 lr: 0.0043 gnorm: 0.088404/09/2020 07:02:00 > epoch 3 updates 3200 loss: 0.2690 lr: 0.0043 gnorm: 0.099204/09/2020 07:02:50 > epoch 3 updates 3250 loss: 0.3074 lr: 0.0043 gnorm: 0.0752[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 07:04:09 
-04/09/2020 07:04:09 train loss: 0.2897 lr: 0.0043 gnorm: 0.0876 clip: 0
-04/09/2020 07:04:09 valid loss: 0.4846 inference_time: 373.2236 auc: 0.8746 f1: 0.7924 acc: 0.7714 cost_time: 69.3412 [NEW BEST]
-04/09/2020 07:04:13 > epoch 3 updates 3300 loss: 0.3586 lr: 0.0043 gnorm: 0.090704/09/2020 07:05:03 > epoch 3 updates 3350 loss: 0.3199 lr: 0.0043 gnorm: 0.076704/09/2020 07:05:53 > epoch 3 updates 3400 loss: 0.3114 lr: 0.0043 gnorm: 0.087404/09/2020 07:06:43 > epoch 3 updates 3450 loss: 0.3208 lr: 0.0043 gnorm: 0.112504/09/2020 07:07:20 
-04/09/2020 07:07:20 train loss: 0.3275 lr: 0.0043 gnorm: 0.0919 clip: 0
-04/09/2020 07:07:20 valid loss: 0.5424 inference_time: 366.6386 auc: 0.8684 f1: 0.7824 acc: 0.7524 cost_time: 72.5153 [BEST: 0.7714]
-04/09/2020 07:08:05 > epoch 3 updates 3500 loss: 0.3069 lr: 0.0043 gnorm: 0.092204/09/2020 07:08:55 > epoch 3 updates 3550 loss: 0.2851 lr: 0.0043 gnorm: 0.0689[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 07:09:42 
-04/09/2020 07:09:42 train loss: 0.2959 lr: 0.0043 gnorm: 0.0805 clip: 0
-04/09/2020 07:09:42 valid loss: 0.4808 inference_time: 374.0862 auc: 0.8755 f1: 0.7936 acc: 0.7790 cost_time: 74.8777 [NEW BEST]
-04/09/2020 07:09:42 
-[trainer.py:49]  epoch=4/40, experiment_times=0
-04/09/2020 07:09:42 Epoch: 4
-04/09/2020 07:10:19 > epoch 4 updates 3600 loss: 0.3086 lr: 0.0043 gnorm: 0.105104/09/2020 07:11:04 
-04/09/2020 07:11:04 train loss: 0.3086 lr: 0.0043 gnorm: 0.1051 clip: 0
-04/09/2020 07:11:04 valid loss: 0.5179 inference_time: 378.4326 auc: 0.8710 f1: 0.7892 acc: 0.7663 cost_time: 76.2494 [BEST: 0.7790]
-04/09/2020 07:11:42 > epoch 4 updates 3650 loss: 0.2605 lr: 0.0043 gnorm: 0.073704/09/2020 07:12:33 > epoch 4 updates 3700 loss: 0.3135 lr: 0.0043 gnorm: 0.126204/09/2020 07:13:23 > epoch 4 updates 3750 loss: 0.3462 lr: 0.0043 gnorm: 0.1495[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 07:14:15 
-04/09/2020 07:14:15 train loss: 0.3070 lr: 0.0043 gnorm: 0.1167 clip: 0
-04/09/2020 07:14:15 valid loss: 0.4733 inference_time: 376.0132 auc: 0.8806 f1: 0.7976 acc: 0.7791 cost_time: 79.4322 [NEW BEST]
-04/09/2020 07:14:47 > epoch 4 updates 3800 loss: 0.2747 lr: 0.0043 gnorm: 0.099304/09/2020 07:15:37 > epoch 4 updates 3850 loss: 0.3041 lr: 0.0043 gnorm: 0.094604/09/2020 07:16:28 > epoch 4 updates 3900 loss: 0.3173 lr: 0.0043 gnorm: 0.164004/09/2020 07:17:26 
-04/09/2020 07:17:26 train loss: 0.2989 lr: 0.0043 gnorm: 0.1195 clip: 0
-04/09/2020 07:17:26 valid loss: 0.4679 inference_time: 369.5034 auc: 0.8838 f1: 0.7984 acc: 0.7779 cost_time: 82.6188 [BEST: 0.7791]
-04/09/2020 07:17:52 > epoch 4 updates 3950 loss: 0.3511 lr: 0.0043 gnorm: 0.110104/09/2020 07:18:43 > epoch 4 updates 4000 loss: 0.2913 lr: 0.0043 gnorm: 0.077504/09/2020 07:19:32 > epoch 4 updates 4050 loss: 0.3062 lr: 0.0041 gnorm: 0.107904/09/2020 07:20:37 
-04/09/2020 07:20:37 train loss: 0.3160 lr: 0.0042 gnorm: 0.0985 clip: 0
-04/09/2020 07:20:37 valid loss: 0.4955 inference_time: 372.2751 auc: 0.8801 f1: 0.7932 acc: 0.7680 cost_time: 85.8117 [BEST: 0.7791]
-04/09/2020 07:20:55 > epoch 4 updates 4100 loss: 0.2891 lr: 0.0041 gnorm: 0.086104/09/2020 07:21:46 > epoch 4 updates 4150 loss: 0.2864 lr: 0.0041 gnorm: 0.116204/09/2020 07:22:36 > epoch 4 updates 4200 loss: 0.3571 lr: 0.0041 gnorm: 0.146104/09/2020 07:23:49 
-04/09/2020 07:23:49 train loss: 0.3111 lr: 0.0041 gnorm: 0.1163 clip: 0
-04/09/2020 07:23:49 valid loss: 0.4780 inference_time: 378.0188 auc: 0.8843 f1: 0.7987 acc: 0.7770 cost_time: 89.0116 [BEST: 0.7791]
-04/09/2020 07:24:01 > epoch 4 updates 4250 loss: 0.2713 lr: 0.0041 gnorm: 0.109604/09/2020 07:24:51 > epoch 4 updates 4300 loss: 0.2946 lr: 0.0041 gnorm: 0.081604/09/2020 07:25:42 > epoch 4 updates 4350 loss: 0.2634 lr: 0.0041 gnorm: 0.123804/09/2020 07:27:01 
-04/09/2020 07:27:01 train loss: 0.2764 lr: 0.0041 gnorm: 0.1050 clip: 0
-04/09/2020 07:27:01 valid loss: 0.4992 inference_time: 378.1419 auc: 0.8855 f1: 0.7980 acc: 0.7748 cost_time: 92.2088 [BEST: 0.7791]
-04/09/2020 07:27:05 > epoch 4 updates 4400 loss: 0.3442 lr: 0.0041 gnorm: 0.096304/09/2020 07:27:56 > epoch 4 updates 4450 loss: 0.2509 lr: 0.0041 gnorm: 0.075504/09/2020 07:28:46 > epoch 4 updates 4500 loss: 0.3170 lr: 0.0041 gnorm: 0.101804/09/2020 07:29:36 > epoch 4 updates 4550 loss: 0.3269 lr: 0.0041 gnorm: 0.072004/09/2020 07:30:13 
-04/09/2020 07:30:13 train loss: 0.3098 lr: 0.0041 gnorm: 0.0863 clip: 0
-04/09/2020 07:30:13 valid loss: 0.4991 inference_time: 378.1036 auc: 0.8755 f1: 0.7926 acc: 0.7719 cost_time: 95.3971 [BEST: 0.7791]
-04/09/2020 07:30:59 > epoch 4 updates 4600 loss: 0.2502 lr: 0.0041 gnorm: 0.082104/09/2020 07:31:49 > epoch 4 updates 4650 loss: 0.3351 lr: 0.0041 gnorm: 0.092704/09/2020 07:32:39 > epoch 4 updates 4700 loss: 0.3116 lr: 0.0041 gnorm: 0.091804/09/2020 07:33:23 
-04/09/2020 07:33:23 train loss: 0.2992 lr: 0.0041 gnorm: 0.0889 clip: 0
-04/09/2020 07:33:23 valid loss: 0.4843 inference_time: 380.0318 auc: 0.8869 f1: 0.7982 acc: 0.7731 cost_time: 98.5687 [BEST: 0.7791]
-04/09/2020 07:34:03 > epoch 4 updates 4750 loss: 0.2994 lr: 0.0041 gnorm: 0.084904/09/2020 07:34:38 
-04/09/2020 07:34:38 train loss: 0.2994 lr: 0.0041 gnorm: 0.0849 clip: 0
-04/09/2020 07:34:38 valid loss: 0.4823 inference_time: 380.9101 auc: 0.8818 f1: 0.7952 acc: 0.7746 cost_time: 99.8274 [BEST: 0.7791]
-04/09/2020 07:34:38 
-[trainer.py:49]  epoch=5/40, experiment_times=0
-04/09/2020 07:34:38 Epoch: 5
-04/09/2020 07:35:28 > epoch 5 updates 4800 loss: 0.3216 lr: 0.0041 gnorm: 0.176604/09/2020 07:36:18 > epoch 5 updates 4850 loss: 0.2843 lr: 0.0041 gnorm: 0.083704/09/2020 07:37:08 
-04/09/2020 07:37:08 train loss: 0.3028 lr: 0.0041 gnorm: 0.1299 clip: 0
-04/09/2020 07:37:08 valid loss: 0.5162 inference_time: 381.0736 auc: 0.8842 f1: 0.7919 acc: 0.7622 cost_time: 102.3243 [BEST: 0.7791]
-04/09/2020 07:37:41 > epoch 5 updates 4900 loss: 0.3595 lr: 0.0041 gnorm: 0.109304/09/2020 07:38:32 > epoch 5 updates 4950 loss: 0.2843 lr: 0.0041 gnorm: 0.102904/09/2020 07:39:22 > epoch 5 updates 5000 loss: 0.2807 lr: 0.0041 gnorm: 0.1044[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 07:40:19 
-04/09/2020 07:40:19 train loss: 0.3079 lr: 0.0041 gnorm: 0.1055 clip: 0
-04/09/2020 07:40:19 valid loss: 0.4729 inference_time: 369.3490 auc: 0.8877 f1: 0.8019 acc: 0.7821 cost_time: 105.5043 [NEW BEST]
-04/09/2020 07:40:45 > epoch 5 updates 5050 loss: 0.3043 lr: 0.0039 gnorm: 0.103004/09/2020 07:41:36 > epoch 5 updates 5100 loss: 0.2478 lr: 0.0039 gnorm: 0.093904/09/2020 07:42:26 > epoch 5 updates 5150 loss: 0.3406 lr: 0.0039 gnorm: 0.156004/09/2020 07:43:31 
-04/09/2020 07:43:31 train loss: 0.2977 lr: 0.0039 gnorm: 0.1178 clip: 0
-04/09/2020 07:43:31 valid loss: 0.4828 inference_time: 374.2088 auc: 0.8846 f1: 0.7971 acc: 0.7745 cost_time: 108.7028 [BEST: 0.7821]
-04/09/2020 07:43:50 > epoch 5 updates 5200 loss: 0.2962 lr: 0.0039 gnorm: 0.113104/09/2020 07:44:41 > epoch 5 updates 5250 loss: 0.3377 lr: 0.0039 gnorm: 0.099504/09/2020 07:45:31 > epoch 5 updates 5300 loss: 0.3336 lr: 0.0039 gnorm: 0.1002[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 07:46:42 
-04/09/2020 07:46:42 train loss: 0.3226 lr: 0.0039 gnorm: 0.1042 clip: 0
-04/09/2020 07:46:42 valid loss: 0.4725 inference_time: 376.1617 auc: 0.8824 f1: 0.8000 acc: 0.7825 cost_time: 111.8859 [NEW BEST]
-04/09/2020 07:46:54 > epoch 5 updates 5350 loss: 0.2649 lr: 0.0039 gnorm: 0.107604/09/2020 07:47:45 > epoch 5 updates 5400 loss: 0.3006 lr: 0.0039 gnorm: 0.089004/09/2020 07:48:35 > epoch 5 updates 5450 loss: 0.3111 lr: 0.0039 gnorm: 0.0903[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 07:49:53 
-04/09/2020 07:49:53 train loss: 0.2924 lr: 0.0039 gnorm: 0.0956 clip: 0
-04/09/2020 07:49:53 valid loss: 0.4755 inference_time: 372.4168 auc: 0.8894 f1: 0.8028 acc: 0.7827 cost_time: 115.0639 [NEW BEST]
-04/09/2020 07:49:58 > epoch 5 updates 5500 loss: 0.2911 lr: 0.0039 gnorm: 0.105904/09/2020 07:50:48 > epoch 5 updates 5550 loss: 0.2741 lr: 0.0039 gnorm: 0.091404/09/2020 07:51:39 > epoch 5 updates 5600 loss: 0.2878 lr: 0.0039 gnorm: 0.085004/09/2020 07:52:29 > epoch 5 updates 5650 loss: 0.3020 lr: 0.0039 gnorm: 0.105104/09/2020 07:53:04 
-04/09/2020 07:53:04 train loss: 0.2888 lr: 0.0039 gnorm: 0.0968 clip: 0
-04/09/2020 07:53:04 valid loss: 0.4984 inference_time: 370.8871 auc: 0.8850 f1: 0.8006 acc: 0.7810 cost_time: 118.2572 [BEST: 0.7827]
-04/09/2020 07:53:53 > epoch 5 updates 5700 loss: 0.2618 lr: 0.0039 gnorm: 0.077204/09/2020 07:54:42 > epoch 5 updates 5750 loss: 0.2906 lr: 0.0039 gnorm: 0.089204/09/2020 07:55:33 > epoch 5 updates 5800 loss: 0.3060 lr: 0.0039 gnorm: 0.0821[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 07:56:15 
-04/09/2020 07:56:15 train loss: 0.2863 lr: 0.0039 gnorm: 0.0829 clip: 0
-04/09/2020 07:56:15 valid loss: 0.4670 inference_time: 379.2103 auc: 0.8945 f1: 0.8098 acc: 0.7903 cost_time: 121.4340 [NEW BEST]
-04/09/2020 07:56:56 > epoch 5 updates 5850 loss: 0.3210 lr: 0.0039 gnorm: 0.195404/09/2020 07:57:47 > epoch 5 updates 5900 loss: 0.3227 lr: 0.0039 gnorm: 0.112004/09/2020 07:59:00 
-04/09/2020 07:59:00 train loss: 0.3219 lr: 0.0039 gnorm: 0.1535 clip: 0
-04/09/2020 07:59:00 valid loss: 0.4807 inference_time: 378.5691 auc: 0.8879 f1: 0.8019 acc: 0.7810 cost_time: 124.1927 [BEST: 0.7903]
-04/09/2020 07:59:00 
-[trainer.py:49]  epoch=6/40, experiment_times=0
-04/09/2020 07:59:00 Epoch: 6
-04/09/2020 07:59:12 > epoch 6 updates 5950 loss: 0.2787 lr: 0.0039 gnorm: 0.098804/09/2020 08:00:00 
-04/09/2020 08:00:00 train loss: 0.2787 lr: 0.0039 gnorm: 0.0988 clip: 0
-04/09/2020 08:00:00 valid loss: 0.4918 inference_time: 369.3318 auc: 0.8923 f1: 0.8039 acc: 0.7814 cost_time: 125.1840 [BEST: 0.7903]
-04/09/2020 08:00:33 > epoch 6 updates 6000 loss: 0.2335 lr: 0.0039 gnorm: 0.106504/09/2020 08:01:23 > epoch 6 updates 6050 loss: 0.2548 lr: 0.0037 gnorm: 0.129404/09/2020 08:02:14 > epoch 6 updates 6100 loss: 0.3085 lr: 0.0037 gnorm: 0.151104/09/2020 08:03:09 
-04/09/2020 08:03:09 train loss: 0.2658 lr: 0.0037 gnorm: 0.1292 clip: 0
-04/09/2020 08:03:09 valid loss: 0.4979 inference_time: 365.8495 auc: 0.8894 f1: 0.8021 acc: 0.7810 cost_time: 128.3326 [BEST: 0.7903]
-04/09/2020 08:03:36 > epoch 6 updates 6150 loss: 0.2789 lr: 0.0037 gnorm: 0.105104/09/2020 08:04:27 > epoch 6 updates 6200 loss: 0.3242 lr: 0.0037 gnorm: 0.132904/09/2020 08:05:18 > epoch 6 updates 6250 loss: 0.2702 lr: 0.0037 gnorm: 0.079504/09/2020 08:06:21 
-04/09/2020 08:06:21 train loss: 0.2911 lr: 0.0037 gnorm: 0.1058 clip: 0
-04/09/2020 08:06:21 valid loss: 0.4771 inference_time: 380.4991 auc: 0.8942 f1: 0.8073 acc: 0.7880 cost_time: 131.5421 [BEST: 0.7903]
-04/09/2020 08:06:41 > epoch 6 updates 6300 loss: 0.2876 lr: 0.0037 gnorm: 0.091404/09/2020 08:07:31 > epoch 6 updates 6350 loss: 0.2856 lr: 0.0037 gnorm: 0.098404/09/2020 08:08:21 > epoch 6 updates 6400 loss: 0.2529 lr: 0.0037 gnorm: 0.085204/09/2020 08:09:32 
-04/09/2020 08:09:32 train loss: 0.2753 lr: 0.0037 gnorm: 0.0916 clip: 0
-04/09/2020 08:09:32 valid loss: 0.4729 inference_time: 380.2472 auc: 0.8883 f1: 0.8035 acc: 0.7837 cost_time: 134.7170 [BEST: 0.7903]
-04/09/2020 08:09:45 > epoch 6 updates 6450 loss: 0.2520 lr: 0.0037 gnorm: 0.069004/09/2020 08:10:35 > epoch 6 updates 6500 loss: 0.2122 lr: 0.0037 gnorm: 0.084704/09/2020 08:11:25 > epoch 6 updates 6550 loss: 0.2689 lr: 0.0037 gnorm: 0.087604/09/2020 08:12:43 
-04/09/2020 08:12:43 train loss: 0.2444 lr: 0.0037 gnorm: 0.0805 clip: 0
-04/09/2020 08:12:43 valid loss: 0.4964 inference_time: 376.5925 auc: 0.8914 f1: 0.8026 acc: 0.7803 cost_time: 137.8954 [BEST: 0.7903]
-04/09/2020 08:12:48 > epoch 6 updates 6600 loss: 0.2964 lr: 0.0037 gnorm: 0.107704/09/2020 08:13:40 > epoch 6 updates 6650 loss: 0.2339 lr: 0.0037 gnorm: 0.085904/09/2020 08:14:30 > epoch 6 updates 6700 loss: 0.2202 lr: 0.0037 gnorm: 0.065504/09/2020 08:15:20 > epoch 6 updates 6750 loss: 0.2931 lr: 0.0037 gnorm: 0.143204/09/2020 08:15:53 
-04/09/2020 08:15:53 train loss: 0.2609 lr: 0.0037 gnorm: 0.1007 clip: 0
-04/09/2020 08:15:53 valid loss: 0.5123 inference_time: 370.7054 auc: 0.8876 f1: 0.7988 acc: 0.7740 cost_time: 141.0774 [BEST: 0.7903]
-04/09/2020 08:16:44 > epoch 6 updates 6800 loss: 0.2742 lr: 0.0037 gnorm: 0.122404/09/2020 08:17:34 > epoch 6 updates 6850 loss: 0.2802 lr: 0.0037 gnorm: 0.074704/09/2020 08:18:24 > epoch 6 updates 6900 loss: 0.1774 lr: 0.0037 gnorm: 0.087104/09/2020 08:19:06 
-04/09/2020 08:19:06 train loss: 0.2436 lr: 0.0037 gnorm: 0.0946 clip: 0
-04/09/2020 08:19:06 valid loss: 0.4822 inference_time: 384.4863 auc: 0.8940 f1: 0.8080 acc: 0.7900 cost_time: 144.2799 [BEST: 0.7903]
-04/09/2020 08:19:48 > epoch 6 updates 6950 loss: 0.2303 lr: 0.0037 gnorm: 0.074404/09/2020 08:20:38 > epoch 6 updates 7000 loss: 0.3322 lr: 0.0037 gnorm: 0.108104/09/2020 08:21:28 > epoch 6 updates 7050 loss: 0.2686 lr: 0.0035 gnorm: 0.091504/09/2020 08:22:17 
-04/09/2020 08:22:17 train loss: 0.2772 lr: 0.0036 gnorm: 0.0914 clip: 0
-04/09/2020 08:22:17 valid loss: 0.5257 inference_time: 380.4054 auc: 0.8902 f1: 0.7996 acc: 0.7718 cost_time: 147.4780 [BEST: 0.7903]
-04/09/2020 08:22:52 > epoch 6 updates 7100 loss: 0.3531 lr: 0.0035 gnorm: 0.095704/09/2020 08:23:55 
-04/09/2020 08:23:55 train loss: 0.3531 lr: 0.0035 gnorm: 0.0957 clip: 0
-04/09/2020 08:23:55 valid loss: 0.4964 inference_time: 388.4607 auc: 0.8887 f1: 0.8036 acc: 0.7854 cost_time: 149.1040 [BEST: 0.7903]
-04/09/2020 08:23:55 
-[trainer.py:49]  epoch=7/40, experiment_times=0
-04/09/2020 08:23:55 Epoch: 7
-04/09/2020 08:24:19 > epoch 7 updates 7150 loss: 0.2457 lr: 0.0035 gnorm: 0.091404/09/2020 08:25:09 > epoch 7 updates 7200 loss: 0.2753 lr: 0.0035 gnorm: 0.0995[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-0/checkpoint
-04/09/2020 08:26:04 
-04/09/2020 08:26:04 train loss: 0.2606 lr: 0.0035 gnorm: 0.0955 clip: 0
-04/09/2020 08:26:04 valid loss: 0.4760 inference_time: 369.1272 auc: 0.8933 f1: 0.8089 acc: 0.7924 cost_time: 151.2459 [NEW BEST]
-04/09/2020 08:26:32 > epoch 7 updates 7250 loss: 0.2135 lr: 0.0035 gnorm: 0.088504/09/2020 08:27:23 > epoch 7 updates 7300 loss: 0.2660 lr: 0.0035 gnorm: 0.084004/09/2020 08:28:14 > epoch 7 updates 7350 loss: 0.2473 lr: 0.0035 gnorm: 0.085204/09/2020 08:29:15 
-04/09/2020 08:29:15 train loss: 0.2424 lr: 0.0035 gnorm: 0.0859 clip: 0
-04/09/2020 08:29:15 valid loss: 0.5053 inference_time: 378.9758 auc: 0.8924 f1: 0.8045 acc: 0.7814 cost_time: 154.4447 [BEST: 0.7924]
-04/09/2020 08:29:37 > epoch 7 updates 7400 loss: 0.3225 lr: 0.0035 gnorm: 0.118504/09/2020 08:30:27 > epoch 7 updates 7450 loss: 0.3200 lr: 0.0035 gnorm: 0.108704/09/2020 08:31:17 > epoch 7 updates 7500 loss: 0.2892 lr: 0.0035 gnorm: 0.101804/09/2020 08:32:26 
-04/09/2020 08:32:26 train loss: 0.3105 lr: 0.0035 gnorm: 0.1096 clip: 0
-04/09/2020 08:32:26 valid loss: 0.4788 inference_time: 377.1388 auc: 0.8943 f1: 0.8072 acc: 0.7880 cost_time: 157.6206 [BEST: 0.7924]
-04/09/2020 08:32:40 > epoch 7 updates 7550 loss: 0.2604 lr: 0.0035 gnorm: 0.096604/09/2020 08:33:30 > epoch 7 updates 7600 loss: 0.2416 lr: 0.0035 gnorm: 0.088604/09/2020 08:34:20 > epoch 7 updates 7650 loss: 0.2858 lr: 0.0035 gnorm: 0.088404/09/2020 08:35:37 
-04/09/2020 08:35:37 train loss: 0.2627 lr: 0.0035 gnorm: 0.0912 clip: 0
-04/09/2020 08:35:37 valid loss: 0.4961 inference_time: 369.3031 auc: 0.8924 f1: 0.8059 acc: 0.7857 cost_time: 160.7966 [BEST: 0.7924]
-04/09/2020 08:35:44 > epoch 7 updates 7700 loss: 0.2433 lr: 0.0035 gnorm: 0.108804/09/2020 08:36:34 > epoch 7 updates 7750 loss: 0.2663 lr: 0.0035 gnorm: 0.096104/09/2020 08:37:25 > epoch 7 updates 7800 loss: 0.2354 lr: 0.0035 gnorm: 0.092304/09/2020 08:38:15 > epoch 7 updates 7850 loss: 0.2478 lr: 0.0035 gnorm: 0.085804/09/2020 08:38:47 
-04/09/2020 08:38:47 train loss: 0.2482 lr: 0.0035 gnorm: 0.0957 clip: 0
-04/09/2020 08:38:47 valid loss: 0.4890 inference_time: 370.3658 auc: 0.8921 f1: 0.8069 acc: 0.7894 cost_time: 163.9781 [BEST: 0.7924]
-04/09/2020 08:39:37 > epoch 7 updates 7900 loss: 0.3226 lr: 0.0035 gnorm: 0.126404/09/2020 08:40:28 > epoch 7 updates 7950 loss: 0.2712 lr: 0.0035 gnorm: 0.094904/09/2020 08:41:18 > epoch 7 updates 8000 loss: 0.2414 lr: 0.0035 gnorm: 0.094304/09/2020 08:41:59 
-04/09/2020 08:41:59 train loss: 0.2782 lr: 0.0035 gnorm: 0.1051 clip: 0
-04/09/2020 08:41:59 valid loss: 0.5286 inference_time: 377.7823 auc: 0.8908 f1: 0.7992 acc: 0.7749 cost_time: 167.1664 [BEST: 0.7924]
-04/09/2020 08:42:42 > epoch 7 updates 8050 loss: 0.2378 lr: 0.0033 gnorm: 0.108804/09/2020 08:43:33 > epoch 7 updates 8100 loss: 0.2772 lr: 0.0033 gnorm: 0.142104/09/2020 08:44:24 > epoch 7 updates 8150 loss: 0.3028 lr: 0.0033 gnorm: 0.122104/09/2020 08:45:11 
-04/09/2020 08:45:11 train loss: 0.2728 lr: 0.0033 gnorm: 0.1244 clip: 0
-04/09/2020 08:45:11 valid loss: 0.5165 inference_time: 377.9157 auc: 0.8931 f1: 0.8021 acc: 0.7773 cost_time: 170.3628 [BEST: 0.7924]
-04/09/2020 08:45:47 > epoch 7 updates 8200 loss: 0.2177 lr: 0.0033 gnorm: 0.089604/09/2020 08:46:38 > epoch 7 updates 8250 loss: 0.2431 lr: 0.0033 gnorm: 0.105604/09/2020 08:47:28 > epoch 7 updates 8300 loss: 0.2461 lr: 0.0033 gnorm: 0.088104/09/2020 08:48:17 
-04/09/2020 08:48:17 train loss: 0.2357 lr: 0.0033 gnorm: 0.0944 clip: 0
-04/09/2020 08:48:17 valid loss: 0.4874 inference_time: 375.7780 auc: 0.8961 f1: 0.8089 acc: 0.7891 cost_time: 173.4745 [BEST: 0.7924]
-04/09/2020 08:48:17 
-[trainer.py:49]  epoch=8/40, experiment_times=0
-04/09/2020 08:48:17 Epoch: 8
-04/09/2020 08:48:56 
-04/09/2020 08:48:56 valid loss: 0.5107 inference_time: 377.0573 auc: 0.8924 f1: 0.8048 acc: 0.7833 cost_time: 174.1257 [BEST: 0.7924]
-04/09/2020 08:49:24 > epoch 8 updates 8350 loss: 0.2558 lr: 0.0033 gnorm: 0.082704/09/2020 08:50:15 > epoch 8 updates 8400 loss: 0.2276 lr: 0.0033 gnorm: 0.080104/09/2020 08:51:06 > epoch 8 updates 8450 loss: 0.2339 lr: 0.0033 gnorm: 0.087204/09/2020 08:52:06 
-04/09/2020 08:52:06 train loss: 0.2390 lr: 0.0033 gnorm: 0.0833 clip: 0
-04/09/2020 08:52:06 valid loss: 0.5286 inference_time: 370.7641 auc: 0.8954 f1: 0.8059 acc: 0.7814 cost_time: 177.2870 [BEST: 0.7924]
-04/09/2020 08:52:28 > epoch 8 updates 8500 loss: 0.2784 lr: 0.0033 gnorm: 0.116404/09/2020 08:53:19 > epoch 8 updates 8550 loss: 0.2750 lr: 0.0033 gnorm: 0.086304/09/2020 08:54:09 > epoch 8 updates 8600 loss: 0.2532 lr: 0.0033 gnorm: 0.095004/09/2020 08:55:16 
-04/09/2020 08:55:16 train loss: 0.2688 lr: 0.0033 gnorm: 0.0992 clip: 0
-04/09/2020 08:55:16 valid loss: 0.5234 inference_time: 367.2890 auc: 0.8950 f1: 0.8047 acc: 0.7805 cost_time: 180.4599 [BEST: 0.7924]
-04/09/2020 08:55:31 > epoch 8 updates 8650 loss: 0.2533 lr: 0.0033 gnorm: 0.093104/09/2020 08:56:23 > epoch 8 updates 8700 loss: 0.2144 lr: 0.0033 gnorm: 0.076204/09/2020 08:57:13 > epoch 8 updates 8750 loss: 0.2290 lr: 0.0033 gnorm: 0.098704/09/2020 08:58:28 
-04/09/2020 08:58:28 train loss: 0.2322 lr: 0.0033 gnorm: 0.0893 clip: 0
-04/09/2020 08:58:28 valid loss: 0.5031 inference_time: 373.0117 auc: 0.8970 f1: 0.8092 acc: 0.7900 cost_time: 183.6474 [BEST: 0.7924]
-[trainer.py:72]  Tolerance reached. Training is stopped early.
-04/09/2020 08:58:28 
-04/09/2020 08:58:28 Training complete.
-04/09/2020 08:58:28 best dev score 0.7923611730100723 at step 7222 (epoch 7).
-04/09/2020 08:58:28 best eval stats [loss: 0.4760 inference_time: 369.1272 auc: 0.8933 f1: 0.8089 acc: 0.7924 cost_time: 151.2459]
-04/09/2020 08:58:28 Training time: 3:03:38.
-[train.py:38]  experiment_times=1/5, best_experiment_times=0, ave_test_score=0.792361, max_test_score=0.792361
-[train.py:47]  eval_score_list: [0.7923611730100723] 0
-[train.py:25]  args.summary_dir: /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1
-04/09/2020 08:58:28 train (338053) | test (22438)
-04/09/2020 08:58:28 #classes: 2; #vocab: 5012
-[model.py:60]  <class 'list'> devices: ['/device:CPU:0'] splits: 1
-04/09/2020 08:58:30 trainable params: 4,127,205
-04/09/2020 08:58:30 trainable params (exclude embeddings): 4,127,205
-04/09/2020 08:58:30 { '__index__': 1,
-  '__parents__': ['default', 'chat_courpus'],
-  '__repeat__': 5,
-  'alignment': 'identity',
-  'batch_size': 256,
-  'beta1': 0.9,
-  'beta2': 0.999,
-  'blocks': 1,
-  'connection': 'aug',
-  'data_dir': '/home/cloudminds/Mywork/corpus/Chinese_QA/chat_courpus',
-  'dropout_keep_prob': 0.8,
-  'early_stopping': 1563,
-  'embedding_dim': 300,
-  'embedding_mode': 'freq',
-  'enc_layers': 3,
-  'epochs': 40,
-  'eval_epoch': True,
-  'eval_file': 'test',
-  'eval_per_samples': 6400,
-  'eval_per_samples_warmup': 40000,
-  'eval_per_updates': 25,
-  'eval_per_updates_warmup': 157,
-  'eval_warmup_samples': 0,
-  'eval_warmup_steps': 0,
-  'fusion': 'full',
-  'grad_clipping': 5,
-  'hidden_size': 400,
-  'kernel_size': 3,
-  'language': 'chinese',
-  'log_file': 'log.txt',
-  'log_per_samples': 1280,
-  'log_per_updates': 5,
-  'lower_case': True,
-  'lr': 0.005,
-  'lr_decay_rate': 0.95,
-  'lr_decay_samples': 256000,
-  'lr_decay_steps': 1000,
-  'lr_warmup_samples': 0,
-  'lr_warmup_steps': 0,
-  'max_checkpoints': 1,
-  'max_len': 20,
-  'max_loss': 999.0,
-  'max_vocab': 999999,
-  'metric': 'acc',
-  'min_df': 5,
-  'min_len': 1,
-  'min_lr': 6e-05,
-  'min_samples': 0,
-  'min_steps': 0,
-  'multi_gpu': False,
-  'name': 'benchmark-1',
-  'num_classes': 2,
-  'num_vocab': 5012,
-  'output_dir': 'models/chat_courpus',
-  'padding': 0,
-  'prediction': 'full',
-  'pretrained_embeddings': '/home/cloudminds/Word2Vector/Chinese/charVector_DbqaSmpLog',
-  'save': True,
-  'save_all': False,
-  'seed': None,
-  'sort_by_len': False,
-  'summary_dir': '/home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1',
-  'tensorboard': True,
-  'tolerance_samples': 400000,
-  'watch_metrics': ['auc', 'f1', 'acc']}
-04/09/2020 08:58:33 setup complete: 0:00:05s.
-[trainer.py:45]  eval_per_updates= 157
-[trainer.py:49]  epoch=1/40, experiment_times=1
-04/09/2020 08:58:33 Epoch: 1
-04/09/2020 08:59:25 > epoch 1 updates 50 loss: 0.6749 lr: 0.0050 gnorm: 0.140304/09/2020 09:00:15 > epoch 1 updates 100 loss: 0.4262 lr: 0.0050 gnorm: 0.230504/09/2020 09:01:05 > epoch 1 updates 150 loss: 0.4486 lr: 0.0050 gnorm: 0.2023[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:01:45 
-04/09/2020 09:01:45 train loss: 0.5158 lr: 0.0050 gnorm: 0.1912 clip: 0
-04/09/2020 09:01:45 valid loss: 0.5729 inference_time: 373.3627 auc: 0.7878 f1: 0.7221 acc: 0.7045 cost_time: 3.2875 [NEW BEST]
-04/09/2020 09:02:29 > epoch 1 updates 200 loss: 0.3995 lr: 0.0050 gnorm: 0.258704/09/2020 09:03:18 > epoch 1 updates 250 loss: 0.4181 lr: 0.0050 gnorm: 0.207004/09/2020 09:04:09 > epoch 1 updates 300 loss: 0.4137 lr: 0.0050 gnorm: 0.1368[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:04:55 
-04/09/2020 09:04:55 train loss: 0.4105 lr: 0.0050 gnorm: 0.2004 clip: 0
-04/09/2020 09:04:55 valid loss: 0.5634 inference_time: 366.8728 auc: 0.8097 f1: 0.7363 acc: 0.7219 cost_time: 6.4539 [NEW BEST]
-04/09/2020 09:05:31 > epoch 1 updates 350 loss: 0.4594 lr: 0.0050 gnorm: 0.637004/09/2020 09:06:21 > epoch 1 updates 400 loss: 0.4496 lr: 0.0050 gnorm: 0.250504/09/2020 09:07:11 > epoch 1 updates 450 loss: 0.3140 lr: 0.0050 gnorm: 0.161704/09/2020 09:08:04 
-04/09/2020 09:08:04 train loss: 0.4072 lr: 0.0050 gnorm: 0.3481 clip: 0
-04/09/2020 09:08:04 valid loss: 0.6106 inference_time: 367.8065 auc: 0.8231 f1: 0.7496 acc: 0.7050 cost_time: 9.6022 [BEST: 0.7219]
-04/09/2020 09:08:33 > epoch 1 updates 500 loss: 0.4604 lr: 0.0050 gnorm: 0.210104/09/2020 09:09:25 > epoch 1 updates 550 loss: 0.4058 lr: 0.0050 gnorm: 0.167804/09/2020 09:10:16 > epoch 1 updates 600 loss: 0.3593 lr: 0.0050 gnorm: 0.1536[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:11:16 
-04/09/2020 09:11:16 train loss: 0.4082 lr: 0.0050 gnorm: 0.1770 clip: 0
-04/09/2020 09:11:16 valid loss: 0.5297 inference_time: 365.7206 auc: 0.8451 f1: 0.7635 acc: 0.7264 cost_time: 12.8041 [NEW BEST]
-04/09/2020 09:11:38 > epoch 1 updates 650 loss: 0.3701 lr: 0.0050 gnorm: 0.196804/09/2020 09:12:29 > epoch 1 updates 700 loss: 0.3982 lr: 0.0050 gnorm: 0.201804/09/2020 09:13:19 > epoch 1 updates 750 loss: 0.3486 lr: 0.0050 gnorm: 0.2538[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:14:29 
-04/09/2020 09:14:29 train loss: 0.3722 lr: 0.0050 gnorm: 0.2177 clip: 0
-04/09/2020 09:14:29 valid loss: 0.5118 inference_time: 385.7256 auc: 0.8441 f1: 0.7665 acc: 0.7438 cost_time: 16.0254 [NEW BEST]
-04/09/2020 09:14:45 > epoch 1 updates 800 loss: 0.3484 lr: 0.0050 gnorm: 0.237304/09/2020 09:15:34 > epoch 1 updates 850 loss: 0.3319 lr: 0.0050 gnorm: 0.212904/09/2020 09:16:24 > epoch 1 updates 900 loss: 0.3531 lr: 0.0050 gnorm: 0.288504/09/2020 09:17:40 
-04/09/2020 09:17:40 train loss: 0.3445 lr: 0.0050 gnorm: 0.2464 clip: 0
-04/09/2020 09:17:40 valid loss: 0.5329 inference_time: 373.9946 auc: 0.8471 f1: 0.7686 acc: 0.7400 cost_time: 19.1964 [BEST: 0.7438]
-04/09/2020 09:17:48 > epoch 1 updates 950 loss: 0.3952 lr: 0.0050 gnorm: 0.153904/09/2020 09:18:38 > epoch 1 updates 1000 loss: 0.3577 lr: 0.0050 gnorm: 0.124304/09/2020 09:19:28 > epoch 1 updates 1050 loss: 0.3533 lr: 0.0047 gnorm: 0.2020[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:20:50 
-04/09/2020 09:20:50 train loss: 0.3686 lr: 0.0049 gnorm: 0.1602 clip: 0
-04/09/2020 09:20:50 valid loss: 0.4843 inference_time: 376.5567 auc: 0.8596 f1: 0.7792 acc: 0.7707 cost_time: 22.3721 [NEW BEST]
-04/09/2020 09:20:51 > epoch 1 updates 1100 loss: 0.3766 lr: 0.0047 gnorm: 0.347804/09/2020 09:21:42 > epoch 1 updates 1150 loss: 0.3099 lr: 0.0047 gnorm: 0.130304/09/2020 09:22:53 
-04/09/2020 09:22:53 train loss: 0.3431 lr: 0.0047 gnorm: 0.2385 clip: 0
-04/09/2020 09:22:53 valid loss: 0.5226 inference_time: 373.0868 auc: 0.8564 f1: 0.7797 acc: 0.7583 cost_time: 24.4224 [BEST: 0.7707]
-04/09/2020 09:22:53 
-[trainer.py:49]  epoch=2/40, experiment_times=1
-04/09/2020 09:22:53 Epoch: 2
-04/09/2020 09:23:06 > epoch 2 updates 1200 loss: 0.3435 lr: 0.0047 gnorm: 0.130904/09/2020 09:23:57 > epoch 2 updates 1250 loss: 0.3315 lr: 0.0047 gnorm: 0.224004/09/2020 09:24:37 
-04/09/2020 09:24:37 train loss: 0.3375 lr: 0.0047 gnorm: 0.1777 clip: 0
-04/09/2020 09:24:37 valid loss: 0.5144 inference_time: 381.6719 auc: 0.8556 f1: 0.7762 acc: 0.7650 cost_time: 26.1478 [BEST: 0.7707]
-04/09/2020 09:25:21 > epoch 2 updates 1300 loss: 0.3060 lr: 0.0047 gnorm: 0.165304/09/2020 09:26:11 > epoch 2 updates 1350 loss: 0.3173 lr: 0.0047 gnorm: 0.321204/09/2020 09:27:01 > epoch 2 updates 1400 loss: 0.3056 lr: 0.0047 gnorm: 0.135904/09/2020 09:27:47 
-04/09/2020 09:27:47 train loss: 0.3096 lr: 0.0047 gnorm: 0.2074 clip: 0
-04/09/2020 09:27:47 valid loss: 0.4834 inference_time: 375.6900 auc: 0.8618 f1: 0.7807 acc: 0.7696 cost_time: 29.3248 [BEST: 0.7707]
-04/09/2020 09:28:24 > epoch 2 updates 1450 loss: 0.2928 lr: 0.0047 gnorm: 0.154304/09/2020 09:29:14 > epoch 2 updates 1500 loss: 0.3400 lr: 0.0047 gnorm: 0.135104/09/2020 09:30:04 > epoch 2 updates 1550 loss: 0.3212 lr: 0.0047 gnorm: 0.2863[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:30:58 
-04/09/2020 09:30:58 train loss: 0.3181 lr: 0.0047 gnorm: 0.1923 clip: 0
-04/09/2020 09:30:58 valid loss: 0.4642 inference_time: 380.7189 auc: 0.8664 f1: 0.7847 acc: 0.7779 cost_time: 32.5000 [NEW BEST]
-04/09/2020 09:31:28 > epoch 2 updates 1600 loss: 0.3618 lr: 0.0047 gnorm: 0.132204/09/2020 09:32:18 > epoch 2 updates 1650 loss: 0.3590 lr: 0.0047 gnorm: 0.086004/09/2020 09:33:09 > epoch 2 updates 1700 loss: 0.3889 lr: 0.0047 gnorm: 0.1641[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:34:09 
-04/09/2020 09:34:09 train loss: 0.3700 lr: 0.0047 gnorm: 0.1275 clip: 0
-04/09/2020 09:34:09 valid loss: 0.4740 inference_time: 381.4605 auc: 0.8694 f1: 0.7879 acc: 0.7807 cost_time: 35.6913 [NEW BEST]
-04/09/2020 09:34:33 > epoch 2 updates 1750 loss: 0.3798 lr: 0.0047 gnorm: 0.140904/09/2020 09:35:24 > epoch 2 updates 1800 loss: 0.3139 lr: 0.0047 gnorm: 0.162304/09/2020 09:36:14 > epoch 2 updates 1850 loss: 0.3582 lr: 0.0047 gnorm: 0.245604/09/2020 09:37:23 
-04/09/2020 09:37:23 train loss: 0.3506 lr: 0.0047 gnorm: 0.1833 clip: 0
-04/09/2020 09:37:23 valid loss: 0.5135 inference_time: 376.0565 auc: 0.8665 f1: 0.7852 acc: 0.7662 cost_time: 38.9168 [BEST: 0.7807]
-04/09/2020 09:37:39 > epoch 2 updates 1900 loss: 0.3659 lr: 0.0047 gnorm: 0.109904/09/2020 09:38:28 > epoch 2 updates 1950 loss: 0.3463 lr: 0.0047 gnorm: 0.109704/09/2020 09:39:19 > epoch 2 updates 2000 loss: 0.3493 lr: 0.0047 gnorm: 0.099704/09/2020 09:40:32 
-04/09/2020 09:40:32 train loss: 0.3538 lr: 0.0047 gnorm: 0.1064 clip: 0
-04/09/2020 09:40:32 valid loss: 0.4972 inference_time: 369.6098 auc: 0.8783 f1: 0.7930 acc: 0.7688 cost_time: 42.0735 [BEST: 0.7807]
-04/09/2020 09:40:41 > epoch 2 updates 2050 loss: 0.2878 lr: 0.0045 gnorm: 0.113604/09/2020 09:41:30 > epoch 2 updates 2100 loss: 0.3915 lr: 0.0045 gnorm: 0.157304/09/2020 09:42:20 > epoch 2 updates 2150 loss: 0.3704 lr: 0.0045 gnorm: 0.126104/09/2020 09:43:40 
-04/09/2020 09:43:40 train loss: 0.3502 lr: 0.0045 gnorm: 0.1324 clip: 0
-04/09/2020 09:43:40 valid loss: 0.4755 inference_time: 369.6704 auc: 0.8792 f1: 0.7927 acc: 0.7696 cost_time: 45.2050 [BEST: 0.7807]
-04/09/2020 09:43:42 > epoch 2 updates 2200 loss: 0.3301 lr: 0.0045 gnorm: 0.090504/09/2020 09:44:33 > epoch 2 updates 2250 loss: 0.2576 lr: 0.0045 gnorm: 0.106404/09/2020 09:45:22 > epoch 2 updates 2300 loss: 0.2978 lr: 0.0045 gnorm: 0.118104/09/2020 09:46:12 > epoch 2 updates 2350 loss: 0.3010 lr: 0.0045 gnorm: 0.0800[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-1/checkpoint
-04/09/2020 09:46:50 
-04/09/2020 09:46:50 train loss: 0.2966 lr: 0.0045 gnorm: 0.0987 clip: 0
-04/09/2020 09:46:50 valid loss: 0.4676 inference_time: 370.3011 auc: 0.8795 f1: 0.7995 acc: 0.7900 cost_time: 48.3623 [NEW BEST]
-04/09/2020 09:47:42 
-04/09/2020 09:47:42 valid loss: 0.5049 inference_time: 360.5203 auc: 0.8717 f1: 0.7895 acc: 0.7680 cost_time: 49.2341 [BEST: 0.7900]
-04/09/2020 09:47:42 
-[trainer.py:49]  epoch=3/40, experiment_times=1
-04/09/2020 09:47:42 Epoch: 3
-04/09/2020 09:48:07 > epoch 3 updates 2400 loss: 0.2657 lr: 0.0045 gnorm: 0.120904/09/2020 09:48:58 > epoch 3 updates 2450 loss: 0.2777 lr: 0.0045 gnorm: 0.139804/09/2020 09:49:48 > epoch 3 updates 2500 loss: 0.3040 lr: 0.0045 gnorm: 0.184104/09/2020 09:50:32 
-04/09/2020 09:50:32 train loss: 0.2826 lr: 0.0045 gnorm: 0.1485 clip: 0
-04/09/2020 09:50:32 valid loss: 0.4853 inference_time: 366.6742 auc: 0.8798 f1: 0.7979 acc: 0.7808 cost_time: 52.0685 [BEST: 0.7900]
-04/09/2020 09:51:10 > epoch 3 updates 2550 loss: 0.2888 lr: 0.0045 gnorm: 0.140704/09/2020 09:52:00 > epoch 3 updates 2600 loss: 0.2854 lr: 0.0045 gnorm: 0.079504/09/2020 09:52:50 > epoch 3 updates 2650 loss: 0.3322 lr: 0.0045 gnorm: 0.171004/09/2020 09:53:42 
-04/09/2020 09:53:42 train loss: 0.3023 lr: 0.0045 gnorm: 0.1305 clip: 0
-04/09/2020 09:53:42 valid loss: 0.4618 inference_time: 375.5630 auc: 0.8780 f1: 0.7969 acc: 0.7800 cost_time: 55.2297 [BEST: 0.7900]
-04/09/2020 09:54:13 > epoch 3 updates 2700 loss: 0.2868 lr: 0.0045 gnorm: 0.120304/09/2020 09:55:03 > epoch 3 updates 2750 loss: 0.3384 lr: 0.0045 gnorm: 0.230804/09/2020 09:55:53 > epoch 3 updates 2800 loss: 0.3351 lr: 0.0045 gnorm: 0.136404/09/2020 09:56:52 
-04/09/2020 09:56:52 train loss: 0.3202 lr: 0.0045 gnorm: 0.1626 clip: 0
-04/09/2020 09:56:52 valid loss: 0.4595 inference_time: 367.1925 auc: 0.8811 f1: 0.7989 acc: 0.7889 cost_time: 58.4032 [BEST: 0.7900]
-04/09/2020 09:57:16 > epoch 3 updates 2850 loss: 0.3531 lr: 0.0045 gnorm: 0.102404/09/2020 09:58:06 > epoch 3 updates 2900 loss: 0.3289 lr: 0.0045 gnorm: 0.130704/09/2020 09:58:56 > epoch 3 updates 2950 loss: 0.3057 lr: 0.0045 gnorm: 0.087804/09/2020 10:00:03 
-04/09/2020 10:00:03 train loss: 0.3291 lr: 0.0045 gnorm: 0.1069 clip: 0
-04/09/2020 10:00:03 valid loss: 0.5169 inference_time: 373.1463 auc: 0.8795 f1: 0.7925 acc: 0.7636 cost_time: 61.5814 [BEST: 0.7900]
-04/09/2020 10:00:20 > epoch 3 updates 3000 loss: 0.3369 lr: 0.0045 gnorm: 0.126904/09/2020 10:01:09 > epoch 3 updates 3050 loss: 0.3200 lr: 0.0043 gnorm: 0.200104/09/2020 10:02:00 > epoch 3 updates 3100 loss: 0.2792 lr: 0.0043 gnorm: 0.109604/09/2020 10:03:13 
-04/09/2020 10:03:13 train loss: 0.3119 lr: 0.0044 gnorm: 0.1455 clip: 0
-04/09/2020 10:03:13 valid loss: 0.4834 inference_time: 366.8581 auc: 0.8819 f1: 0.7976 acc: 0.7792 cost_time: 64.7528 [BEST: 0.7900]
-04/09/2020 10:03:23 > epoch 3 updates 3150 loss: 0.3167 lr: 0.0043 gnorm: 0.175904/09/2020 10:04:14 > epoch 3 updates 3200 loss: 0.3814 lr: 0.0043 gnorm: 0.118604/09/2020 10:05:04 > epoch 3 updates 3250 loss: 0.2690 lr: 0.0043 gnorm: 0.083704/09/2020 10:06:24 
-04/09/2020 10:06:24 train loss: 0.3222 lr: 0.0043 gnorm: 0.1258 clip: 0
-04/09/2020 10:06:24 valid loss: 0.4743 inference_time: 382.2018 auc: 0.8881 f1: 0.7989 acc: 0.7750 cost_time: 67.9452 [BEST: 0.7900]
-04/09/2020 10:06:28 > epoch 3 updates 3300 loss: 0.3162 lr: 0.0043 gnorm: 0.130004/09/2020 10:07:17 > epoch 3 updates 3350 loss: 0.2572 lr: 0.0043 gnorm: 0.088004/09/2020 10:08:08 > epoch 3 updates 3400 loss: 0.2888 lr: 0.0043 gnorm: 0.104904/09/2020 10:08:58 > epoch 3 updates 3450 loss: 0.2811 lr: 0.0043 gnorm: 0.119704/09/2020 10:09:34 
-04/09/2020 10:09:34 train loss: 0.2857 lr: 0.0043 gnorm: 0.1106 clip: 0
-04/09/2020 10:09:34 valid loss: 0.5117 inference_time: 368.4084 auc: 0.8812 f1: 0.7906 acc: 0.7644 cost_time: 71.1053 [BEST: 0.7900]
-04/09/2020 10:10:21 > epoch 3 updates 3500 loss: 0.3111 lr: 0.0043 gnorm: 0.181004/09/2020 10:11:11 > epoch 3 updates 3550 loss: 0.2703 lr: 0.0043 gnorm: 0.130604/09/2020 10:11:56 
-04/09/2020 10:11:56 train loss: 0.2906 lr: 0.0043 gnorm: 0.1557 clip: 0
-04/09/2020 10:11:56 valid loss: 0.4988 inference_time: 365.4407 auc: 0.8900 f1: 0.8008 acc: 0.7764 cost_time: 73.4767 [BEST: 0.7900]
-04/09/2020 10:11:56 
-[trainer.py:49]  epoch=4/40, experiment_times=1
-04/09/2020 10:11:56 Epoch: 4
-04/09/2020 10:12:34 > epoch 4 updates 3600 loss: 0.2664 lr: 0.0043 gnorm: 0.101704/09/2020 10:13:17 
-04/09/2020 10:13:17 train loss: 0.2664 lr: 0.0043 gnorm: 0.1017 clip: 0
-04/09/2020 10:13:17 valid loss: 0.4829 inference_time: 367.9454 auc: 0.8891 f1: 0.8012 acc: 0.7790 cost_time: 74.8190 [BEST: 0.7900]
-04/09/2020 10:13:56 > epoch 4 updates 3650 loss: 0.2975 lr: 0.0043 gnorm: 0.157704/09/2020 10:14:46 > epoch 4 updates 3700 loss: 0.3837 lr: 0.0043 gnorm: 0.174104/09/2020 10:15:36 > epoch 4 updates 3750 loss: 0.3227 lr: 0.0043 gnorm: 0.126904/09/2020 10:16:27 
-04/09/2020 10:16:27 train loss: 0.3347 lr: 0.0043 gnorm: 0.1528 clip: 0
-04/09/2020 10:16:27 valid loss: 0.5353 inference_time: 367.7942 auc: 0.8878 f1: 0.7937 acc: 0.7617 cost_time: 77.9916 [BEST: 0.7900]
-04/09/2020 10:16:59 > epoch 4 updates 3800 loss: 0.3215 lr: 0.0043 gnorm: 0.100904/09/2020 10:17:49 > epoch 4 updates 3850 loss: 0.2672 lr: 0.0043 gnorm: 0.080104/09/2020 10:18:41 > epoch 4 updates 3900 loss: 0.2347 lr: 0.0043 gnorm: 0.103704/09/2020 10:19:38 
-04/09/2020 10:19:38 train loss: 0.2742 lr: 0.0043 gnorm: 0.0949 clip: 0
-04/09/2020 10:19:38 valid loss: 0.4775 inference_time: 372.9529 auc: 0.8893 f1: 0.8037 acc: 0.7846 cost_time: 81.1689 [BEST: 0.7900]
-[trainer.py:72]  Tolerance reached. Training is stopped early.
-04/09/2020 10:19:38 
-04/09/2020 10:19:38 Training complete.
-04/09/2020 10:19:38 best dev score 0.789954541402977 at step 2355 (epoch 2).
-04/09/2020 10:19:38 best eval stats [loss: 0.4676 inference_time: 370.3011 auc: 0.8795 f1: 0.7995 acc: 0.7900 cost_time: 48.3623]
-04/09/2020 10:19:38 Training time: 1:21:10.
-[train.py:38]  experiment_times=2/5, best_experiment_times=0, ave_test_score=0.791158, max_test_score=0.792361
-[train.py:47]  eval_score_list: [0.7923611730100723, 0.789954541402977] 0
-[train.py:25]  args.summary_dir: /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2
-04/09/2020 10:19:38 train (338053) | test (22438)
-04/09/2020 10:19:38 #classes: 2; #vocab: 5012
-[model.py:60]  <class 'list'> devices: ['/device:CPU:0'] splits: 1
-04/09/2020 10:19:40 trainable params: 4,127,205
-04/09/2020 10:19:40 trainable params (exclude embeddings): 4,127,205
-04/09/2020 10:19:40 { '__index__': 2,
-  '__parents__': ['default', 'chat_courpus'],
-  '__repeat__': 5,
-  'alignment': 'identity',
-  'batch_size': 256,
-  'beta1': 0.9,
-  'beta2': 0.999,
-  'blocks': 1,
-  'connection': 'aug',
-  'data_dir': '/home/cloudminds/Mywork/corpus/Chinese_QA/chat_courpus',
-  'dropout_keep_prob': 0.8,
-  'early_stopping': 1563,
-  'embedding_dim': 300,
-  'embedding_mode': 'freq',
-  'enc_layers': 3,
-  'epochs': 40,
-  'eval_epoch': True,
-  'eval_file': 'test',
-  'eval_per_samples': 6400,
-  'eval_per_samples_warmup': 40000,
-  'eval_per_updates': 25,
-  'eval_per_updates_warmup': 157,
-  'eval_warmup_samples': 0,
-  'eval_warmup_steps': 0,
-  'fusion': 'full',
-  'grad_clipping': 5,
-  'hidden_size': 400,
-  'kernel_size': 3,
-  'language': 'chinese',
-  'log_file': 'log.txt',
-  'log_per_samples': 1280,
-  'log_per_updates': 5,
-  'lower_case': True,
-  'lr': 0.005,
-  'lr_decay_rate': 0.95,
-  'lr_decay_samples': 256000,
-  'lr_decay_steps': 1000,
-  'lr_warmup_samples': 0,
-  'lr_warmup_steps': 0,
-  'max_checkpoints': 1,
-  'max_len': 20,
-  'max_loss': 999.0,
-  'max_vocab': 999999,
-  'metric': 'acc',
-  'min_df': 5,
-  'min_len': 1,
-  'min_lr': 6e-05,
-  'min_samples': 0,
-  'min_steps': 0,
-  'multi_gpu': False,
-  'name': 'benchmark-2',
-  'num_classes': 2,
-  'num_vocab': 5012,
-  'output_dir': 'models/chat_courpus',
-  'padding': 0,
-  'prediction': 'full',
-  'pretrained_embeddings': '/home/cloudminds/Word2Vector/Chinese/charVector_DbqaSmpLog',
-  'save': True,
-  'save_all': False,
-  'seed': None,
-  'sort_by_len': False,
-  'summary_dir': '/home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2',
-  'tensorboard': True,
-  'tolerance_samples': 400000,
-  'watch_metrics': ['auc', 'f1', 'acc']}
-04/09/2020 10:19:43 setup complete: 0:00:05s.
-[trainer.py:45]  eval_per_updates= 157
-[trainer.py:49]  epoch=1/40, experiment_times=2
-04/09/2020 10:19:43 Epoch: 1
-04/09/2020 10:20:35 > epoch 1 updates 50 loss: 0.6885 lr: 0.0050 gnorm: 0.473404/09/2020 10:21:26 > epoch 1 updates 100 loss: 0.5241 lr: 0.0050 gnorm: 0.580504/09/2020 10:22:16 > epoch 1 updates 150 loss: 0.4696 lr: 0.0050 gnorm: 0.2736[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 10:22:55 
-04/09/2020 10:22:55 train loss: 0.5600 lr: 0.0050 gnorm: 0.4418 clip: 0
-04/09/2020 10:22:55 valid loss: 0.5962 inference_time: 366.3308 auc: 0.7774 f1: 0.7047 acc: 0.6955 cost_time: 3.2820 [NEW BEST]
-04/09/2020 10:23:39 > epoch 1 updates 200 loss: 0.3940 lr: 0.0050 gnorm: 0.214604/09/2020 10:24:29 > epoch 1 updates 250 loss: 0.3965 lr: 0.0050 gnorm: 0.359104/09/2020 10:25:20 > epoch 1 updates 300 loss: 0.4049 lr: 0.0050 gnorm: 0.6171[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 10:26:07 
-04/09/2020 10:26:07 train loss: 0.3985 lr: 0.0050 gnorm: 0.3983 clip: 0
-04/09/2020 10:26:07 valid loss: 0.5495 inference_time: 374.3043 auc: 0.8119 f1: 0.7421 acc: 0.7298 cost_time: 6.4770 [NEW BEST]
-04/09/2020 10:26:43 > epoch 1 updates 350 loss: 0.4413 lr: 0.0050 gnorm: 0.251104/09/2020 10:27:32 > epoch 1 updates 400 loss: 0.3451 lr: 0.0050 gnorm: 0.183104/09/2020 10:28:23 > epoch 1 updates 450 loss: 0.4108 lr: 0.0050 gnorm: 0.178004/09/2020 10:29:18 
-04/09/2020 10:29:18 train loss: 0.3990 lr: 0.0050 gnorm: 0.2038 clip: 0
-04/09/2020 10:29:18 valid loss: 0.6060 inference_time: 377.3800 auc: 0.8180 f1: 0.7471 acc: 0.6919 cost_time: 9.6596 [BEST: 0.7298]
-04/09/2020 10:29:47 > epoch 1 updates 500 loss: 0.3627 lr: 0.0050 gnorm: 0.392404/09/2020 10:30:37 > epoch 1 updates 550 loss: 0.3614 lr: 0.0050 gnorm: 0.154704/09/2020 10:31:27 > epoch 1 updates 600 loss: 0.3718 lr: 0.0050 gnorm: 0.1508[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 10:32:28 
-04/09/2020 10:32:28 train loss: 0.3653 lr: 0.0050 gnorm: 0.2318 clip: 0
-04/09/2020 10:32:28 valid loss: 0.5401 inference_time: 372.9877 auc: 0.8350 f1: 0.7632 acc: 0.7302 cost_time: 12.8346 [NEW BEST]
-04/09/2020 10:32:50 > epoch 1 updates 650 loss: 0.4316 lr: 0.0050 gnorm: 0.431404/09/2020 10:33:41 > epoch 1 updates 700 loss: 0.3825 lr: 0.0050 gnorm: 0.357704/09/2020 10:34:31 > epoch 1 updates 750 loss: 0.3657 lr: 0.0050 gnorm: 0.1374[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 10:35:40 
-04/09/2020 10:35:40 train loss: 0.3930 lr: 0.0050 gnorm: 0.3078 clip: 0
-04/09/2020 10:35:40 valid loss: 0.5218 inference_time: 370.9488 auc: 0.8460 f1: 0.7666 acc: 0.7420 cost_time: 16.0241 [NEW BEST]
-04/09/2020 10:35:54 > epoch 1 updates 800 loss: 0.4343 lr: 0.0050 gnorm: 0.219404/09/2020 10:36:44 > epoch 1 updates 850 loss: 0.3546 lr: 0.0050 gnorm: 0.169304/09/2020 10:37:33 > epoch 1 updates 900 loss: 0.3518 lr: 0.0050 gnorm: 0.3082[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 10:38:48 
-04/09/2020 10:38:48 train loss: 0.3800 lr: 0.0050 gnorm: 0.2326 clip: 0
-04/09/2020 10:38:48 valid loss: 0.4910 inference_time: 374.0448 auc: 0.8437 f1: 0.7595 acc: 0.7609 cost_time: 19.1691 [NEW BEST]
-04/09/2020 10:38:56 > epoch 1 updates 950 loss: 0.3941 lr: 0.0050 gnorm: 0.201904/09/2020 10:39:46 > epoch 1 updates 1000 loss: 0.4094 lr: 0.0050 gnorm: 0.275704/09/2020 10:40:36 > epoch 1 updates 1050 loss: 0.3625 lr: 0.0047 gnorm: 0.110004/09/2020 10:41:58 
-04/09/2020 10:41:58 train loss: 0.3885 lr: 0.0049 gnorm: 0.1955 clip: 0
-04/09/2020 10:41:58 valid loss: 0.5087 inference_time: 376.2423 auc: 0.8537 f1: 0.7773 acc: 0.7600 cost_time: 22.3271 [BEST: 0.7609]
-04/09/2020 10:41:59 > epoch 1 updates 1100 loss: 0.3921 lr: 0.0047 gnorm: 0.166004/09/2020 10:42:49 > epoch 1 updates 1150 loss: 0.2894 lr: 0.0047 gnorm: 0.130804/09/2020 10:43:59 
-04/09/2020 10:43:59 train loss: 0.3405 lr: 0.0047 gnorm: 0.1483 clip: 0
-04/09/2020 10:43:59 valid loss: 0.5003 inference_time: 371.7701 auc: 0.8619 f1: 0.7810 acc: 0.7572 cost_time: 24.3512 [BEST: 0.7609]
-04/09/2020 10:43:59 
-[trainer.py:49]  epoch=2/40, experiment_times=2
-04/09/2020 10:43:59 Epoch: 2
-04/09/2020 10:44:13 > epoch 2 updates 1200 loss: 0.3121 lr: 0.0047 gnorm: 0.110504/09/2020 10:45:03 > epoch 2 updates 1250 loss: 0.3744 lr: 0.0047 gnorm: 0.292504/09/2020 10:45:41 
-04/09/2020 10:45:41 train loss: 0.3434 lr: 0.0047 gnorm: 0.2020 clip: 0
-04/09/2020 10:45:41 valid loss: 0.5445 inference_time: 369.0221 auc: 0.8574 f1: 0.7740 acc: 0.7428 cost_time: 26.0562 [BEST: 0.7609]
-04/09/2020 10:46:26 > epoch 2 updates 1300 loss: 0.3776 lr: 0.0047 gnorm: 0.137904/09/2020 10:47:16 > epoch 2 updates 1350 loss: 0.3631 lr: 0.0047 gnorm: 0.101904/09/2020 10:48:07 > epoch 2 updates 1400 loss: 0.3228 lr: 0.0047 gnorm: 0.1367[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 10:48:52 
-04/09/2020 10:48:52 train loss: 0.3543 lr: 0.0047 gnorm: 0.1255 clip: 0
-04/09/2020 10:48:52 valid loss: 0.4831 inference_time: 363.4188 auc: 0.8649 f1: 0.7838 acc: 0.7670 cost_time: 29.2372 [NEW BEST]
-04/09/2020 10:49:29 > epoch 2 updates 1450 loss: 0.3528 lr: 0.0047 gnorm: 0.185404/09/2020 10:50:20 > epoch 2 updates 1500 loss: 0.3274 lr: 0.0047 gnorm: 0.102604/09/2020 10:51:10 > epoch 2 updates 1550 loss: 0.3822 lr: 0.0047 gnorm: 0.121204/09/2020 10:52:05 
-04/09/2020 10:52:05 train loss: 0.3542 lr: 0.0047 gnorm: 0.1362 clip: 0
-04/09/2020 10:52:05 valid loss: 0.4963 inference_time: 398.3745 auc: 0.8607 f1: 0.7823 acc: 0.7662 cost_time: 32.4439 [BEST: 0.7670]
-04/09/2020 10:52:35 > epoch 2 updates 1600 loss: 0.3649 lr: 0.0047 gnorm: 0.112904/09/2020 10:53:24 > epoch 2 updates 1650 loss: 0.3063 lr: 0.0047 gnorm: 0.107504/09/2020 10:54:14 > epoch 2 updates 1700 loss: 0.3278 lr: 0.0047 gnorm: 0.083504/09/2020 10:55:14 
-04/09/2020 10:55:14 train loss: 0.3329 lr: 0.0047 gnorm: 0.1012 clip: 0
-04/09/2020 10:55:14 valid loss: 0.5065 inference_time: 374.8168 auc: 0.8598 f1: 0.7793 acc: 0.7549 cost_time: 35.6007 [BEST: 0.7670]
-04/09/2020 10:55:37 > epoch 2 updates 1750 loss: 0.2692 lr: 0.0047 gnorm: 0.161704/09/2020 10:56:26 > epoch 2 updates 1800 loss: 0.4062 lr: 0.0047 gnorm: 0.125304/09/2020 10:57:16 > epoch 2 updates 1850 loss: 0.3094 lr: 0.0047 gnorm: 0.1076[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 10:58:23 
-04/09/2020 10:58:23 train loss: 0.3284 lr: 0.0047 gnorm: 0.1314 clip: 0
-04/09/2020 10:58:23 valid loss: 0.4918 inference_time: 363.5800 auc: 0.8638 f1: 0.7867 acc: 0.7705 cost_time: 38.7438 [NEW BEST]
-04/09/2020 10:58:39 > epoch 2 updates 1900 loss: 0.3707 lr: 0.0047 gnorm: 0.130104/09/2020 10:59:30 > epoch 2 updates 1950 loss: 0.3652 lr: 0.0047 gnorm: 0.110904/09/2020 11:00:21 > epoch 2 updates 2000 loss: 0.3378 lr: 0.0047 gnorm: 0.161004/09/2020 11:01:35 
-04/09/2020 11:01:35 train loss: 0.3578 lr: 0.0047 gnorm: 0.1341 clip: 0
-04/09/2020 11:01:35 valid loss: 0.4982 inference_time: 374.4805 auc: 0.8655 f1: 0.7840 acc: 0.7600 cost_time: 41.9528 [BEST: 0.7705]
-04/09/2020 11:01:44 > epoch 2 updates 2050 loss: 0.3113 lr: 0.0045 gnorm: 0.111504/09/2020 11:02:35 > epoch 2 updates 2100 loss: 0.3471 lr: 0.0045 gnorm: 0.100504/09/2020 11:03:24 > epoch 2 updates 2150 loss: 0.3257 lr: 0.0045 gnorm: 0.097504/09/2020 11:04:46 
-04/09/2020 11:04:46 train loss: 0.3281 lr: 0.0045 gnorm: 0.1031 clip: 0
-04/09/2020 11:04:46 valid loss: 0.5107 inference_time: 365.5334 auc: 0.8682 f1: 0.7860 acc: 0.7601 cost_time: 45.1268 [BEST: 0.7705]
-04/09/2020 11:04:48 > epoch 2 updates 2200 loss: 0.3668 lr: 0.0045 gnorm: 0.117004/09/2020 11:05:38 > epoch 2 updates 2250 loss: 0.4023 lr: 0.0045 gnorm: 0.190504/09/2020 11:06:28 > epoch 2 updates 2300 loss: 0.3469 lr: 0.0045 gnorm: 0.118804/09/2020 11:07:19 > epoch 2 updates 2350 loss: 0.3422 lr: 0.0045 gnorm: 0.114004/09/2020 11:07:56 
-04/09/2020 11:07:56 train loss: 0.3644 lr: 0.0045 gnorm: 0.1350 clip: 0
-04/09/2020 11:07:56 valid loss: 0.5008 inference_time: 368.1724 auc: 0.8694 f1: 0.7876 acc: 0.7617 cost_time: 48.3036 [BEST: 0.7705]
-04/09/2020 11:08:51 
-04/09/2020 11:08:51 valid loss: 0.4933 inference_time: 382.1986 auc: 0.8711 f1: 0.7879 acc: 0.7650 cost_time: 49.2132 [BEST: 0.7705]
-04/09/2020 11:08:51 
-[trainer.py:49]  epoch=3/40, experiment_times=2
-04/09/2020 11:08:51 Epoch: 3
-04/09/2020 11:09:16 > epoch 3 updates 2400 loss: 0.3355 lr: 0.0045 gnorm: 0.126604/09/2020 11:10:06 > epoch 3 updates 2450 loss: 0.3777 lr: 0.0045 gnorm: 0.134704/09/2020 11:10:56 > epoch 3 updates 2500 loss: 0.3059 lr: 0.0045 gnorm: 0.119104/09/2020 11:11:41 
-04/09/2020 11:11:41 train loss: 0.3396 lr: 0.0045 gnorm: 0.1268 clip: 0
-04/09/2020 11:11:41 valid loss: 0.5005 inference_time: 369.6460 auc: 0.8764 f1: 0.7914 acc: 0.7655 cost_time: 52.0528 [BEST: 0.7705]
-04/09/2020 11:12:20 > epoch 3 updates 2550 loss: 0.3298 lr: 0.0045 gnorm: 0.103104/09/2020 11:13:10 > epoch 3 updates 2600 loss: 0.3302 lr: 0.0045 gnorm: 0.142004/09/2020 11:14:01 > epoch 3 updates 2650 loss: 0.2850 lr: 0.0045 gnorm: 0.1276[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 11:14:53 
-04/09/2020 11:14:53 train loss: 0.3149 lr: 0.0045 gnorm: 0.1243 clip: 0
-04/09/2020 11:14:53 valid loss: 0.4656 inference_time: 370.8077 auc: 0.8732 f1: 0.7946 acc: 0.7842 cost_time: 55.2406 [NEW BEST]
-04/09/2020 11:15:24 > epoch 3 updates 2700 loss: 0.3304 lr: 0.0045 gnorm: 0.165504/09/2020 11:16:15 > epoch 3 updates 2750 loss: 0.3268 lr: 0.0045 gnorm: 0.077404/09/2020 11:17:05 > epoch 3 updates 2800 loss: 0.2585 lr: 0.0045 gnorm: 0.088904/09/2020 11:18:04 
-04/09/2020 11:18:04 train loss: 0.3050 lr: 0.0045 gnorm: 0.1103 clip: 0
-04/09/2020 11:18:04 valid loss: 0.4990 inference_time: 367.9744 auc: 0.8740 f1: 0.7868 acc: 0.7589 cost_time: 58.4295 [BEST: 0.7842]
-04/09/2020 11:18:28 > epoch 3 updates 2850 loss: 0.3400 lr: 0.0045 gnorm: 0.089604/09/2020 11:19:19 > epoch 3 updates 2900 loss: 0.3459 lr: 0.0045 gnorm: 0.136204/09/2020 11:20:09 > epoch 3 updates 2950 loss: 0.2437 lr: 0.0045 gnorm: 0.092504/09/2020 11:21:15 
-04/09/2020 11:21:15 train loss: 0.3095 lr: 0.0045 gnorm: 0.1061 clip: 0
-04/09/2020 11:21:15 valid loss: 0.4906 inference_time: 371.9708 auc: 0.8730 f1: 0.7887 acc: 0.7620 cost_time: 61.6223 [BEST: 0.7842]
-04/09/2020 11:21:33 > epoch 3 updates 3000 loss: 0.3505 lr: 0.0045 gnorm: 0.111004/09/2020 11:22:23 > epoch 3 updates 3050 loss: 0.3267 lr: 0.0043 gnorm: 0.077204/09/2020 11:23:12 > epoch 3 updates 3100 loss: 0.2512 lr: 0.0043 gnorm: 0.082204/09/2020 11:24:25 
-04/09/2020 11:24:25 train loss: 0.3091 lr: 0.0044 gnorm: 0.0900 clip: 0
-04/09/2020 11:24:25 valid loss: 0.4725 inference_time: 371.0893 auc: 0.8795 f1: 0.7967 acc: 0.7789 cost_time: 64.7806 [BEST: 0.7842]
-04/09/2020 11:24:35 > epoch 3 updates 3150 loss: 0.2736 lr: 0.0043 gnorm: 0.085604/09/2020 11:25:24 > epoch 3 updates 3200 loss: 0.3341 lr: 0.0043 gnorm: 0.103504/09/2020 11:26:13 > epoch 3 updates 3250 loss: 0.3066 lr: 0.0043 gnorm: 0.116904/09/2020 11:27:34 
-04/09/2020 11:27:34 train loss: 0.3049 lr: 0.0043 gnorm: 0.1021 clip: 0
-04/09/2020 11:27:34 valid loss: 0.4742 inference_time: 376.4359 auc: 0.8767 f1: 0.7957 acc: 0.7787 cost_time: 67.9336 [BEST: 0.7842]
-04/09/2020 11:27:37 > epoch 3 updates 3300 loss: 0.3545 lr: 0.0043 gnorm: 0.169604/09/2020 11:28:27 > epoch 3 updates 3350 loss: 0.2952 lr: 0.0043 gnorm: 0.127804/09/2020 11:29:18 > epoch 3 updates 3400 loss: 0.2518 lr: 0.0043 gnorm: 0.099404/09/2020 11:30:08 > epoch 3 updates 3450 loss: 0.3300 lr: 0.0043 gnorm: 0.096904/09/2020 11:30:46 
-04/09/2020 11:30:46 train loss: 0.3077 lr: 0.0043 gnorm: 0.1231 clip: 0
-04/09/2020 11:30:46 valid loss: 0.4726 inference_time: 382.4854 auc: 0.8686 f1: 0.7891 acc: 0.7776 cost_time: 71.1338 [BEST: 0.7842]
-04/09/2020 11:31:30 > epoch 3 updates 3500 loss: 0.3883 lr: 0.0043 gnorm: 0.170504/09/2020 11:32:21 > epoch 3 updates 3550 loss: 0.3461 lr: 0.0043 gnorm: 0.086904/09/2020 11:33:08 
-04/09/2020 11:33:08 train loss: 0.3671 lr: 0.0043 gnorm: 0.1285 clip: 0
-04/09/2020 11:33:08 valid loss: 0.4589 inference_time: 377.0494 auc: 0.8801 f1: 0.7993 acc: 0.7822 cost_time: 73.4919 [BEST: 0.7842]
-04/09/2020 11:33:08 
-[trainer.py:49]  epoch=4/40, experiment_times=2
-04/09/2020 11:33:08 Epoch: 4
-04/09/2020 11:33:45 > epoch 4 updates 3600 loss: 0.3742 lr: 0.0043 gnorm: 0.183904/09/2020 11:34:28 
-04/09/2020 11:34:28 train loss: 0.3742 lr: 0.0043 gnorm: 0.1839 clip: 0
-04/09/2020 11:34:28 valid loss: 0.4677 inference_time: 370.6774 auc: 0.8801 f1: 0.7973 acc: 0.7783 cost_time: 74.8379 [BEST: 0.7842]
-04/09/2020 11:35:08 > epoch 4 updates 3650 loss: 0.3042 lr: 0.0043 gnorm: 0.144904/09/2020 11:35:59 > epoch 4 updates 3700 loss: 0.3325 lr: 0.0043 gnorm: 0.101904/09/2020 11:36:49 > epoch 4 updates 3750 loss: 0.2994 lr: 0.0043 gnorm: 0.0787[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/09/2020 11:37:41 
-04/09/2020 11:37:41 train loss: 0.3120 lr: 0.0043 gnorm: 0.1083 clip: 0
-04/09/2020 11:37:41 valid loss: 0.4880 inference_time: 376.4868 auc: 0.8808 f1: 0.7996 acc: 0.7864 cost_time: 78.0492 [NEW BEST]
-04/09/2020 11:38:13 > epoch 4 updates 3800 loss: 0.2515 lr: 0.0043 gnorm: 0.100804/09/2020 11:39:03 > epoch 4 updates 3850 loss: 0.3222 lr: 0.0043 gnorm: 0.104004/09/2020 11:39:53 > epoch 4 updates 3900 loss: 0.3342 lr: 0.0043 gnorm: 0.138904/09/2020 11:40:51 
-04/09/2020 11:40:51 train loss: 0.3029 lr: 0.0043 gnorm: 0.1147 clip: 0
-04/09/2020 11:40:51 valid loss: 0.4830 inference_time: 368.4125 auc: 0.8777 f1: 0.7909 acc: 0.7658 cost_time: 81.2082 [BEST: 0.7864]
-04/09/2020 11:41:15 > epoch 4 updates 3950 loss: 0.2848 lr: 0.0043 gnorm: 0.078804/09/2020 11:42:05 > epoch 4 updates 4000 loss: 0.2611 lr: 0.0043 gnorm: 0.098504/09/2020 11:42:56 > epoch 4 updates 4050 loss: 0.2647 lr: 0.0041 gnorm: 0.130904/09/2020 11:44:00 
-04/09/2020 11:44:00 train loss: 0.2701 lr: 0.0042 gnorm: 0.1029 clip: 0
-04/09/2020 11:44:00 valid loss: 0.4724 inference_time: 363.5773 auc: 0.8836 f1: 0.7992 acc: 0.7797 cost_time: 84.3743 [BEST: 0.7864]
-04/09/2020 11:44:18 > epoch 4 updates 4100 loss: 0.2496 lr: 0.0041 gnorm: 0.079904/09/2020 11:45:09 > epoch 4 updates 4150 loss: 0.2928 lr: 0.0041 gnorm: 0.078604/09/2020 11:45:59 > epoch 4 updates 4200 loss: 0.2832 lr: 0.0041 gnorm: 0.107404/09/2020 11:47:11 
-04/09/2020 11:47:11 train loss: 0.2753 lr: 0.0041 gnorm: 0.0888 clip: 0
-04/09/2020 11:47:11 valid loss: 0.4875 inference_time: 370.1100 auc: 0.8782 f1: 0.7962 acc: 0.7745 cost_time: 87.5449 [BEST: 0.7864]
-04/09/2020 11:47:22 > epoch 4 updates 4250 loss: 0.3242 lr: 0.0041 gnorm: 0.111804/09/2020 11:48:12 > epoch 4 updates 4300 loss: 0.3110 lr: 0.0041 gnorm: 0.094504/09/2020 11:49:02 > epoch 4 updates 4350 loss: 0.3617 lr: 0.0041 gnorm: 0.212404/09/2020 11:50:21 
-04/09/2020 11:50:21 train loss: 0.3324 lr: 0.0041 gnorm: 0.1399 clip: 0
-04/09/2020 11:50:21 valid loss: 0.4915 inference_time: 375.2079 auc: 0.8817 f1: 0.7934 acc: 0.7673 cost_time: 90.7201 [BEST: 0.7864]
-04/09/2020 11:50:25 > epoch 4 updates 4400 loss: 0.2602 lr: 0.0041 gnorm: 0.085604/09/2020 11:51:16 > epoch 4 updates 4450 loss: 0.3122 lr: 0.0041 gnorm: 0.084704/09/2020 11:52:05 > epoch 4 updates 4500 loss: 0.3185 lr: 0.0041 gnorm: 0.080804/09/2020 11:52:55 > epoch 4 updates 4550 loss: 0.2874 lr: 0.0041 gnorm: 0.078004/09/2020 11:53:31 
-04/09/2020 11:53:31 train loss: 0.2947 lr: 0.0041 gnorm: 0.0823 clip: 0
-04/09/2020 11:53:31 valid loss: 0.4596 inference_time: 374.0380 auc: 0.8891 f1: 0.8031 acc: 0.7829 cost_time: 93.8824 [BEST: 0.7864]
-04/09/2020 11:54:18 > epoch 4 updates 4600 loss: 0.3263 lr: 0.0041 gnorm: 0.109504/09/2020 11:55:08 > epoch 4 updates 4650 loss: 0.2789 lr: 0.0041 gnorm: 0.098904/09/2020 11:55:59 > epoch 4 updates 4700 loss: 0.2826 lr: 0.0041 gnorm: 0.076904/09/2020 11:56:41 
-04/09/2020 11:56:41 train loss: 0.2958 lr: 0.0041 gnorm: 0.0950 clip: 0
-04/09/2020 11:56:41 valid loss: 0.4887 inference_time: 363.4101 auc: 0.8792 f1: 0.7965 acc: 0.7760 cost_time: 97.0531 [BEST: 0.7864]
-04/09/2020 11:57:24 > epoch 4 updates 4750 loss: 0.2676 lr: 0.0041 gnorm: 0.072604/09/2020 11:57:58 
-04/09/2020 11:57:58 train loss: 0.2676 lr: 0.0041 gnorm: 0.0726 clip: 0
-04/09/2020 11:57:58 valid loss: 0.4854 inference_time: 373.2365 auc: 0.8861 f1: 0.7986 acc: 0.7743 cost_time: 98.3374 [BEST: 0.7864]
-04/09/2020 11:57:58 
-[trainer.py:49]  epoch=5/40, experiment_times=2
-04/09/2020 11:57:58 Epoch: 5
-04/09/2020 11:58:47 > epoch 5 updates 4800 loss: 0.2990 lr: 0.0041 gnorm: 0.084804/09/2020 11:59:37 > epoch 5 updates 4850 loss: 0.2890 lr: 0.0041 gnorm: 0.088504/10/2020 12:00:28 
-04/10/2020 12:00:28 train loss: 0.2940 lr: 0.0041 gnorm: 0.0867 clip: 0
-04/10/2020 12:00:28 valid loss: 0.4679 inference_time: 375.0108 auc: 0.8821 f1: 0.8003 acc: 0.7845 cost_time: 100.8259 [BEST: 0.7864]
-04/10/2020 12:01:01 > epoch 5 updates 4900 loss: 0.3708 lr: 0.0041 gnorm: 0.168804/10/2020 12:01:51 > epoch 5 updates 4950 loss: 0.2238 lr: 0.0041 gnorm: 0.080704/10/2020 12:02:41 > epoch 5 updates 5000 loss: 0.2740 lr: 0.0041 gnorm: 0.0699[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-2/checkpoint
-04/10/2020 12:03:38 
-04/10/2020 12:03:38 train loss: 0.2892 lr: 0.0041 gnorm: 0.1062 clip: 0
-04/10/2020 12:03:38 valid loss: 0.4585 inference_time: 375.0795 auc: 0.8843 f1: 0.8029 acc: 0.7916 cost_time: 103.9934 [NEW BEST]
-04/10/2020 12:04:04 > epoch 5 updates 5050 loss: 0.3053 lr: 0.0039 gnorm: 0.089304/10/2020 12:04:54 > epoch 5 updates 5100 loss: 0.3658 lr: 0.0039 gnorm: 0.145804/10/2020 12:05:44 > epoch 5 updates 5150 loss: 0.3116 lr: 0.0039 gnorm: 0.131604/10/2020 12:06:49 
-04/10/2020 12:06:49 train loss: 0.3276 lr: 0.0039 gnorm: 0.1224 clip: 0
-04/10/2020 12:06:49 valid loss: 0.4731 inference_time: 383.9965 auc: 0.8866 f1: 0.8029 acc: 0.7838 cost_time: 107.1803 [BEST: 0.7916]
-04/10/2020 12:07:08 > epoch 5 updates 5200 loss: 0.3059 lr: 0.0039 gnorm: 0.094404/10/2020 12:07:57 > epoch 5 updates 5250 loss: 0.3564 lr: 0.0039 gnorm: 0.120804/10/2020 12:08:47 > epoch 5 updates 5300 loss: 0.3050 lr: 0.0039 gnorm: 0.109704/10/2020 12:09:58 
-04/10/2020 12:09:58 train loss: 0.3224 lr: 0.0039 gnorm: 0.1084 clip: 0
-04/10/2020 12:09:58 valid loss: 0.4628 inference_time: 377.2532 auc: 0.8860 f1: 0.8026 acc: 0.7854 cost_time: 110.3332 [BEST: 0.7916]
-04/10/2020 12:10:11 > epoch 5 updates 5350 loss: 0.2705 lr: 0.0039 gnorm: 0.087804/10/2020 12:11:01 > epoch 5 updates 5400 loss: 0.2729 lr: 0.0039 gnorm: 0.082104/10/2020 12:11:52 > epoch 5 updates 5450 loss: 0.2322 lr: 0.0039 gnorm: 0.076104/10/2020 12:13:09 
-04/10/2020 12:13:09 train loss: 0.2584 lr: 0.0039 gnorm: 0.0820 clip: 0
-04/10/2020 12:13:09 valid loss: 0.5018 inference_time: 371.3612 auc: 0.8816 f1: 0.7934 acc: 0.7666 cost_time: 113.5224 [BEST: 0.7916]
-04/10/2020 12:13:14 > epoch 5 updates 5500 loss: 0.3188 lr: 0.0039 gnorm: 0.085304/10/2020 12:14:05 > epoch 5 updates 5550 loss: 0.2688 lr: 0.0039 gnorm: 0.080504/10/2020 12:14:55 > epoch 5 updates 5600 loss: 0.2557 lr: 0.0039 gnorm: 0.072504/10/2020 12:15:46 > epoch 5 updates 5650 loss: 0.3053 lr: 0.0039 gnorm: 0.100004/10/2020 12:16:21 
-04/10/2020 12:16:21 train loss: 0.2871 lr: 0.0039 gnorm: 0.0846 clip: 0
-04/10/2020 12:16:21 valid loss: 0.4765 inference_time: 377.4926 auc: 0.8865 f1: 0.8043 acc: 0.7859 cost_time: 116.7149 [BEST: 0.7916]
-04/10/2020 12:17:10 > epoch 5 updates 5700 loss: 0.3040 lr: 0.0039 gnorm: 0.082904/10/2020 12:18:00 > epoch 5 updates 5750 loss: 0.3839 lr: 0.0039 gnorm: 0.141704/10/2020 12:18:50 > epoch 5 updates 5800 loss: 0.2613 lr: 0.0039 gnorm: 0.154704/10/2020 12:19:32 
-04/10/2020 12:19:32 train loss: 0.3163 lr: 0.0039 gnorm: 0.1267 clip: 0
-04/10/2020 12:19:32 valid loss: 0.4946 inference_time: 371.3225 auc: 0.8845 f1: 0.7972 acc: 0.7700 cost_time: 119.8985 [BEST: 0.7916]
-04/10/2020 12:20:13 > epoch 5 updates 5850 loss: 0.3431 lr: 0.0039 gnorm: 0.099304/10/2020 12:21:04 > epoch 5 updates 5900 loss: 0.2644 lr: 0.0039 gnorm: 0.083104/10/2020 12:22:17 
-04/10/2020 12:22:17 train loss: 0.3036 lr: 0.0039 gnorm: 0.0912 clip: 0
-04/10/2020 12:22:17 valid loss: 0.4498 inference_time: 383.3093 auc: 0.8890 f1: 0.8046 acc: 0.7888 cost_time: 122.6562 [BEST: 0.7916]
-04/10/2020 12:22:17 
-[trainer.py:49]  epoch=6/40, experiment_times=2
-04/10/2020 12:22:17 Epoch: 6
-04/10/2020 12:22:29 > epoch 6 updates 5950 loss: 0.2888 lr: 0.0039 gnorm: 0.078704/10/2020 12:23:18 
-04/10/2020 12:23:18 train loss: 0.2888 lr: 0.0039 gnorm: 0.0787 clip: 0
-04/10/2020 12:23:18 valid loss: 0.4945 inference_time: 370.6249 auc: 0.8913 f1: 0.8030 acc: 0.7799 cost_time: 123.6604 [BEST: 0.7916]
-04/10/2020 12:23:51 > epoch 6 updates 6000 loss: 0.2558 lr: 0.0039 gnorm: 0.072104/10/2020 12:24:42 > epoch 6 updates 6050 loss: 0.2202 lr: 0.0037 gnorm: 0.100904/10/2020 12:25:32 > epoch 6 updates 6100 loss: 0.2289 lr: 0.0037 gnorm: 0.089004/10/2020 12:26:28 
-04/10/2020 12:26:28 train loss: 0.2349 lr: 0.0037 gnorm: 0.0874 clip: 0
-04/10/2020 12:26:28 valid loss: 0.4856 inference_time: 371.5360 auc: 0.8818 f1: 0.7958 acc: 0.7733 cost_time: 126.8278 [BEST: 0.7916]
-04/10/2020 12:26:55 > epoch 6 updates 6150 loss: 0.2572 lr: 0.0037 gnorm: 0.079704/10/2020 12:27:46 > epoch 6 updates 6200 loss: 0.2693 lr: 0.0037 gnorm: 0.080104/10/2020 12:28:37 > epoch 6 updates 6250 loss: 0.3229 lr: 0.0037 gnorm: 0.090004/10/2020 12:29:39 
-04/10/2020 12:29:39 train loss: 0.2833 lr: 0.0037 gnorm: 0.0833 clip: 0
-04/10/2020 12:29:39 valid loss: 0.4821 inference_time: 370.9522 auc: 0.8928 f1: 0.8068 acc: 0.7879 cost_time: 130.0191 [BEST: 0.7916]
-04/10/2020 12:29:59 > epoch 6 updates 6300 loss: 0.2949 lr: 0.0037 gnorm: 0.099404/10/2020 12:30:49 > epoch 6 updates 6350 loss: 0.2674 lr: 0.0037 gnorm: 0.080004/10/2020 12:31:39 > epoch 6 updates 6400 loss: 0.3343 lr: 0.0037 gnorm: 0.099204/10/2020 12:32:49 
-04/10/2020 12:32:49 train loss: 0.2990 lr: 0.0037 gnorm: 0.0929 clip: 0
-04/10/2020 12:32:49 valid loss: 0.4788 inference_time: 372.8767 auc: 0.8866 f1: 0.8022 acc: 0.7826 cost_time: 133.1765 [BEST: 0.7916]
-04/10/2020 12:33:02 > epoch 6 updates 6450 loss: 0.2922 lr: 0.0037 gnorm: 0.088104/10/2020 12:33:52 > epoch 6 updates 6500 loss: 0.2528 lr: 0.0037 gnorm: 0.104204/10/2020 12:34:42 > epoch 6 updates 6550 loss: 0.2505 lr: 0.0037 gnorm: 0.077304/10/2020 12:35:59 
-04/10/2020 12:35:59 train loss: 0.2650 lr: 0.0037 gnorm: 0.0898 clip: 0
-04/10/2020 12:35:59 valid loss: 0.4727 inference_time: 362.2361 auc: 0.8942 f1: 0.8035 acc: 0.7800 cost_time: 136.3518 [BEST: 0.7916]
-[trainer.py:72]  Tolerance reached. Training is stopped early.
-04/10/2020 12:35:59 
-04/10/2020 12:35:59 Training complete.
-04/10/2020 12:35:59 best dev score 0.7916480969783403 at step 5024 (epoch 5).
-04/10/2020 12:35:59 best eval stats [loss: 0.4585 inference_time: 375.0795 auc: 0.8843 f1: 0.8029 acc: 0.7916 cost_time: 103.9934]
-04/10/2020 12:35:59 Training time: 2:16:21.
-[train.py:38]  experiment_times=3/5, best_experiment_times=0, ave_test_score=0.791321, max_test_score=0.792361
-[train.py:47]  eval_score_list: [0.7923611730100723, 0.789954541402977, 0.7916480969783403] 0
-[train.py:25]  args.summary_dir: /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3
-04/10/2020 12:36:00 train (338053) | test (22438)
-04/10/2020 12:36:00 #classes: 2; #vocab: 5012
-[model.py:60]  <class 'list'> devices: ['/device:CPU:0'] splits: 1
-04/10/2020 12:36:01 trainable params: 4,127,205
-04/10/2020 12:36:01 trainable params (exclude embeddings): 4,127,205
-04/10/2020 12:36:01 { '__index__': 3,
-  '__parents__': ['default', 'chat_courpus'],
-  '__repeat__': 5,
-  'alignment': 'identity',
-  'batch_size': 256,
-  'beta1': 0.9,
-  'beta2': 0.999,
-  'blocks': 1,
-  'connection': 'aug',
-  'data_dir': '/home/cloudminds/Mywork/corpus/Chinese_QA/chat_courpus',
-  'dropout_keep_prob': 0.8,
-  'early_stopping': 1563,
-  'embedding_dim': 300,
-  'embedding_mode': 'freq',
-  'enc_layers': 3,
-  'epochs': 40,
-  'eval_epoch': True,
-  'eval_file': 'test',
-  'eval_per_samples': 6400,
-  'eval_per_samples_warmup': 40000,
-  'eval_per_updates': 25,
-  'eval_per_updates_warmup': 157,
-  'eval_warmup_samples': 0,
-  'eval_warmup_steps': 0,
-  'fusion': 'full',
-  'grad_clipping': 5,
-  'hidden_size': 400,
-  'kernel_size': 3,
-  'language': 'chinese',
-  'log_file': 'log.txt',
-  'log_per_samples': 1280,
-  'log_per_updates': 5,
-  'lower_case': True,
-  'lr': 0.005,
-  'lr_decay_rate': 0.95,
-  'lr_decay_samples': 256000,
-  'lr_decay_steps': 1000,
-  'lr_warmup_samples': 0,
-  'lr_warmup_steps': 0,
-  'max_checkpoints': 1,
-  'max_len': 20,
-  'max_loss': 999.0,
-  'max_vocab': 999999,
-  'metric': 'acc',
-  'min_df': 5,
-  'min_len': 1,
-  'min_lr': 6e-05,
-  'min_samples': 0,
-  'min_steps': 0,
-  'multi_gpu': False,
-  'name': 'benchmark-3',
-  'num_classes': 2,
-  'num_vocab': 5012,
-  'output_dir': 'models/chat_courpus',
-  'padding': 0,
-  'prediction': 'full',
-  'pretrained_embeddings': '/home/cloudminds/Word2Vector/Chinese/charVector_DbqaSmpLog',
-  'save': True,
-  'save_all': False,
-  'seed': None,
-  'sort_by_len': False,
-  'summary_dir': '/home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3',
-  'tensorboard': True,
-  'tolerance_samples': 400000,
-  'watch_metrics': ['auc', 'f1', 'acc']}
-04/10/2020 12:36:05 setup complete: 0:00:05s.
-[trainer.py:45]  eval_per_updates= 157
-[trainer.py:49]  epoch=1/40, experiment_times=3
-04/10/2020 12:36:05 Epoch: 1
-04/10/2020 12:36:56 > epoch 1 updates 50 loss: 0.6801 lr: 0.0050 gnorm: 0.169204/10/2020 12:37:46 > epoch 1 updates 100 loss: 0.4343 lr: 0.0050 gnorm: 0.267104/10/2020 12:38:37 > epoch 1 updates 150 loss: 0.4628 lr: 0.0050 gnorm: 0.3526[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 12:39:18 
-04/10/2020 12:39:18 train loss: 0.5250 lr: 0.0050 gnorm: 0.2636 clip: 0
-04/10/2020 12:39:18 valid loss: 0.6128 inference_time: 374.6852 auc: 0.7761 f1: 0.7091 acc: 0.6963 cost_time: 3.3032 [NEW BEST]
-04/10/2020 12:40:00 > epoch 1 updates 200 loss: 0.4572 lr: 0.0050 gnorm: 0.417104/10/2020 12:40:51 > epoch 1 updates 250 loss: 0.4521 lr: 0.0050 gnorm: 0.393704/10/2020 12:41:41 > epoch 1 updates 300 loss: 0.3717 lr: 0.0050 gnorm: 0.4362[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 12:42:28 
-04/10/2020 12:42:28 train loss: 0.4267 lr: 0.0050 gnorm: 0.4158 clip: 0
-04/10/2020 12:42:28 valid loss: 0.5429 inference_time: 375.1076 auc: 0.8159 f1: 0.7462 acc: 0.7322 cost_time: 6.4774 [NEW BEST]
-04/10/2020 12:43:04 > epoch 1 updates 350 loss: 0.3910 lr: 0.0050 gnorm: 0.227104/10/2020 12:43:54 > epoch 1 updates 400 loss: 0.5069 lr: 0.0050 gnorm: 0.762504/10/2020 12:44:44 > epoch 1 updates 450 loss: 0.3602 lr: 0.0050 gnorm: 0.1891[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 12:45:38 
-04/10/2020 12:45:38 train loss: 0.4193 lr: 0.0050 gnorm: 0.3928 clip: 0
-04/10/2020 12:45:38 valid loss: 0.5347 inference_time: 364.4881 auc: 0.8253 f1: 0.7514 acc: 0.7372 cost_time: 9.6360 [NEW BEST]
-04/10/2020 12:46:07 > epoch 1 updates 500 loss: 0.3674 lr: 0.0050 gnorm: 0.143904/10/2020 12:46:57 > epoch 1 updates 550 loss: 0.3728 lr: 0.0050 gnorm: 0.345004/10/2020 12:47:46 > epoch 1 updates 600 loss: 0.3775 lr: 0.0050 gnorm: 0.133404/10/2020 12:48:47 
-04/10/2020 12:48:47 train loss: 0.3726 lr: 0.0050 gnorm: 0.2074 clip: 0
-04/10/2020 12:48:47 valid loss: 0.5600 inference_time: 367.0644 auc: 0.8280 f1: 0.7545 acc: 0.7244 cost_time: 12.8018 [BEST: 0.7372]
-04/10/2020 12:49:10 > epoch 1 updates 650 loss: 0.4283 lr: 0.0050 gnorm: 0.172404/10/2020 12:50:01 > epoch 1 updates 700 loss: 0.3595 lr: 0.0050 gnorm: 0.194704/10/2020 12:50:51 > epoch 1 updates 750 loss: 0.3479 lr: 0.0050 gnorm: 0.1103[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 12:51:59 
-04/10/2020 12:51:59 train loss: 0.3783 lr: 0.0050 gnorm: 0.1589 clip: 0
-04/10/2020 12:51:59 valid loss: 0.5250 inference_time: 373.9261 auc: 0.8406 f1: 0.7655 acc: 0.7404 cost_time: 15.9967 [NEW BEST]
-04/10/2020 12:52:15 > epoch 1 updates 800 loss: 0.3793 lr: 0.0050 gnorm: 0.268604/10/2020 12:53:05 > epoch 1 updates 850 loss: 0.4180 lr: 0.0050 gnorm: 0.614404/10/2020 12:53:55 > epoch 1 updates 900 loss: 0.4043 lr: 0.0050 gnorm: 0.1537[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 12:55:10 
-04/10/2020 12:55:10 train loss: 0.4006 lr: 0.0050 gnorm: 0.3452 clip: 0
-04/10/2020 12:55:10 valid loss: 0.5110 inference_time: 360.6658 auc: 0.8520 f1: 0.7717 acc: 0.7481 cost_time: 19.1810 [NEW BEST]
-04/10/2020 12:55:19 > epoch 1 updates 950 loss: 0.3735 lr: 0.0050 gnorm: 0.253604/10/2020 12:56:09 > epoch 1 updates 1000 loss: 0.3832 lr: 0.0050 gnorm: 0.104004/10/2020 12:56:59 > epoch 1 updates 1050 loss: 0.4065 lr: 0.0047 gnorm: 0.1469[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 12:58:22 
-04/10/2020 12:58:22 train loss: 0.3879 lr: 0.0049 gnorm: 0.1678 clip: 0
-04/10/2020 12:58:22 valid loss: 0.5029 inference_time: 385.0667 auc: 0.8577 f1: 0.7766 acc: 0.7537 cost_time: 22.3801 [NEW BEST]
-04/10/2020 12:58:23 > epoch 1 updates 1100 loss: 0.4094 lr: 0.0047 gnorm: 0.181604/10/2020 12:59:14 > epoch 1 updates 1150 loss: 0.3768 lr: 0.0047 gnorm: 0.1767[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:00:24 
-04/10/2020 01:00:24 train loss: 0.3930 lr: 0.0047 gnorm: 0.1791 clip: 0
-04/10/2020 01:00:24 valid loss: 0.4842 inference_time: 372.1964 auc: 0.8556 f1: 0.7735 acc: 0.7654 cost_time: 24.4145 [NEW BEST]
-04/10/2020 01:00:24 
-[trainer.py:49]  epoch=2/40, experiment_times=3
-04/10/2020 01:00:24 Epoch: 2
-04/10/2020 01:00:37 > epoch 2 updates 1200 loss: 0.3715 lr: 0.0047 gnorm: 0.169904/10/2020 01:01:28 > epoch 2 updates 1250 loss: 0.3885 lr: 0.0047 gnorm: 0.1831[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:02:06 
-04/10/2020 01:02:06 train loss: 0.3801 lr: 0.0047 gnorm: 0.1765 clip: 0
-04/10/2020 01:02:06 valid loss: 0.4814 inference_time: 366.9933 auc: 0.8656 f1: 0.7846 acc: 0.7677 cost_time: 26.1126 [NEW BEST]
-04/10/2020 01:02:50 > epoch 2 updates 1300 loss: 0.3727 lr: 0.0047 gnorm: 0.169404/10/2020 01:03:41 > epoch 2 updates 1350 loss: 0.3204 lr: 0.0047 gnorm: 0.098804/10/2020 01:04:31 > epoch 2 updates 1400 loss: 0.4007 lr: 0.0047 gnorm: 0.216004/10/2020 01:05:17 
-04/10/2020 01:05:17 train loss: 0.3647 lr: 0.0047 gnorm: 0.1616 clip: 0
-04/10/2020 01:05:17 valid loss: 0.5006 inference_time: 371.7972 auc: 0.8618 f1: 0.7777 acc: 0.7529 cost_time: 29.2898 [BEST: 0.7677]
-04/10/2020 01:05:54 > epoch 2 updates 1450 loss: 0.3813 lr: 0.0047 gnorm: 0.133504/10/2020 01:06:44 > epoch 2 updates 1500 loss: 0.3447 lr: 0.0047 gnorm: 0.115904/10/2020 01:07:33 > epoch 2 updates 1550 loss: 0.3391 lr: 0.0047 gnorm: 0.154804/10/2020 01:08:26 
-04/10/2020 01:08:26 train loss: 0.3549 lr: 0.0047 gnorm: 0.1348 clip: 0
-04/10/2020 01:08:26 valid loss: 0.5012 inference_time: 373.9296 auc: 0.8724 f1: 0.7866 acc: 0.7608 cost_time: 32.4509 [BEST: 0.7677]
-04/10/2020 01:08:56 > epoch 2 updates 1600 loss: 0.3245 lr: 0.0047 gnorm: 0.138604/10/2020 01:09:45 > epoch 2 updates 1650 loss: 0.3244 lr: 0.0047 gnorm: 0.134204/10/2020 01:10:35 > epoch 2 updates 1700 loss: 0.3370 lr: 0.0047 gnorm: 0.117304/10/2020 01:11:34 
-04/10/2020 01:11:34 train loss: 0.3287 lr: 0.0047 gnorm: 0.1300 clip: 0
-04/10/2020 01:11:34 valid loss: 0.4813 inference_time: 372.9482 auc: 0.8661 f1: 0.7863 acc: 0.7665 cost_time: 35.5853 [BEST: 0.7677]
-04/10/2020 01:11:57 > epoch 2 updates 1750 loss: 0.3421 lr: 0.0047 gnorm: 0.092604/10/2020 01:12:47 > epoch 2 updates 1800 loss: 0.2949 lr: 0.0047 gnorm: 0.223304/10/2020 01:13:38 > epoch 2 updates 1850 loss: 0.3138 lr: 0.0047 gnorm: 0.1099[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:14:45 
-04/10/2020 01:14:45 train loss: 0.3169 lr: 0.0047 gnorm: 0.1420 clip: 0
-04/10/2020 01:14:45 valid loss: 0.4710 inference_time: 368.5021 auc: 0.8694 f1: 0.7871 acc: 0.7709 cost_time: 38.7565 [NEW BEST]
-04/10/2020 01:15:01 > epoch 2 updates 1900 loss: 0.3540 lr: 0.0047 gnorm: 0.109604/10/2020 01:15:50 > epoch 2 updates 1950 loss: 0.2966 lr: 0.0047 gnorm: 0.101004/10/2020 01:16:40 > epoch 2 updates 2000 loss: 0.3134 lr: 0.0047 gnorm: 0.2393[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:17:55 
-04/10/2020 01:17:55 train loss: 0.3212 lr: 0.0047 gnorm: 0.1504 clip: 0
-04/10/2020 01:17:55 valid loss: 0.4684 inference_time: 384.6200 auc: 0.8750 f1: 0.7933 acc: 0.7789 cost_time: 41.9341 [NEW BEST]
-04/10/2020 01:18:05 > epoch 2 updates 2050 loss: 0.3588 lr: 0.0045 gnorm: 0.235604/10/2020 01:18:56 > epoch 2 updates 2100 loss: 0.3215 lr: 0.0045 gnorm: 0.110004/10/2020 01:19:47 > epoch 2 updates 2150 loss: 0.3462 lr: 0.0045 gnorm: 0.135204/10/2020 01:21:08 
-04/10/2020 01:21:08 train loss: 0.3421 lr: 0.0045 gnorm: 0.1599 clip: 0
-04/10/2020 01:21:08 valid loss: 0.5030 inference_time: 362.7161 auc: 0.8757 f1: 0.7879 acc: 0.7601 cost_time: 45.1427 [BEST: 0.7789]
-04/10/2020 01:21:10 > epoch 2 updates 2200 loss: 0.3419 lr: 0.0045 gnorm: 0.116204/10/2020 01:22:01 > epoch 2 updates 2250 loss: 0.3494 lr: 0.0045 gnorm: 0.151704/10/2020 01:22:52 > epoch 2 updates 2300 loss: 0.3361 lr: 0.0045 gnorm: 0.115404/10/2020 01:23:40 > epoch 2 updates 2350 loss: 0.3182 lr: 0.0045 gnorm: 0.133704/10/2020 01:24:19 
-04/10/2020 01:24:19 train loss: 0.3363 lr: 0.0045 gnorm: 0.1292 clip: 0
-04/10/2020 01:24:19 valid loss: 0.4885 inference_time: 378.8967 auc: 0.8724 f1: 0.7916 acc: 0.7694 cost_time: 48.3292 [BEST: 0.7789]
-[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:25:12 
-04/10/2020 01:25:12 valid loss: 0.4589 inference_time: 380.8733 auc: 0.8768 f1: 0.7949 acc: 0.7804 cost_time: 49.2167 [NEW BEST]
-04/10/2020 01:25:12 
-[trainer.py:49]  epoch=3/40, experiment_times=3
-04/10/2020 01:25:12 Epoch: 3
-04/10/2020 01:25:37 > epoch 3 updates 2400 loss: 0.3368 lr: 0.0045 gnorm: 0.130904/10/2020 01:26:27 > epoch 3 updates 2450 loss: 0.2460 lr: 0.0045 gnorm: 0.110704/10/2020 01:27:18 > epoch 3 updates 2500 loss: 0.3075 lr: 0.0045 gnorm: 0.1173[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:28:03 
-04/10/2020 01:28:03 train loss: 0.2967 lr: 0.0045 gnorm: 0.1196 clip: 0
-04/10/2020 01:28:03 valid loss: 0.4624 inference_time: 373.8108 auc: 0.8776 f1: 0.7965 acc: 0.7850 cost_time: 52.0600 [NEW BEST]
-04/10/2020 01:28:42 > epoch 3 updates 2550 loss: 0.3239 lr: 0.0045 gnorm: 0.088904/10/2020 01:29:32 > epoch 3 updates 2600 loss: 0.3080 lr: 0.0045 gnorm: 0.196104/10/2020 01:30:22 > epoch 3 updates 2650 loss: 0.2787 lr: 0.0045 gnorm: 0.111704/10/2020 01:31:15 
-04/10/2020 01:31:15 train loss: 0.3034 lr: 0.0045 gnorm: 0.1323 clip: 0
-04/10/2020 01:31:15 valid loss: 0.4806 inference_time: 381.4301 auc: 0.8774 f1: 0.7931 acc: 0.7731 cost_time: 55.2615 [BEST: 0.7850]
-04/10/2020 01:31:46 > epoch 3 updates 2700 loss: 0.3548 lr: 0.0045 gnorm: 0.086704/10/2020 01:32:36 > epoch 3 updates 2750 loss: 0.3160 lr: 0.0045 gnorm: 0.152404/10/2020 01:33:26 > epoch 3 updates 2800 loss: 0.2832 lr: 0.0045 gnorm: 0.111004/10/2020 01:34:26 
-04/10/2020 01:34:26 train loss: 0.3178 lr: 0.0045 gnorm: 0.1168 clip: 0
-04/10/2020 01:34:26 valid loss: 0.4636 inference_time: 379.4104 auc: 0.8818 f1: 0.7957 acc: 0.7748 cost_time: 58.4404 [BEST: 0.7850]
-04/10/2020 01:34:50 > epoch 3 updates 2850 loss: 0.3158 lr: 0.0045 gnorm: 0.096904/10/2020 01:35:40 > epoch 3 updates 2900 loss: 0.2882 lr: 0.0045 gnorm: 0.081604/10/2020 01:36:31 > epoch 3 updates 2950 loss: 0.2545 lr: 0.0045 gnorm: 0.086504/10/2020 01:37:36 
-04/10/2020 01:37:36 train loss: 0.2860 lr: 0.0045 gnorm: 0.0883 clip: 0
-04/10/2020 01:37:36 valid loss: 0.5009 inference_time: 363.4401 auc: 0.8809 f1: 0.7911 acc: 0.7634 cost_time: 61.6082 [BEST: 0.7850]
-04/10/2020 01:37:53 > epoch 3 updates 3000 loss: 0.4024 lr: 0.0045 gnorm: 0.168604/10/2020 01:38:44 > epoch 3 updates 3050 loss: 0.3148 lr: 0.0043 gnorm: 0.091904/10/2020 01:39:34 > epoch 3 updates 3100 loss: 0.2847 lr: 0.0043 gnorm: 0.083604/10/2020 01:40:48 
-04/10/2020 01:40:48 train loss: 0.3336 lr: 0.0044 gnorm: 0.1144 clip: 0
-04/10/2020 01:40:48 valid loss: 0.4692 inference_time: 371.4075 auc: 0.8860 f1: 0.8016 acc: 0.7831 cost_time: 64.8062 [BEST: 0.7850]
-04/10/2020 01:40:57 > epoch 3 updates 3150 loss: 0.3324 lr: 0.0043 gnorm: 0.151304/10/2020 01:41:47 > epoch 3 updates 3200 loss: 0.3458 lr: 0.0043 gnorm: 0.135804/10/2020 01:42:38 > epoch 3 updates 3250 loss: 0.3242 lr: 0.0043 gnorm: 0.0932[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:44:00 
-04/10/2020 01:44:00 train loss: 0.3341 lr: 0.0043 gnorm: 0.1266 clip: 0
-04/10/2020 01:44:00 valid loss: 0.4519 inference_time: 377.6695 auc: 0.8910 f1: 0.8050 acc: 0.7878 cost_time: 68.0054 [NEW BEST]
-04/10/2020 01:44:03 > epoch 3 updates 3300 loss: 0.3509 lr: 0.0043 gnorm: 0.109604/10/2020 01:44:53 > epoch 3 updates 3350 loss: 0.3470 lr: 0.0043 gnorm: 0.166704/10/2020 01:45:44 > epoch 3 updates 3400 loss: 0.3207 lr: 0.0043 gnorm: 0.144104/10/2020 01:46:33 > epoch 3 updates 3450 loss: 0.3060 lr: 0.0043 gnorm: 0.1614[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:47:11 
-04/10/2020 01:47:11 train loss: 0.3310 lr: 0.0043 gnorm: 0.1456 clip: 0
-04/10/2020 01:47:11 valid loss: 0.4500 inference_time: 377.4199 auc: 0.8872 f1: 0.8037 acc: 0.7942 cost_time: 71.1889 [NEW BEST]
-04/10/2020 01:47:57 > epoch 3 updates 3500 loss: 0.2486 lr: 0.0043 gnorm: 0.082904/10/2020 01:48:48 > epoch 3 updates 3550 loss: 0.2887 lr: 0.0043 gnorm: 0.091604/10/2020 01:49:33 
-04/10/2020 01:49:33 train loss: 0.2688 lr: 0.0043 gnorm: 0.0872 clip: 0
-04/10/2020 01:49:33 valid loss: 0.4628 inference_time: 368.7976 auc: 0.8885 f1: 0.8022 acc: 0.7820 cost_time: 73.5700 [BEST: 0.7942]
-04/10/2020 01:49:33 
-[trainer.py:49]  epoch=4/40, experiment_times=3
-04/10/2020 01:49:33 Epoch: 4
-04/10/2020 01:50:11 > epoch 4 updates 3600 loss: 0.2508 lr: 0.0043 gnorm: 0.0810[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-3/checkpoint
-04/10/2020 01:50:56 
-04/10/2020 01:50:56 train loss: 0.2508 lr: 0.0043 gnorm: 0.0810 clip: 0
-04/10/2020 01:50:56 valid loss: 0.4408 inference_time: 381.9940 auc: 0.8947 f1: 0.8122 acc: 0.7986 cost_time: 74.9373 [NEW BEST]
-04/10/2020 01:51:35 > epoch 4 updates 3650 loss: 0.2643 lr: 0.0043 gnorm: 0.118304/10/2020 01:52:26 > epoch 4 updates 3700 loss: 0.2787 lr: 0.0043 gnorm: 0.129004/10/2020 01:53:16 > epoch 4 updates 3750 loss: 0.2539 lr: 0.0043 gnorm: 0.118104/10/2020 01:54:07 
-04/10/2020 01:54:07 train loss: 0.2656 lr: 0.0043 gnorm: 0.1218 clip: 0
-04/10/2020 01:54:07 valid loss: 0.4778 inference_time: 366.1558 auc: 0.8889 f1: 0.8026 acc: 0.7798 cost_time: 78.1345 [BEST: 0.7986]
-04/10/2020 01:54:40 > epoch 4 updates 3800 loss: 0.2215 lr: 0.0043 gnorm: 0.082104/10/2020 01:55:32 > epoch 4 updates 3850 loss: 0.2968 lr: 0.0043 gnorm: 0.089804/10/2020 01:56:22 > epoch 4 updates 3900 loss: 0.3141 lr: 0.0043 gnorm: 0.137504/10/2020 01:57:21 
-04/10/2020 01:57:21 train loss: 0.2778 lr: 0.0043 gnorm: 0.1033 clip: 0
-04/10/2020 01:57:21 valid loss: 0.4606 inference_time: 379.3429 auc: 0.8869 f1: 0.8029 acc: 0.7871 cost_time: 81.3554 [BEST: 0.7986]
-04/10/2020 01:57:46 > epoch 4 updates 3950 loss: 0.3453 lr: 0.0043 gnorm: 0.150204/10/2020 01:58:37 > epoch 4 updates 4000 loss: 0.3147 lr: 0.0043 gnorm: 0.091804/10/2020 01:59:29 > epoch 4 updates 4050 loss: 0.2598 lr: 0.0041 gnorm: 0.084304/10/2020 02:00:34 
-04/10/2020 02:00:34 train loss: 0.3063 lr: 0.0042 gnorm: 0.1085 clip: 0
-04/10/2020 02:00:34 valid loss: 0.4421 inference_time: 367.8850 auc: 0.8919 f1: 0.8089 acc: 0.7937 cost_time: 84.5770 [BEST: 0.7986]
-04/10/2020 02:00:51 > epoch 4 updates 4100 loss: 0.2348 lr: 0.0041 gnorm: 0.084404/10/2020 02:01:42 > epoch 4 updates 4150 loss: 0.2576 lr: 0.0041 gnorm: 0.124004/10/2020 02:02:32 > epoch 4 updates 4200 loss: 0.2962 lr: 0.0041 gnorm: 0.084704/10/2020 02:03:45 
-04/10/2020 02:03:45 train loss: 0.2631 lr: 0.0041 gnorm: 0.0977 clip: 0
-04/10/2020 02:03:45 valid loss: 0.4543 inference_time: 374.8378 auc: 0.8986 f1: 0.8102 acc: 0.7912 cost_time: 87.7592 [BEST: 0.7986]
-04/10/2020 02:03:56 > epoch 4 updates 4250 loss: 0.2602 lr: 0.0041 gnorm: 0.097504/10/2020 02:04:46 > epoch 4 updates 4300 loss: 0.3014 lr: 0.0041 gnorm: 0.080104/10/2020 02:05:36 > epoch 4 updates 4350 loss: 0.3725 lr: 0.0041 gnorm: 0.168304/10/2020 02:06:55 
-04/10/2020 02:06:55 train loss: 0.3117 lr: 0.0041 gnorm: 0.1155 clip: 0
-04/10/2020 02:06:55 valid loss: 0.4604 inference_time: 378.7341 auc: 0.8911 f1: 0.8047 acc: 0.7847 cost_time: 90.9330 [BEST: 0.7986]
-04/10/2020 02:06:59 > epoch 4 updates 4400 loss: 0.3413 lr: 0.0041 gnorm: 0.139204/10/2020 02:07:50 > epoch 4 updates 4450 loss: 0.2778 lr: 0.0041 gnorm: 0.098204/10/2020 02:08:41 > epoch 4 updates 4500 loss: 0.2420 lr: 0.0041 gnorm: 0.079004/10/2020 02:09:31 > epoch 4 updates 4550 loss: 0.2647 lr: 0.0041 gnorm: 0.109704/10/2020 02:10:08 
-04/10/2020 02:10:08 train loss: 0.2811 lr: 0.0041 gnorm: 0.1064 clip: 0
-04/10/2020 02:10:08 valid loss: 0.4586 inference_time: 375.9330 auc: 0.8938 f1: 0.8081 acc: 0.7894 cost_time: 94.1394 [BEST: 0.7986]
-04/10/2020 02:10:55 > epoch 4 updates 4600 loss: 0.2916 lr: 0.0041 gnorm: 0.098004/10/2020 02:11:45 > epoch 4 updates 4650 loss: 0.3192 lr: 0.0041 gnorm: 0.091204/10/2020 02:12:36 > epoch 4 updates 4700 loss: 0.2683 lr: 0.0041 gnorm: 0.089204/10/2020 02:13:19 
-04/10/2020 02:13:19 train loss: 0.2930 lr: 0.0041 gnorm: 0.0928 clip: 0
-04/10/2020 02:13:19 valid loss: 0.4364 inference_time: 370.6755 auc: 0.8905 f1: 0.8071 acc: 0.7978 cost_time: 97.3247 [BEST: 0.7986]
-04/10/2020 02:14:00 > epoch 4 updates 4750 loss: 0.3429 lr: 0.0041 gnorm: 0.133004/10/2020 02:14:35 
-04/10/2020 02:14:35 train loss: 0.3429 lr: 0.0041 gnorm: 0.1330 clip: 0
-04/10/2020 02:14:35 valid loss: 0.4626 inference_time: 380.4057 auc: 0.8929 f1: 0.8052 acc: 0.7867 cost_time: 98.6014 [BEST: 0.7986]
-04/10/2020 02:14:35 
-[trainer.py:49]  epoch=5/40, experiment_times=3
-04/10/2020 02:14:35 Epoch: 5
-04/10/2020 02:15:25 > epoch 5 updates 4800 loss: 0.1951 lr: 0.0041 gnorm: 0.084904/10/2020 02:16:15 > epoch 5 updates 4850 loss: 0.2602 lr: 0.0041 gnorm: 0.105104/10/2020 02:17:05 
-04/10/2020 02:17:05 train loss: 0.2278 lr: 0.0041 gnorm: 0.0951 clip: 0
-04/10/2020 02:17:05 valid loss: 0.4631 inference_time: 379.3428 auc: 0.8919 f1: 0.8103 acc: 0.7977 cost_time: 101.1002 [BEST: 0.7986]
-04/10/2020 02:17:39 > epoch 5 updates 4900 loss: 0.2787 lr: 0.0041 gnorm: 0.097204/10/2020 02:18:29 > epoch 5 updates 4950 loss: 0.2866 lr: 0.0041 gnorm: 0.118804/10/2020 02:19:19 > epoch 5 updates 5000 loss: 0.2314 lr: 0.0041 gnorm: 0.100204/10/2020 02:20:16 
-04/10/2020 02:20:16 train loss: 0.2654 lr: 0.0041 gnorm: 0.1054 clip: 0
-04/10/2020 02:20:16 valid loss: 0.4749 inference_time: 387.4712 auc: 0.8950 f1: 0.8068 acc: 0.7840 cost_time: 104.2870 [BEST: 0.7986]
-04/10/2020 02:20:43 > epoch 5 updates 5050 loss: 0.2441 lr: 0.0039 gnorm: 0.080804/10/2020 02:21:33 > epoch 5 updates 5100 loss: 0.2931 lr: 0.0039 gnorm: 0.115104/10/2020 02:22:23 > epoch 5 updates 5150 loss: 0.2830 lr: 0.0039 gnorm: 0.091504/10/2020 02:23:28 
-04/10/2020 02:23:28 train loss: 0.2735 lr: 0.0039 gnorm: 0.0958 clip: 0
-04/10/2020 02:23:28 valid loss: 0.4730 inference_time: 377.9317 auc: 0.8958 f1: 0.8098 acc: 0.7875 cost_time: 107.4753 [BEST: 0.7986]
-[trainer.py:72]  Tolerance reached. Training is stopped early.
-04/10/2020 02:23:28 
-04/10/2020 02:23:28 Training complete.
-04/10/2020 02:23:28 best dev score 0.798556021035743 at step 3611 (epoch 4).
-04/10/2020 02:23:28 best eval stats [loss: 0.4408 inference_time: 381.9940 auc: 0.8947 f1: 0.8122 acc: 0.7986 cost_time: 74.9373]
-04/10/2020 02:23:28 Training time: 1:47:28.
-[train.py:38]  experiment_times=4/5, best_experiment_times=3, ave_test_score=0.793130, max_test_score=0.798556
-[train.py:47]  eval_score_list: [0.7923611730100723, 0.789954541402977, 0.7916480969783403, 0.798556021035743] 3
-[train.py:25]  args.summary_dir: /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4
-04/10/2020 02:23:28 train (338053) | test (22438)
-04/10/2020 02:23:28 #classes: 2; #vocab: 5012
-[model.py:60]  <class 'list'> devices: ['/device:CPU:0'] splits: 1
-04/10/2020 02:23:30 trainable params: 4,127,205
-04/10/2020 02:23:30 trainable params (exclude embeddings): 4,127,205
-04/10/2020 02:23:30 { '__index__': 4,
-  '__parents__': ['default', 'chat_courpus'],
-  '__repeat__': 5,
-  'alignment': 'identity',
-  'batch_size': 256,
-  'beta1': 0.9,
-  'beta2': 0.999,
-  'blocks': 1,
-  'connection': 'aug',
-  'data_dir': '/home/cloudminds/Mywork/corpus/Chinese_QA/chat_courpus',
-  'dropout_keep_prob': 0.8,
-  'early_stopping': 1563,
-  'embedding_dim': 300,
-  'embedding_mode': 'freq',
-  'enc_layers': 3,
-  'epochs': 40,
-  'eval_epoch': True,
-  'eval_file': 'test',
-  'eval_per_samples': 6400,
-  'eval_per_samples_warmup': 40000,
-  'eval_per_updates': 25,
-  'eval_per_updates_warmup': 157,
-  'eval_warmup_samples': 0,
-  'eval_warmup_steps': 0,
-  'fusion': 'full',
-  'grad_clipping': 5,
-  'hidden_size': 400,
-  'kernel_size': 3,
-  'language': 'chinese',
-  'log_file': 'log.txt',
-  'log_per_samples': 1280,
-  'log_per_updates': 5,
-  'lower_case': True,
-  'lr': 0.005,
-  'lr_decay_rate': 0.95,
-  'lr_decay_samples': 256000,
-  'lr_decay_steps': 1000,
-  'lr_warmup_samples': 0,
-  'lr_warmup_steps': 0,
-  'max_checkpoints': 1,
-  'max_len': 20,
-  'max_loss': 999.0,
-  'max_vocab': 999999,
-  'metric': 'acc',
-  'min_df': 5,
-  'min_len': 1,
-  'min_lr': 6e-05,
-  'min_samples': 0,
-  'min_steps': 0,
-  'multi_gpu': False,
-  'name': 'benchmark-4',
-  'num_classes': 2,
-  'num_vocab': 5012,
-  'output_dir': 'models/chat_courpus',
-  'padding': 0,
-  'prediction': 'full',
-  'pretrained_embeddings': '/home/cloudminds/Word2Vector/Chinese/charVector_DbqaSmpLog',
-  'save': True,
-  'save_all': False,
-  'seed': None,
-  'sort_by_len': False,
-  'summary_dir': '/home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4',
-  'tensorboard': True,
-  'tolerance_samples': 400000,
-  'watch_metrics': ['auc', 'f1', 'acc']}
-04/10/2020 02:23:33 setup complete: 0:00:05s.
-[trainer.py:45]  eval_per_updates= 157
-[trainer.py:49]  epoch=1/40, experiment_times=4
-04/10/2020 02:23:33 Epoch: 1
-04/10/2020 02:24:25 > epoch 1 updates 50 loss: 0.5366 lr: 0.0050 gnorm: 0.364904/10/2020 02:25:15 > epoch 1 updates 100 loss: 0.4327 lr: 0.0050 gnorm: 0.782804/10/2020 02:26:06 > epoch 1 updates 150 loss: 0.4489 lr: 0.0050 gnorm: 0.1849[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 02:26:46 
-04/10/2020 02:26:46 train loss: 0.4724 lr: 0.0050 gnorm: 0.4436 clip: 0
-04/10/2020 02:26:46 valid loss: 0.5601 inference_time: 378.4525 auc: 0.8053 f1: 0.7366 acc: 0.7141 cost_time: 3.3025 [NEW BEST]
-04/10/2020 02:27:30 > epoch 1 updates 200 loss: 0.4554 lr: 0.0050 gnorm: 0.234104/10/2020 02:28:21 > epoch 1 updates 250 loss: 0.4494 lr: 0.0050 gnorm: 0.270404/10/2020 02:29:13 > epoch 1 updates 300 loss: 0.4355 lr: 0.0050 gnorm: 0.3645[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 02:30:00 
-04/10/2020 02:30:00 train loss: 0.4467 lr: 0.0050 gnorm: 0.2901 clip: 0
-04/10/2020 02:30:00 valid loss: 0.5609 inference_time: 368.9928 auc: 0.8191 f1: 0.7500 acc: 0.7228 cost_time: 6.5286 [NEW BEST]
-04/10/2020 02:30:36 > epoch 1 updates 350 loss: 0.3735 lr: 0.0050 gnorm: 0.180204/10/2020 02:31:27 > epoch 1 updates 400 loss: 0.3740 lr: 0.0050 gnorm: 0.215904/10/2020 02:32:18 > epoch 1 updates 450 loss: 0.3678 lr: 0.0050 gnorm: 0.1630[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 02:33:12 
-04/10/2020 02:33:12 train loss: 0.3717 lr: 0.0050 gnorm: 0.1863 clip: 0
-04/10/2020 02:33:12 valid loss: 0.5285 inference_time: 372.4330 auc: 0.8283 f1: 0.7451 acc: 0.7474 cost_time: 9.7292 [NEW BEST]
-04/10/2020 02:33:41 > epoch 1 updates 500 loss: 0.3280 lr: 0.0050 gnorm: 0.278304/10/2020 02:34:31 > epoch 1 updates 550 loss: 0.3997 lr: 0.0050 gnorm: 0.135204/10/2020 02:35:23 > epoch 1 updates 600 loss: 0.4077 lr: 0.0050 gnorm: 0.160304/10/2020 02:36:24 
-04/10/2020 02:36:24 train loss: 0.3787 lr: 0.0050 gnorm: 0.1909 clip: 0
-04/10/2020 02:36:24 valid loss: 0.5215 inference_time: 375.0179 auc: 0.8319 f1: 0.7560 acc: 0.7368 cost_time: 12.9391 [BEST: 0.7474]
-04/10/2020 02:36:47 > epoch 1 updates 650 loss: 0.3732 lr: 0.0050 gnorm: 0.155504/10/2020 02:37:37 > epoch 1 updates 700 loss: 0.3469 lr: 0.0050 gnorm: 0.141304/10/2020 02:38:27 > epoch 1 updates 750 loss: 0.3887 lr: 0.0050 gnorm: 0.2351[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 02:39:35 
-04/10/2020 02:39:35 train loss: 0.3697 lr: 0.0050 gnorm: 0.1776 clip: 0
-04/10/2020 02:39:35 valid loss: 0.5046 inference_time: 374.1582 auc: 0.8390 f1: 0.7431 acc: 0.7572 cost_time: 16.1179 [NEW BEST]
-04/10/2020 02:39:50 > epoch 1 updates 800 loss: 0.3761 lr: 0.0050 gnorm: 0.167704/10/2020 02:40:40 > epoch 1 updates 850 loss: 0.4390 lr: 0.0050 gnorm: 0.171304/10/2020 02:41:30 > epoch 1 updates 900 loss: 0.3908 lr: 0.0050 gnorm: 0.184804/10/2020 02:42:46 
-04/10/2020 02:42:46 train loss: 0.4020 lr: 0.0050 gnorm: 0.1746 clip: 0
-04/10/2020 02:42:46 valid loss: 0.5925 inference_time: 377.0962 auc: 0.8471 f1: 0.7592 acc: 0.7111 cost_time: 19.3006 [BEST: 0.7572]
-04/10/2020 02:42:54 > epoch 1 updates 950 loss: 0.3609 lr: 0.0050 gnorm: 0.106504/10/2020 02:43:45 > epoch 1 updates 1000 loss: 0.3722 lr: 0.0050 gnorm: 0.148804/10/2020 02:44:35 > epoch 1 updates 1050 loss: 0.4030 lr: 0.0047 gnorm: 0.136604/10/2020 02:45:57 
-04/10/2020 02:45:57 train loss: 0.3788 lr: 0.0049 gnorm: 0.1307 clip: 0
-04/10/2020 02:45:57 valid loss: 0.5121 inference_time: 365.1201 auc: 0.8529 f1: 0.7769 acc: 0.7568 cost_time: 22.4846 [BEST: 0.7572]
-04/10/2020 02:45:58 > epoch 1 updates 1100 loss: 0.3351 lr: 0.0047 gnorm: 0.195904/10/2020 02:46:49 > epoch 1 updates 1150 loss: 0.3385 lr: 0.0047 gnorm: 0.1589[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 02:48:00 
-04/10/2020 02:48:00 train loss: 0.3368 lr: 0.0047 gnorm: 0.1773 clip: 0
-04/10/2020 02:48:00 valid loss: 0.5100 inference_time: 379.3578 auc: 0.8525 f1: 0.7733 acc: 0.7596 cost_time: 24.5256 [NEW BEST]
-04/10/2020 02:48:00 
-[trainer.py:49]  epoch=2/40, experiment_times=4
-04/10/2020 02:48:00 Epoch: 2
-04/10/2020 02:48:13 > epoch 2 updates 1200 loss: 0.4056 lr: 0.0047 gnorm: 0.210804/10/2020 02:49:03 > epoch 2 updates 1250 loss: 0.3418 lr: 0.0047 gnorm: 0.116104/10/2020 02:49:42 
-04/10/2020 02:49:42 train loss: 0.3736 lr: 0.0047 gnorm: 0.1632 clip: 0
-04/10/2020 02:49:42 valid loss: 0.5084 inference_time: 370.4351 auc: 0.8530 f1: 0.7739 acc: 0.7560 cost_time: 26.2344 [BEST: 0.7596]
-04/10/2020 02:50:26 > epoch 2 updates 1300 loss: 0.3408 lr: 0.0047 gnorm: 0.096204/10/2020 02:51:17 > epoch 2 updates 1350 loss: 0.3723 lr: 0.0047 gnorm: 0.083504/10/2020 02:52:06 > epoch 2 updates 1400 loss: 0.3223 lr: 0.0047 gnorm: 0.154104/10/2020 02:52:52 
-04/10/2020 02:52:52 train loss: 0.3450 lr: 0.0047 gnorm: 0.1114 clip: 0
-04/10/2020 02:52:52 valid loss: 0.5115 inference_time: 372.5525 auc: 0.8608 f1: 0.7785 acc: 0.7517 cost_time: 29.4024 [BEST: 0.7596]
-04/10/2020 02:53:29 > epoch 2 updates 1450 loss: 0.3693 lr: 0.0047 gnorm: 0.181904/10/2020 02:54:19 > epoch 2 updates 1500 loss: 0.4096 lr: 0.0047 gnorm: 0.194104/10/2020 02:55:09 > epoch 2 updates 1550 loss: 0.3471 lr: 0.0047 gnorm: 0.190304/10/2020 02:56:02 
-04/10/2020 02:56:02 train loss: 0.3753 lr: 0.0047 gnorm: 0.1888 clip: 0
-04/10/2020 02:56:02 valid loss: 0.5492 inference_time: 372.3062 auc: 0.8526 f1: 0.7722 acc: 0.7428 cost_time: 32.5634 [BEST: 0.7596]
-04/10/2020 02:56:32 > epoch 2 updates 1600 loss: 0.3506 lr: 0.0047 gnorm: 0.148804/10/2020 02:57:22 > epoch 2 updates 1650 loss: 0.3364 lr: 0.0047 gnorm: 0.104304/10/2020 02:58:12 > epoch 2 updates 1700 loss: 0.3099 lr: 0.0047 gnorm: 0.0932[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 02:59:12 
-04/10/2020 02:59:12 train loss: 0.3322 lr: 0.0047 gnorm: 0.1153 clip: 0
-04/10/2020 02:59:12 valid loss: 0.4966 inference_time: 364.6156 auc: 0.8613 f1: 0.7811 acc: 0.7602 cost_time: 35.7358 [NEW BEST]
-04/10/2020 02:59:35 > epoch 2 updates 1750 loss: 0.2868 lr: 0.0047 gnorm: 0.090404/10/2020 03:00:26 > epoch 2 updates 1800 loss: 0.3240 lr: 0.0047 gnorm: 0.083504/10/2020 03:01:17 > epoch 2 updates 1850 loss: 0.3100 lr: 0.0047 gnorm: 0.2032[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 03:02:24 
-04/10/2020 03:02:24 train loss: 0.3070 lr: 0.0047 gnorm: 0.1261 clip: 0
-04/10/2020 03:02:24 valid loss: 0.5134 inference_time: 369.8393 auc: 0.8606 f1: 0.7832 acc: 0.7616 cost_time: 38.9286 [NEW BEST]
-04/10/2020 03:02:39 > epoch 2 updates 1900 loss: 0.3620 lr: 0.0047 gnorm: 0.109604/10/2020 03:03:31 > epoch 2 updates 1950 loss: 0.4117 lr: 0.0047 gnorm: 0.251604/10/2020 03:04:21 > epoch 2 updates 2000 loss: 0.3919 lr: 0.0047 gnorm: 0.1637[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 03:05:35 
-04/10/2020 03:05:35 train loss: 0.3887 lr: 0.0047 gnorm: 0.1751 clip: 0
-04/10/2020 03:05:35 valid loss: 0.4859 inference_time: 378.4532 auc: 0.8708 f1: 0.7884 acc: 0.7649 cost_time: 42.1222 [NEW BEST]
-04/10/2020 03:05:44 > epoch 2 updates 2050 loss: 0.3369 lr: 0.0045 gnorm: 0.080104/10/2020 03:06:35 > epoch 2 updates 2100 loss: 0.2778 lr: 0.0045 gnorm: 0.140604/10/2020 03:07:26 > epoch 2 updates 2150 loss: 0.3586 lr: 0.0045 gnorm: 0.1168[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 03:08:45 
-04/10/2020 03:08:45 train loss: 0.3245 lr: 0.0045 gnorm: 0.1126 clip: 0
-04/10/2020 03:08:45 valid loss: 0.4818 inference_time: 361.5135 auc: 0.8678 f1: 0.7879 acc: 0.7716 cost_time: 45.2898 [NEW BEST]
-04/10/2020 03:08:47 > epoch 2 updates 2200 loss: 0.3689 lr: 0.0045 gnorm: 0.184304/10/2020 03:09:38 > epoch 2 updates 2250 loss: 0.3385 lr: 0.0045 gnorm: 0.089104/10/2020 03:10:29 > epoch 2 updates 2300 loss: 0.3061 lr: 0.0045 gnorm: 0.089504/10/2020 03:11:20 > epoch 2 updates 2350 loss: 0.3936 lr: 0.0045 gnorm: 0.134104/10/2020 03:11:59 
-04/10/2020 03:11:59 train loss: 0.3518 lr: 0.0045 gnorm: 0.1241 clip: 0
-04/10/2020 03:11:59 valid loss: 0.5147 inference_time: 381.7195 auc: 0.8605 f1: 0.7787 acc: 0.7516 cost_time: 48.5143 [BEST: 0.7716]
-04/10/2020 03:12:51 
-04/10/2020 03:12:51 valid loss: 0.4777 inference_time: 362.4218 auc: 0.8728 f1: 0.7907 acc: 0.7703 cost_time: 49.3815 [BEST: 0.7716]
-04/10/2020 03:12:51 
-[trainer.py:49]  epoch=3/40, experiment_times=4
-04/10/2020 03:12:51 Epoch: 3
-04/10/2020 03:13:16 > epoch 3 updates 2400 loss: 0.2920 lr: 0.0045 gnorm: 0.102704/10/2020 03:14:06 > epoch 3 updates 2450 loss: 0.3215 lr: 0.0045 gnorm: 0.114904/10/2020 03:14:56 > epoch 3 updates 2500 loss: 0.2942 lr: 0.0045 gnorm: 0.1084[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 03:15:40 
-04/10/2020 03:15:40 train loss: 0.3026 lr: 0.0045 gnorm: 0.1087 clip: 0
-04/10/2020 03:15:40 valid loss: 0.4992 inference_time: 359.6278 auc: 0.8692 f1: 0.7896 acc: 0.7719 cost_time: 52.1929 [NEW BEST]
-04/10/2020 03:16:18 > epoch 3 updates 2550 loss: 0.3695 lr: 0.0045 gnorm: 0.132304/10/2020 03:17:08 > epoch 3 updates 2600 loss: 0.2915 lr: 0.0045 gnorm: 0.139804/10/2020 03:17:56 > epoch 3 updates 2650 loss: 0.3772 lr: 0.0045 gnorm: 0.224804/10/2020 03:18:48 
-04/10/2020 03:18:48 train loss: 0.3461 lr: 0.0045 gnorm: 0.1659 clip: 0
-04/10/2020 03:18:48 valid loss: 0.5114 inference_time: 369.6044 auc: 0.8717 f1: 0.7850 acc: 0.7531 cost_time: 55.3276 [BEST: 0.7719]
-04/10/2020 03:19:18 > epoch 3 updates 2700 loss: 0.3313 lr: 0.0045 gnorm: 0.098604/10/2020 03:20:08 > epoch 3 updates 2750 loss: 0.3274 lr: 0.0045 gnorm: 0.107704/10/2020 03:20:59 > epoch 3 updates 2800 loss: 0.3751 lr: 0.0045 gnorm: 0.081404/10/2020 03:21:59 
-04/10/2020 03:21:59 train loss: 0.3447 lr: 0.0045 gnorm: 0.0958 clip: 0
-04/10/2020 03:21:59 valid loss: 0.4933 inference_time: 374.1955 auc: 0.8722 f1: 0.7907 acc: 0.7707 cost_time: 58.5125 [BEST: 0.7719]
-04/10/2020 03:22:22 > epoch 3 updates 2850 loss: 0.3546 lr: 0.0045 gnorm: 0.167004/10/2020 03:23:12 > epoch 3 updates 2900 loss: 0.3131 lr: 0.0045 gnorm: 0.121704/10/2020 03:24:03 > epoch 3 updates 2950 loss: 0.2837 lr: 0.0045 gnorm: 0.086504/10/2020 03:25:09 
-04/10/2020 03:25:09 train loss: 0.3169 lr: 0.0045 gnorm: 0.1248 clip: 0
-04/10/2020 03:25:09 valid loss: 0.4933 inference_time: 373.8650 auc: 0.8727 f1: 0.7915 acc: 0.7713 cost_time: 61.6803 [BEST: 0.7719]
-04/10/2020 03:25:26 > epoch 3 updates 3000 loss: 0.3509 lr: 0.0045 gnorm: 0.168704/10/2020 03:26:16 > epoch 3 updates 3050 loss: 0.3582 lr: 0.0043 gnorm: 0.110104/10/2020 03:27:06 > epoch 3 updates 3100 loss: 0.2933 lr: 0.0043 gnorm: 0.0923[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 03:28:20 
-04/10/2020 03:28:20 train loss: 0.3339 lr: 0.0044 gnorm: 0.1234 clip: 0
-04/10/2020 03:28:20 valid loss: 0.4685 inference_time: 373.3739 auc: 0.8776 f1: 0.7952 acc: 0.7786 cost_time: 64.8635 [NEW BEST]
-04/10/2020 03:28:30 > epoch 3 updates 3150 loss: 0.3474 lr: 0.0043 gnorm: 0.151204/10/2020 03:29:20 > epoch 3 updates 3200 loss: 0.3017 lr: 0.0043 gnorm: 0.119104/10/2020 03:30:10 > epoch 3 updates 3250 loss: 0.3330 lr: 0.0043 gnorm: 0.1387[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 03:31:31 
-04/10/2020 03:31:31 train loss: 0.3273 lr: 0.0043 gnorm: 0.1363 clip: 0
-04/10/2020 03:31:31 valid loss: 0.4398 inference_time: 374.2986 auc: 0.8835 f1: 0.8009 acc: 0.7906 cost_time: 68.0472 [NEW BEST]
-04/10/2020 03:31:34 > epoch 3 updates 3300 loss: 0.3457 lr: 0.0043 gnorm: 0.101404/10/2020 03:32:24 > epoch 3 updates 3350 loss: 0.3285 lr: 0.0043 gnorm: 0.164204/10/2020 03:33:15 > epoch 3 updates 3400 loss: 0.2812 lr: 0.0043 gnorm: 0.115404/10/2020 03:34:05 > epoch 3 updates 3450 loss: 0.3090 lr: 0.0043 gnorm: 0.081004/10/2020 03:34:42 
-04/10/2020 03:34:42 train loss: 0.3159 lr: 0.0043 gnorm: 0.1153 clip: 0
-04/10/2020 03:34:42 valid loss: 0.4905 inference_time: 379.1570 auc: 0.8764 f1: 0.7884 acc: 0.7625 cost_time: 71.2399 [BEST: 0.7906]
-04/10/2020 03:35:28 > epoch 3 updates 3500 loss: 0.3734 lr: 0.0043 gnorm: 0.131204/10/2020 03:36:19 > epoch 3 updates 3550 loss: 0.3666 lr: 0.0043 gnorm: 0.148304/10/2020 03:37:04 
-04/10/2020 03:37:04 train loss: 0.3700 lr: 0.0043 gnorm: 0.1398 clip: 0
-04/10/2020 03:37:04 valid loss: 0.4781 inference_time: 361.8456 auc: 0.8776 f1: 0.7951 acc: 0.7779 cost_time: 73.6022 [BEST: 0.7906]
-04/10/2020 03:37:04 
-[trainer.py:49]  epoch=4/40, experiment_times=4
-04/10/2020 03:37:04 Epoch: 4
-04/10/2020 03:37:42 > epoch 4 updates 3600 loss: 0.3525 lr: 0.0043 gnorm: 0.099304/10/2020 03:38:26 
-04/10/2020 03:38:26 train loss: 0.3525 lr: 0.0043 gnorm: 0.0993 clip: 0
-04/10/2020 03:38:26 valid loss: 0.4747 inference_time: 374.3128 auc: 0.8851 f1: 0.7985 acc: 0.7764 cost_time: 74.9625 [BEST: 0.7906]
-04/10/2020 03:39:05 > epoch 4 updates 3650 loss: 0.2919 lr: 0.0043 gnorm: 0.123404/10/2020 03:39:54 > epoch 4 updates 3700 loss: 0.3553 lr: 0.0043 gnorm: 0.094904/10/2020 03:40:44 > epoch 4 updates 3750 loss: 0.2854 lr: 0.0043 gnorm: 0.128004/10/2020 03:41:35 
-04/10/2020 03:41:35 train loss: 0.3109 lr: 0.0043 gnorm: 0.1154 clip: 0
-04/10/2020 03:41:35 valid loss: 0.5011 inference_time: 370.2183 auc: 0.8845 f1: 0.7945 acc: 0.7683 cost_time: 78.1158 [BEST: 0.7906]
-04/10/2020 03:42:07 > epoch 4 updates 3800 loss: 0.2972 lr: 0.0043 gnorm: 0.084004/10/2020 03:42:57 > epoch 4 updates 3850 loss: 0.2604 lr: 0.0043 gnorm: 0.078004/10/2020 03:43:47 > epoch 4 updates 3900 loss: 0.2927 lr: 0.0043 gnorm: 0.118504/10/2020 03:44:44 
-04/10/2020 03:44:44 train loss: 0.2834 lr: 0.0043 gnorm: 0.0936 clip: 0
-04/10/2020 03:44:44 valid loss: 0.5001 inference_time: 367.1190 auc: 0.8871 f1: 0.7937 acc: 0.7622 cost_time: 81.2699 [BEST: 0.7906]
-04/10/2020 03:45:09 > epoch 4 updates 3950 loss: 0.2867 lr: 0.0043 gnorm: 0.110604/10/2020 03:45:59 > epoch 4 updates 4000 loss: 0.2810 lr: 0.0043 gnorm: 0.068004/10/2020 03:46:49 > epoch 4 updates 4050 loss: 0.3144 lr: 0.0041 gnorm: 0.083104/10/2020 03:47:54 
-04/10/2020 03:47:54 train loss: 0.2941 lr: 0.0042 gnorm: 0.0872 clip: 0
-04/10/2020 03:47:54 valid loss: 0.4630 inference_time: 372.7812 auc: 0.8870 f1: 0.8036 acc: 0.7842 cost_time: 84.4283 [BEST: 0.7906]
-04/10/2020 03:48:12 > epoch 4 updates 4100 loss: 0.2976 lr: 0.0041 gnorm: 0.100204/10/2020 03:49:02 > epoch 4 updates 4150 loss: 0.3105 lr: 0.0041 gnorm: 0.074104/10/2020 03:49:52 > epoch 4 updates 4200 loss: 0.2470 lr: 0.0041 gnorm: 0.079104/10/2020 03:51:04 
-04/10/2020 03:51:04 train loss: 0.2849 lr: 0.0041 gnorm: 0.0844 clip: 0
-04/10/2020 03:51:04 valid loss: 0.4746 inference_time: 371.0724 auc: 0.8768 f1: 0.7942 acc: 0.7779 cost_time: 87.5976 [BEST: 0.7906]
-04/10/2020 03:51:15 > epoch 4 updates 4250 loss: 0.2890 lr: 0.0041 gnorm: 0.071304/10/2020 03:52:06 > epoch 4 updates 4300 loss: 0.3016 lr: 0.0041 gnorm: 0.121304/10/2020 03:52:57 > epoch 4 updates 4350 loss: 0.3417 lr: 0.0041 gnorm: 0.129904/10/2020 03:54:17 
-04/10/2020 03:54:17 train loss: 0.3110 lr: 0.0041 gnorm: 0.1077 clip: 0
-04/10/2020 03:54:17 valid loss: 0.4622 inference_time: 382.0782 auc: 0.8864 f1: 0.7997 acc: 0.7815 cost_time: 90.8099 [BEST: 0.7906]
-04/10/2020 03:54:20 > epoch 4 updates 4400 loss: 0.3053 lr: 0.0041 gnorm: 0.136304/10/2020 03:55:11 > epoch 4 updates 4450 loss: 0.3394 lr: 0.0041 gnorm: 0.074204/10/2020 03:56:02 > epoch 4 updates 4500 loss: 0.2978 lr: 0.0041 gnorm: 0.077404/10/2020 03:56:51 > epoch 4 updates 4550 loss: 0.3548 lr: 0.0041 gnorm: 0.109404/10/2020 03:57:27 
-04/10/2020 03:57:27 train loss: 0.3245 lr: 0.0041 gnorm: 0.0992 clip: 0
-04/10/2020 03:57:27 valid loss: 0.4612 inference_time: 378.3373 auc: 0.8887 f1: 0.7988 acc: 0.7740 cost_time: 93.9908 [BEST: 0.7906]
-04/10/2020 03:58:15 > epoch 4 updates 4600 loss: 0.2922 lr: 0.0041 gnorm: 0.084404/10/2020 03:59:04 > epoch 4 updates 4650 loss: 0.3075 lr: 0.0041 gnorm: 0.126304/10/2020 03:59:55 > epoch 4 updates 4700 loss: 0.3053 lr: 0.0041 gnorm: 0.100404/10/2020 04:00:37 
-04/10/2020 04:00:37 train loss: 0.3017 lr: 0.0041 gnorm: 0.1038 clip: 0
-04/10/2020 04:00:37 valid loss: 0.4582 inference_time: 364.8137 auc: 0.8913 f1: 0.8041 acc: 0.7857 cost_time: 97.1517 [BEST: 0.7906]
-04/10/2020 04:01:18 > epoch 4 updates 4750 loss: 0.2779 lr: 0.0041 gnorm: 0.126004/10/2020 04:01:51 
-04/10/2020 04:01:51 train loss: 0.2779 lr: 0.0041 gnorm: 0.1260 clip: 0
-04/10/2020 04:01:51 valid loss: 0.4665 inference_time: 362.8919 auc: 0.8789 f1: 0.7945 acc: 0.7866 cost_time: 98.3872 [BEST: 0.7906]
-04/10/2020 04:01:51 
-[trainer.py:49]  epoch=5/40, experiment_times=4
-04/10/2020 04:01:51 Epoch: 5
-04/10/2020 04:02:41 > epoch 5 updates 4800 loss: 0.3317 lr: 0.0041 gnorm: 0.117504/10/2020 04:03:31 > epoch 5 updates 4850 loss: 0.3084 lr: 0.0041 gnorm: 0.0768[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 04:04:21 
-04/10/2020 04:04:21 train loss: 0.3200 lr: 0.0041 gnorm: 0.0971 clip: 0
-04/10/2020 04:04:21 valid loss: 0.4399 inference_time: 375.9258 auc: 0.8943 f1: 0.8081 acc: 0.7915 cost_time: 100.8842 [NEW BEST]
-04/10/2020 04:04:54 > epoch 5 updates 4900 loss: 0.2903 lr: 0.0041 gnorm: 0.084804/10/2020 04:05:45 > epoch 5 updates 4950 loss: 0.3431 lr: 0.0041 gnorm: 0.142204/10/2020 04:06:36 > epoch 5 updates 5000 loss: 0.2820 lr: 0.0041 gnorm: 0.174104/10/2020 04:07:33 
-04/10/2020 04:07:33 train loss: 0.3051 lr: 0.0041 gnorm: 0.1340 clip: 0
-04/10/2020 04:07:33 valid loss: 0.4750 inference_time: 377.4825 auc: 0.8865 f1: 0.7991 acc: 0.7760 cost_time: 104.0896 [BEST: 0.7915]
-04/10/2020 04:07:59 > epoch 5 updates 5050 loss: 0.2983 lr: 0.0039 gnorm: 0.081004/10/2020 04:08:49 > epoch 5 updates 5100 loss: 0.3064 lr: 0.0039 gnorm: 0.088904/10/2020 04:09:39 > epoch 5 updates 5150 loss: 0.2892 lr: 0.0039 gnorm: 0.100704/10/2020 04:10:42 
-04/10/2020 04:10:42 train loss: 0.2979 lr: 0.0039 gnorm: 0.0903 clip: 0
-04/10/2020 04:10:42 valid loss: 0.4731 inference_time: 374.6024 auc: 0.8856 f1: 0.8020 acc: 0.7877 cost_time: 107.2315 [BEST: 0.7915]
-04/10/2020 04:11:01 > epoch 5 updates 5200 loss: 0.1998 lr: 0.0039 gnorm: 0.086004/10/2020 04:11:51 > epoch 5 updates 5250 loss: 0.3020 lr: 0.0039 gnorm: 0.142604/10/2020 04:12:41 > epoch 5 updates 5300 loss: 0.2625 lr: 0.0039 gnorm: 0.084504/10/2020 04:13:52 
-04/10/2020 04:13:52 train loss: 0.2549 lr: 0.0039 gnorm: 0.1043 clip: 0
-04/10/2020 04:13:52 valid loss: 0.4799 inference_time: 366.2364 auc: 0.8886 f1: 0.7986 acc: 0.7731 cost_time: 110.3935 [BEST: 0.7915]
-04/10/2020 04:14:04 > epoch 5 updates 5350 loss: 0.2249 lr: 0.0039 gnorm: 0.083404/10/2020 04:14:54 > epoch 5 updates 5400 loss: 0.3219 lr: 0.0039 gnorm: 0.130704/10/2020 04:15:44 > epoch 5 updates 5450 loss: 0.2979 lr: 0.0039 gnorm: 0.092604/10/2020 04:17:02 
-04/10/2020 04:17:02 train loss: 0.2818 lr: 0.0039 gnorm: 0.1022 clip: 0
-04/10/2020 04:17:02 valid loss: 0.4773 inference_time: 374.7797 auc: 0.8872 f1: 0.8010 acc: 0.7800 cost_time: 113.5656 [BEST: 0.7915]
-04/10/2020 04:17:07 > epoch 5 updates 5500 loss: 0.2879 lr: 0.0039 gnorm: 0.116804/10/2020 04:17:57 > epoch 5 updates 5550 loss: 0.3202 lr: 0.0039 gnorm: 0.128504/10/2020 04:18:47 > epoch 5 updates 5600 loss: 0.2886 lr: 0.0039 gnorm: 0.079804/10/2020 04:19:39 > epoch 5 updates 5650 loss: 0.2263 lr: 0.0039 gnorm: 0.086804/10/2020 04:20:13 
-04/10/2020 04:20:13 train loss: 0.2805 lr: 0.0039 gnorm: 0.1028 clip: 0
-04/10/2020 04:20:13 valid loss: 0.4582 inference_time: 369.9889 auc: 0.8923 f1: 0.8046 acc: 0.7834 cost_time: 116.7559 [BEST: 0.7915]
-04/10/2020 04:21:02 > epoch 5 updates 5700 loss: 0.2843 lr: 0.0039 gnorm: 0.082804/10/2020 04:21:52 > epoch 5 updates 5750 loss: 0.2493 lr: 0.0039 gnorm: 0.095804/10/2020 04:22:42 > epoch 5 updates 5800 loss: 0.3087 lr: 0.0039 gnorm: 0.074504/10/2020 04:23:23 
-04/10/2020 04:23:23 train loss: 0.2808 lr: 0.0039 gnorm: 0.0843 clip: 0
-04/10/2020 04:23:23 valid loss: 0.4824 inference_time: 362.9159 auc: 0.8867 f1: 0.8007 acc: 0.7796 cost_time: 119.9210 [BEST: 0.7915]
-04/10/2020 04:24:05 > epoch 5 updates 5850 loss: 0.2576 lr: 0.0039 gnorm: 0.072104/10/2020 04:24:56 > epoch 5 updates 5900 loss: 0.3464 lr: 0.0039 gnorm: 0.1010[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 04:26:10 
-04/10/2020 04:26:10 train loss: 0.3022 lr: 0.0039 gnorm: 0.0866 clip: 0
-04/10/2020 04:26:10 valid loss: 0.4524 inference_time: 382.9238 auc: 0.8937 f1: 0.8112 acc: 0.7961 cost_time: 122.7020 [NEW BEST]
-04/10/2020 04:26:10 
-[trainer.py:49]  epoch=6/40, experiment_times=4
-04/10/2020 04:26:10 Epoch: 6
-04/10/2020 04:26:21 > epoch 6 updates 5950 loss: 0.2635 lr: 0.0039 gnorm: 0.0763[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 04:27:10 
-04/10/2020 04:27:10 train loss: 0.2635 lr: 0.0039 gnorm: 0.0763 clip: 0
-04/10/2020 04:27:10 valid loss: 0.4526 inference_time: 374.2332 auc: 0.8999 f1: 0.8137 acc: 0.7962 cost_time: 123.6971 [NEW BEST]
-04/10/2020 04:27:44 > epoch 6 updates 6000 loss: 0.2383 lr: 0.0039 gnorm: 0.081504/10/2020 04:28:34 > epoch 6 updates 6050 loss: 0.2710 lr: 0.0037 gnorm: 0.069204/10/2020 04:29:23 > epoch 6 updates 6100 loss: 0.2326 lr: 0.0037 gnorm: 0.089404/10/2020 04:30:19 
-04/10/2020 04:30:19 train loss: 0.2473 lr: 0.0037 gnorm: 0.0801 clip: 0
-04/10/2020 04:30:19 valid loss: 0.4675 inference_time: 369.9915 auc: 0.8943 f1: 0.8065 acc: 0.7886 cost_time: 126.8565 [BEST: 0.7962]
-04/10/2020 04:30:47 > epoch 6 updates 6150 loss: 0.2517 lr: 0.0037 gnorm: 0.100704/10/2020 04:31:36 > epoch 6 updates 6200 loss: 0.2770 lr: 0.0037 gnorm: 0.087204/10/2020 04:32:27 > epoch 6 updates 6250 loss: 0.2342 lr: 0.0037 gnorm: 0.098404/10/2020 04:33:30 
-04/10/2020 04:33:30 train loss: 0.2542 lr: 0.0037 gnorm: 0.0954 clip: 0
-04/10/2020 04:33:30 valid loss: 0.4519 inference_time: 378.4730 auc: 0.8944 f1: 0.8094 acc: 0.7917 cost_time: 130.0364 [BEST: 0.7962]
-04/10/2020 04:33:50 > epoch 6 updates 6300 loss: 0.2521 lr: 0.0037 gnorm: 0.088804/10/2020 04:34:40 > epoch 6 updates 6350 loss: 0.2812 lr: 0.0037 gnorm: 0.105704/10/2020 04:35:31 > epoch 6 updates 6400 loss: 0.3144 lr: 0.0037 gnorm: 0.104904/10/2020 04:36:41 
-04/10/2020 04:36:41 train loss: 0.2828 lr: 0.0037 gnorm: 0.0998 clip: 0
-04/10/2020 04:36:41 valid loss: 0.4963 inference_time: 369.7248 auc: 0.8888 f1: 0.8015 acc: 0.7780 cost_time: 133.2239 [BEST: 0.7962]
-04/10/2020 04:36:55 > epoch 6 updates 6450 loss: 0.2310 lr: 0.0037 gnorm: 0.082904/10/2020 04:37:46 > epoch 6 updates 6500 loss: 0.2414 lr: 0.0037 gnorm: 0.077004/10/2020 04:38:36 > epoch 6 updates 6550 loss: 0.3016 lr: 0.0037 gnorm: 0.0805[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 04:39:52 
-04/10/2020 04:39:52 train loss: 0.2583 lr: 0.0037 gnorm: 0.0801 clip: 0
-04/10/2020 04:39:52 valid loss: 0.4493 inference_time: 377.9679 auc: 0.8913 f1: 0.8074 acc: 0.7977 cost_time: 136.3992 [NEW BEST]
-04/10/2020 04:39:58 > epoch 6 updates 6600 loss: 0.2935 lr: 0.0037 gnorm: 0.106604/10/2020 04:40:48 > epoch 6 updates 6650 loss: 0.2706 lr: 0.0037 gnorm: 0.113404/10/2020 04:41:38 > epoch 6 updates 6700 loss: 0.2602 lr: 0.0037 gnorm: 0.082904/10/2020 04:42:28 > epoch 6 updates 6750 loss: 0.2822 lr: 0.0037 gnorm: 0.078804/10/2020 04:43:03 
-04/10/2020 04:43:03 train loss: 0.2766 lr: 0.0037 gnorm: 0.0953 clip: 0
-04/10/2020 04:43:03 valid loss: 0.4474 inference_time: 376.8540 auc: 0.8959 f1: 0.8102 acc: 0.7935 cost_time: 139.5765 [BEST: 0.7977]
-04/10/2020 04:43:51 > epoch 6 updates 6800 loss: 0.2826 lr: 0.0037 gnorm: 0.095604/10/2020 04:44:42 > epoch 6 updates 6850 loss: 0.2653 lr: 0.0037 gnorm: 0.097704/10/2020 04:45:33 > epoch 6 updates 6900 loss: 0.2481 lr: 0.0037 gnorm: 0.118404/10/2020 04:46:14 
-04/10/2020 04:46:14 train loss: 0.2652 lr: 0.0037 gnorm: 0.1040 clip: 0
-04/10/2020 04:46:14 valid loss: 0.4691 inference_time: 371.3825 auc: 0.8945 f1: 0.8104 acc: 0.7928 cost_time: 142.7608 [BEST: 0.7977]
-04/10/2020 04:46:55 > epoch 6 updates 6950 loss: 0.2395 lr: 0.0037 gnorm: 0.075404/10/2020 04:47:47 > epoch 6 updates 7000 loss: 0.2948 lr: 0.0037 gnorm: 0.078504/10/2020 04:48:37 > epoch 6 updates 7050 loss: 0.2857 lr: 0.0035 gnorm: 0.088204/10/2020 04:49:24 
-04/10/2020 04:49:24 train loss: 0.2735 lr: 0.0036 gnorm: 0.0807 clip: 0
-04/10/2020 04:49:24 valid loss: 0.4462 inference_time: 363.0943 auc: 0.9017 f1: 0.8159 acc: 0.7966 cost_time: 145.9410 [BEST: 0.7977]
-04/10/2020 04:50:00 > epoch 6 updates 7100 loss: 0.2309 lr: 0.0035 gnorm: 0.1530[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 04:51:00 
-04/10/2020 04:51:00 train loss: 0.2309 lr: 0.0035 gnorm: 0.1530 clip: 0
-04/10/2020 04:51:00 valid loss: 0.4399 inference_time: 378.0555 auc: 0.9003 f1: 0.8167 acc: 0.8002 cost_time: 147.5336 [NEW BEST]
-04/10/2020 04:51:00 
-[trainer.py:49]  epoch=7/40, experiment_times=4
-04/10/2020 04:51:00 Epoch: 7
-04/10/2020 04:51:23 > epoch 7 updates 7150 loss: 0.2487 lr: 0.0035 gnorm: 0.105904/10/2020 04:52:13 > epoch 7 updates 7200 loss: 0.2087 lr: 0.0035 gnorm: 0.105904/10/2020 04:53:08 
-04/10/2020 04:53:08 train loss: 0.2286 lr: 0.0035 gnorm: 0.1059 clip: 0
-04/10/2020 04:53:08 valid loss: 0.4686 inference_time: 371.1876 auc: 0.8998 f1: 0.8121 acc: 0.7910 cost_time: 149.6660 [BEST: 0.8002]
-04/10/2020 04:53:36 > epoch 7 updates 7250 loss: 0.2554 lr: 0.0035 gnorm: 0.077004/10/2020 04:54:27 > epoch 7 updates 7300 loss: 0.2357 lr: 0.0035 gnorm: 0.101304/10/2020 04:55:18 > epoch 7 updates 7350 loss: 0.2471 lr: 0.0035 gnorm: 0.0772[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 04:56:19 
-04/10/2020 04:56:19 train loss: 0.2460 lr: 0.0035 gnorm: 0.0852 clip: 0
-04/10/2020 04:56:19 valid loss: 0.4521 inference_time: 362.2748 auc: 0.8925 f1: 0.8111 acc: 0.8010 cost_time: 152.8562 [NEW BEST]
-04/10/2020 04:56:41 > epoch 7 updates 7400 loss: 0.2607 lr: 0.0035 gnorm: 0.081504/10/2020 04:57:31 > epoch 7 updates 7450 loss: 0.2733 lr: 0.0035 gnorm: 0.090204/10/2020 04:58:21 > epoch 7 updates 7500 loss: 0.2642 lr: 0.0035 gnorm: 0.089804/10/2020 04:59:31 
-04/10/2020 04:59:31 train loss: 0.2661 lr: 0.0035 gnorm: 0.0872 clip: 0
-04/10/2020 04:59:31 valid loss: 0.4549 inference_time: 379.4527 auc: 0.9021 f1: 0.8143 acc: 0.7965 cost_time: 156.0584 [BEST: 0.8010]
-04/10/2020 04:59:46 > epoch 7 updates 7550 loss: 0.2445 lr: 0.0035 gnorm: 0.091804/10/2020 05:00:36 > epoch 7 updates 7600 loss: 0.2422 lr: 0.0035 gnorm: 0.105204/10/2020 05:01:28 > epoch 7 updates 7650 loss: 0.3011 lr: 0.0035 gnorm: 0.082904/10/2020 05:02:43 
-04/10/2020 05:02:43 train loss: 0.2628 lr: 0.0035 gnorm: 0.0932 clip: 0
-04/10/2020 05:02:43 valid loss: 0.4656 inference_time: 368.4705 auc: 0.8981 f1: 0.8087 acc: 0.7866 cost_time: 159.2458 [BEST: 0.8010]
-04/10/2020 05:02:50 > epoch 7 updates 7700 loss: 0.1910 lr: 0.0035 gnorm: 0.107704/10/2020 05:03:40 > epoch 7 updates 7750 loss: 0.2943 lr: 0.0035 gnorm: 0.108904/10/2020 05:04:31 > epoch 7 updates 7800 loss: 0.2465 lr: 0.0035 gnorm: 0.104804/10/2020 05:05:21 > epoch 7 updates 7850 loss: 0.2428 lr: 0.0035 gnorm: 0.085404/10/2020 05:05:53 
-04/10/2020 05:05:53 train loss: 0.2438 lr: 0.0035 gnorm: 0.1016 clip: 0
-04/10/2020 05:05:53 valid loss: 0.4615 inference_time: 370.5102 auc: 0.9010 f1: 0.8113 acc: 0.7894 cost_time: 162.4241 [BEST: 0.8010]
-04/10/2020 05:06:44 > epoch 7 updates 7900 loss: 0.3007 lr: 0.0035 gnorm: 0.102304/10/2020 05:07:34 > epoch 7 updates 7950 loss: 0.2054 lr: 0.0035 gnorm: 0.110304/10/2020 05:08:25 > epoch 7 updates 8000 loss: 0.2218 lr: 0.0035 gnorm: 0.089904/10/2020 05:09:05 
-04/10/2020 05:09:05 train loss: 0.2424 lr: 0.0035 gnorm: 0.1008 clip: 0
-04/10/2020 05:09:05 valid loss: 0.4427 inference_time: 368.8354 auc: 0.9017 f1: 0.8162 acc: 0.8009 cost_time: 165.6115 [BEST: 0.8010]
-04/10/2020 05:09:48 > epoch 7 updates 8050 loss: 0.2166 lr: 0.0033 gnorm: 0.079104/10/2020 05:10:38 > epoch 7 updates 8100 loss: 0.2441 lr: 0.0033 gnorm: 0.117404/10/2020 05:11:28 > epoch 7 updates 8150 loss: 0.2580 lr: 0.0033 gnorm: 0.091704/10/2020 05:12:15 
-04/10/2020 05:12:15 train loss: 0.2397 lr: 0.0033 gnorm: 0.0961 clip: 0
-04/10/2020 05:12:15 valid loss: 0.4579 inference_time: 374.2365 auc: 0.8992 f1: 0.8126 acc: 0.7943 cost_time: 168.7923 [BEST: 0.8010]
-04/10/2020 05:12:52 > epoch 7 updates 8200 loss: 0.2253 lr: 0.0033 gnorm: 0.110204/10/2020 05:13:42 > epoch 7 updates 8250 loss: 0.3089 lr: 0.0033 gnorm: 0.096204/10/2020 05:14:33 > epoch 7 updates 8300 loss: 0.2064 lr: 0.0033 gnorm: 0.1215[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 05:15:21 
-04/10/2020 05:15:21 train loss: 0.2468 lr: 0.0033 gnorm: 0.1093 clip: 0
-04/10/2020 05:15:21 valid loss: 0.4250 inference_time: 367.2408 auc: 0.9037 f1: 0.8207 acc: 0.8083 cost_time: 171.8829 [NEW BEST]
-04/10/2020 05:15:21 
-[trainer.py:49]  epoch=8/40, experiment_times=4
-04/10/2020 05:15:21 Epoch: 8
-04/10/2020 05:16:00 
-04/10/2020 05:16:00 valid loss: 0.4468 inference_time: 375.8593 auc: 0.9022 f1: 0.8156 acc: 0.7986 cost_time: 172.5372 [BEST: 0.8083]
-04/10/2020 05:16:29 > epoch 8 updates 8350 loss: 0.2627 lr: 0.0033 gnorm: 0.085404/10/2020 05:17:19 > epoch 8 updates 8400 loss: 0.2155 lr: 0.0033 gnorm: 0.081904/10/2020 05:18:09 > epoch 8 updates 8450 loss: 0.2684 lr: 0.0033 gnorm: 0.120304/10/2020 05:19:11 
-04/10/2020 05:19:11 train loss: 0.2489 lr: 0.0033 gnorm: 0.0960 clip: 0
-04/10/2020 05:19:11 valid loss: 0.4724 inference_time: 372.2065 auc: 0.8998 f1: 0.8103 acc: 0.7880 cost_time: 175.7106 [BEST: 0.8083]
-04/10/2020 05:19:33 > epoch 8 updates 8500 loss: 0.2608 lr: 0.0033 gnorm: 0.079304/10/2020 05:20:23 > epoch 8 updates 8550 loss: 0.2000 lr: 0.0033 gnorm: 0.090904/10/2020 05:21:13 > epoch 8 updates 8600 loss: 0.2154 lr: 0.0033 gnorm: 0.076104/10/2020 05:22:21 
-04/10/2020 05:22:21 train loss: 0.2252 lr: 0.0033 gnorm: 0.0821 clip: 0
-04/10/2020 05:22:21 valid loss: 0.4897 inference_time: 370.7603 auc: 0.9020 f1: 0.8079 acc: 0.7832 cost_time: 178.8832 [BEST: 0.8083]
-04/10/2020 05:22:36 > epoch 8 updates 8650 loss: 0.2276 lr: 0.0033 gnorm: 0.112204/10/2020 05:23:27 > epoch 8 updates 8700 loss: 0.1853 lr: 0.0033 gnorm: 0.078404/10/2020 05:24:17 > epoch 8 updates 8750 loss: 0.2401 lr: 0.0033 gnorm: 0.138404/10/2020 05:25:32 
-04/10/2020 05:25:32 train loss: 0.2177 lr: 0.0033 gnorm: 0.1098 clip: 0
-04/10/2020 05:25:32 valid loss: 0.4537 inference_time: 378.6454 auc: 0.9087 f1: 0.8204 acc: 0.8019 cost_time: 182.0702 [BEST: 0.8083]
-04/10/2020 05:25:40 > epoch 8 updates 8800 loss: 0.2532 lr: 0.0033 gnorm: 0.152104/10/2020 05:26:30 > epoch 8 updates 8850 loss: 0.2931 lr: 0.0033 gnorm: 0.099504/10/2020 05:27:21 > epoch 8 updates 8900 loss: 0.2474 lr: 0.0033 gnorm: 0.094004/10/2020 05:28:43 
-04/10/2020 05:28:43 train loss: 0.2645 lr: 0.0033 gnorm: 0.1150 clip: 0
-04/10/2020 05:28:43 valid loss: 0.4783 inference_time: 378.0023 auc: 0.9002 f1: 0.8104 acc: 0.7872 cost_time: 185.2517 [BEST: 0.8083]
-04/10/2020 05:28:44 > epoch 8 updates 8950 loss: 0.2807 lr: 0.0033 gnorm: 0.147904/10/2020 05:29:35 > epoch 8 updates 9000 loss: 0.3239 lr: 0.0033 gnorm: 0.110804/10/2020 05:30:25 > epoch 8 updates 9050 loss: 0.3221 lr: 0.0032 gnorm: 0.128904/10/2020 05:31:15 > epoch 8 updates 9100 loss: 0.2444 lr: 0.0032 gnorm: 0.130504/10/2020 05:31:54 
-04/10/2020 05:31:54 train loss: 0.2926 lr: 0.0032 gnorm: 0.1295 clip: 0
-04/10/2020 05:31:54 valid loss: 0.4786 inference_time: 376.3186 auc: 0.9004 f1: 0.8141 acc: 0.7957 cost_time: 188.4293 [BEST: 0.8083]
-04/10/2020 05:32:38 > epoch 8 updates 9150 loss: 0.2945 lr: 0.0032 gnorm: 0.103404/10/2020 05:33:29 > epoch 8 updates 9200 loss: 0.2387 lr: 0.0032 gnorm: 0.097004/10/2020 05:34:19 > epoch 8 updates 9250 loss: 0.2441 lr: 0.0032 gnorm: 0.1141[model.py:214]  have saved model to /home/cloudminds/Mywork/model/qa_model_dir/chat_courpus/benchmark-4/checkpoint
-04/10/2020 05:35:05 
-04/10/2020 05:35:05 train loss: 0.2589 lr: 0.0032 gnorm: 0.1049 clip: 0
-04/10/2020 05:35:05 valid loss: 0.4362 inference_time: 377.0914 auc: 0.9024 f1: 0.8191 acc: 0.8108 cost_time: 191.6185 [NEW BEST]
-04/10/2020 05:35:43 > epoch 8 updates 9300 loss: 0.2920 lr: 0.0032 gnorm: 0.092004/10/2020 05:36:33 > epoch 8 updates 9350 loss: 0.2470 lr: 0.0032 gnorm: 0.132004/10/2020 05:37:24 > epoch 8 updates 9400 loss: 0.2780 lr: 0.0032 gnorm: 0.103004/10/2020 05:38:17 
-04/10/2020 05:38:17 train loss: 0.2723 lr: 0.0032 gnorm: 0.1090 clip: 0
-04/10/2020 05:38:17 valid loss: 0.4658 inference_time: 376.3732 auc: 0.9038 f1: 0.8131 acc: 0.7912 cost_time: 194.8231 [BEST: 0.8108]
-04/10/2020 05:38:47 > epoch 8 updates 9450 loss: 0.2226 lr: 0.0032 gnorm: 0.103204/10/2020 05:39:37 > epoch 8 updates 9500 loss: 0.2161 lr: 0.0032 gnorm: 0.083204/10/2020 05:40:14 
-04/10/2020 05:40:14 train loss: 0.2193 lr: 0.0032 gnorm: 0.0932 clip: 0
-04/10/2020 05:40:14 valid loss: 0.4484 inference_time: 374.6810 auc: 0.9041 f1: 0.8168 acc: 0.7994 cost_time: 196.7649 [BEST: 0.8108]
-04/10/2020 05:40:14 
-[trainer.py:49]  epoch=9/40, experiment_times=4
-04/10/2020 05:40:14 Epoch: 9
-04/10/2020 05:41:02 > epoch 9 updates 9550 loss: 0.2106 lr: 0.0032 gnorm: 0.077004/10/2020 05:42:02 
-04/10/2020 05:42:02 train loss: 0.2106 lr: 0.0032 gnorm: 0.0770 clip: 0
-04/10/2020 05:42:02 valid loss: 0.4677 inference_time: 376.1228 auc: 0.9039 f1: 0.8165 acc: 0.7991 cost_time: 198.5633 [BEST: 0.8108]
-04/10/2020 05:42:25 > epoch 9 updates 9600 loss: 0.2017 lr: 0.0032 gnorm: 0.125204/10/2020 05:43:14 > epoch 9 updates 9650 loss: 0.1994 lr: 0.0032 gnorm: 0.082704/10/2020 05:44:04 > epoch 9 updates 9700 loss: 0.3437 lr: 0.0032 gnorm: 0.149304/10/2020 05:45:11 
-04/10/2020 05:45:11 train loss: 0.2487 lr: 0.0032 gnorm: 0.1192 clip: 0
-04/10/2020 05:45:11 valid loss: 0.4683 inference_time: 378.4711 auc: 0.9015 f1: 0.8117 acc: 0.7910 cost_time: 201.7218 [BEST: 0.8108]
-04/10/2020 05:45:28 > epoch 9 updates 9750 loss: 0.2829 lr: 0.0032 gnorm: 0.123404/10/2020 05:46:18 > epoch 9 updates 9800 loss: 0.2740 lr: 0.0032 gnorm: 0.147104/10/2020 05:47:08 > epoch 9 updates 9850 loss: 0.2628 lr: 0.0032 gnorm: 0.103904/10/2020 05:48:23 
-04/10/2020 05:48:23 train loss: 0.2732 lr: 0.0032 gnorm: 0.1247 clip: 0
-04/10/2020 05:48:23 valid loss: 0.4679 inference_time: 377.1320 auc: 0.9026 f1: 0.8157 acc: 0.7962 cost_time: 204.9215 [BEST: 0.8108]
-04/10/2020 05:48:32 > epoch 9 updates 9900 loss: 0.2237 lr: 0.0032 gnorm: 0.101304/10/2020 05:49:23 > epoch 9 updates 9950 loss: 0.2030 lr: 0.0032 gnorm: 0.083904/10/2020 05:50:13 > epoch 9 updates 10000 loss: 0.2529 lr: 0.0032 gnorm: 0.094004/10/2020 05:51:34 
-04/10/2020 05:51:34 train loss: 0.2266 lr: 0.0032 gnorm: 0.0930 clip: 0
-04/10/2020 05:51:34 valid loss: 0.4667 inference_time: 368.4457 auc: 0.9023 f1: 0.8150 acc: 0.7963 cost_time: 208.1089 [BEST: 0.8108]
-04/10/2020 05:51:36 > epoch 9 updates 10050 loss: 0.2414 lr: 0.0030 gnorm: 0.086904/10/2020 05:52:26 > epoch 9 updates 10100 loss: 0.2315 lr: 0.0030 gnorm: 0.134104/10/2020 05:53:16 > epoch 9 updates 10150 loss: 0.2473 lr: 0.0030 gnorm: 0.109704/10/2020 05:54:06 > epoch 9 updates 10200 loss: 0.1926 lr: 0.0030 gnorm: 0.074504/10/2020 05:54:44 
-04/10/2020 05:54:44 train loss: 0.2280 lr: 0.0030 gnorm: 0.1012 clip: 0
-04/10/2020 05:54:44 valid loss: 0.4687 inference_time: 372.8139 auc: 0.9028 f1: 0.8142 acc: 0.7970 cost_time: 211.2710 [BEST: 0.8108]
-04/10/2020 05:55:29 > epoch 9 updates 10250 loss: 0.2499 lr: 0.0030 gnorm: 0.101704/10/2020 05:56:20 > epoch 9 updates 10300 loss: 0.2167 lr: 0.0030 gnorm: 0.107704/10/2020 05:57:10 > epoch 9 updates 10350 loss: 0.2652 lr: 0.0030 gnorm: 0.093504/10/2020 05:57:55 
-04/10/2020 05:57:55 train loss: 0.2440 lr: 0.0030 gnorm: 0.1009 clip: 0
-04/10/2020 05:57:55 valid loss: 0.4493 inference_time: 374.4495 auc: 0.9049 f1: 0.8182 acc: 0.8037 cost_time: 214.4554 [BEST: 0.8108]
-04/10/2020 05:58:34 > epoch 9 updates 10400 loss: 0.1960 lr: 0.0030 gnorm: 0.077404/10/2020 05:59:24 > epoch 9 updates 10450 loss: 0.2479 lr: 0.0030 gnorm: 0.114304/10/2020 06:00:13 > epoch 9 updates 10500 loss: 0.2306 lr: 0.0030 gnorm: 0.102004/10/2020 06:01:07 
-04/10/2020 06:01:07 train loss: 0.2250 lr: 0.0030 gnorm: 0.0980 clip: 0
-04/10/2020 06:01:07 valid loss: 0.4408 inference_time: 378.2378 auc: 0.9080 f1: 0.8215 acc: 0.8057 cost_time: 217.6474 [BEST: 0.8108]
-04/10/2020 06:01:38 > epoch 9 updates 10550 loss: 0.2726 lr: 0.0030 gnorm: 0.107304/10/2020 06:02:27 > epoch 9 updates 10600 loss: 0.3075 lr: 0.0030 gnorm: 0.125104/10/2020 06:03:18 > epoch 9 updates 10650 loss: 0.2763 lr: 0.0030 gnorm: 0.118904/10/2020 06:04:18 
-04/10/2020 06:04:18 train loss: 0.2855 lr: 0.0030 gnorm: 0.1171 clip: 0
-04/10/2020 06:04:18 valid loss: 0.4645 inference_time: 378.2405 auc: 0.9008 f1: 0.8144 acc: 0.7969 cost_time: 220.8266 [BEST: 0.8108]
-04/10/2020 06:05:06 
-04/10/2020 06:05:06 valid loss: 0.4617 inference_time: 376.5036 auc: 0.9069 f1: 0.8158 acc: 0.7953 cost_time: 221.6337 [BEST: 0.8108]
-04/10/2020 06:05:06 
-[trainer.py:49]  epoch=10/40, experiment_times=4
-04/10/2020 06:05:06 Epoch: 10
-04/10/2020 06:05:15 > epoch 10 updates 10700 loss: 0.2947 lr: 0.0030 gnorm: 0.108204/10/2020 06:06:06 > epoch 10 updates 10750 loss: 0.1832 lr: 0.0030 gnorm: 0.096604/10/2020 06:06:56 > epoch 10 updates 10800 loss: 0.2789 lr: 0.0030 gnorm: 0.118804/10/2020 06:08:03 
-04/10/2020 06:08:03 train loss: 0.2522 lr: 0.0030 gnorm: 0.1079 clip: 0
-04/10/2020 06:08:03 valid loss: 0.4752 inference_time: 384.5996 auc: 0.9030 f1: 0.8107 acc: 0.7897 cost_time: 224.5889 [BEST: 0.8108]
-[trainer.py:72]  Tolerance reached. Training is stopped early.
-04/10/2020 06:08:03 
-04/10/2020 06:08:03 Training complete.
-04/10/2020 06:08:03 best dev score 0.8107674480791515 at step 9263 (epoch 8).
-04/10/2020 06:08:03 best eval stats [loss: 0.4362 inference_time: 377.0914 auc: 0.9024 f1: 0.8191 acc: 0.8108 cost_time: 191.6185]
-04/10/2020 06:08:03 Training time: 3:44:35.
-[train.py:38]  experiment_times=5/5, best_experiment_times=4, ave_test_score=0.796657, max_test_score=0.810767
-[train.py:47]  eval_score_list: [0.7923611730100723, 0.789954541402977, 0.7916480969783403, 0.798556021035743, 0.8107674480791515] 4

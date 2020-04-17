@@ -15,7 +15,7 @@ class Object:
     pass
 
 
-def parse(config_file):
+def parse(config_file, host_name):
     root = os.path.dirname(config_file) # os.path.join(,"data")  # __parent__ in config is a relative path
     config_group = _load_param('', config_file)
     if type(config_group) is dict:
@@ -37,12 +37,12 @@ def parse(config_file):
                 config_['__index__'] = index
                 if repeat > 1:
                     config_['name'] += '-' + str(index)
-                args = _parse_args(root, config_)
+                args = _parse_args(root, config_, host_name)
                 configs.append((args, config_))
     return configs
 
 
-def _parse_args(root, config):
+def _parse_args(root, config, host_name):
     args = Object()
     assert type(config) is dict
     parents = config.get('__parents__', [])
@@ -50,6 +50,8 @@ def _parse_args(root, config):
         parent = _load_param(root, parent)
         assert type(parent) is dict, 'only top-level configs can be a sequence'
         _add_param(args, parent)
+    args.output_dir = args.output_dir.replace("host_name", host_name)
+    args.data_dir = args.data_dir.replace("host_name", host_name)
     _add_param(args, config)
     _post_process(args)
     return args
@@ -80,8 +82,8 @@ def _load_param(root, file_name: str):
 
 
 def _post_process(args: Object):
-    if not args.output_dir.startswith('models'):
-        args.output_dir = os.path.join('models', args.output_dir)
+    # if not args.output_dir.startswith('models'):
+    #     args.output_dir = os.path.join('models', args.output_dir)
     os.makedirs(args.output_dir, exist_ok=True)
     if not args.name:
         args.name = str(datetime.now())
@@ -90,13 +92,15 @@ def _post_process(args: Object):
         shutil.rmtree(args.summary_dir)
     os.makedirs(args.summary_dir)
     data_config_file = os.path.join(args.output_dir, 'data_config.json5')
-    # print(curLine(), "data_config_file:", data_config_file)
     if os.path.exists(data_config_file):
         with open(data_config_file) as f:
             config = json5.load(f)
             for k, v in config.items():
-                if not hasattr(args, k) or getattr(args, k) != v:
-                    print(curLine(),"wrong for K:",k, ",v:",v)
+                args_v = "none"
+                if hasattr(args, k):
+                    args_v = getattr(args, k)
+                if args_v != v:
+                    print(curLine(),"wrong for config: args.%s=%s, not equal to %s" % (k, args_v, v))
                     print('ERROR: Data configurations are different. Please use another output_dir or '
                           'remove the older one manually.')
                     exit()

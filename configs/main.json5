@@ -1,21 +1,22 @@
 [
-    {
-        name: 'benchmark',
-        __parents__: [
-            'default',
-            'chat_courpus',
-        ],
-        language: 'chinese',
-        __repeat__: 5,
-        eval_file: 'test',
-    },
 //    {
 //        name: 'benchmark',
 //        __parents__: [
 //            'default',
-//            'lcqmc',
+//            'chat_courpus',
 //        ],
-//        __repeat__: 10,
+//        language: 'chinese',
+//        __repeat__: 5,
 //        eval_file: 'test',
 //    },
+    {
+        name: 'benchmark',
+        __parents__: [
+            'default',
+            'chat_corpus_all',
+        ],
+        language: 'chinese',
+        __repeat__: 5,
+        eval_file: 'test',
+    }
 ]

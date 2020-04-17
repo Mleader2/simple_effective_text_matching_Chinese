@@ -4,8 +4,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 *-notice.txt
-
-# C extensions
+*_log.txt
+results.txt
 *.so
 
 # Distribution / packaging

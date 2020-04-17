@@ -54,9 +54,8 @@ def load_embeddings_Chinese(folder, vocab, dim, lower, mode='freq'): #  中文�
         inverse_mask = np.where(count == 0, 1., 0.)
         embedding /= count + inverse_mask
     embedding = embedding.tolist()
-
-    vector = embedding[0]
-    print(curLine(), len(vector), "vector:", type(vector), vector)
+    # vector = embedding[0]
+    # print(curLine(), len(vector), "vector:", type(vector), vector)
     return embedding
 
 def load_embeddings_English(file, vocab, dim, lower, mode='freq'): #  glove的英文词向量

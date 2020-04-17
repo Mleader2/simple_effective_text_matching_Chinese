@@ -58,7 +58,7 @@ class Interface:
         return embeddings
 
     def pre_process(self, data, training=True, batch_size=None, infer_flag=False):
-        if infer_flag:
+        if infer_flag: # 线上推理模式
             batch_result = []
             for sample in data:
                 processed_text1, processed_len1 = self.process_sample(sample["text1"])
@@ -74,7 +74,7 @@ class Interface:
                 batch = {key: self.padding(value, min_len=min_len) if key.startswith('text') else value
                          for key, value in process_sample_dict.items()}
                 batch_result.append(batch)
-        else:
+        else: # 线下训练和测试模式
             result = []
             for sample in data:
                 processed_text1, processed_len1 = self.process_sample(sample["text1"])
