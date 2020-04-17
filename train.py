@@ -12,7 +12,7 @@ def main():
     print(curLine(), "argv:", argv)
     host_name = sys.argv[2]
     if len(argv) == 3:
-        arg_groups = params.parse(sys.argv[1], host_name)
+        arg_groups = params.parse(sys.argv[1], host_name, mode="train")
         test_score_sum = 0.0
         max_test_score = 0.0
         experiment_times = 0

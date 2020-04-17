@@ -15,7 +15,7 @@ class Object:
     pass
 
 
-def parse(config_file, host_name):
+def parse(config_file, host_name, mode):
     root = os.path.dirname(config_file) # os.path.join(,"data")  # __parent__ in config is a relative path
     config_group = _load_param('', config_file)
     if type(config_group) is dict:
@@ -37,12 +37,12 @@ def parse(config_file, host_name):
                 config_['__index__'] = index
                 if repeat > 1:
                     config_['name'] += '-' + str(index)
-                args = _parse_args(root, config_, host_name)
+                args = _parse_args(root, config_, host_name, mode)
                 configs.append((args, config_))
     return configs
 
 
-def _parse_args(root, config, host_name):
+def _parse_args(root, config, host_name, mode):
     args = Object()
     assert type(config) is dict
     parents = config.get('__parents__', [])
@@ -54,7 +54,7 @@ def _parse_args(root, config, host_name):
     args.data_dir = args.data_dir.replace("host_name", host_name)
     # print(curLine(), "args.data_dir:%s, args.output_dir:%s" % (args.data_dir, args.output_dir))
     _add_param(args, config)
-    _post_process(args)
+    _post_process(args, mode)
     return args
 
 
@@ -82,16 +82,17 @@ def _load_param(root, file_name: str):
         return config
 
 
-def _post_process(args: Object):
+def _post_process(args: Object, mode: str):
     # if not args.output_dir.startswith('models'):
     #     args.output_dir = os.path.join('models', args.output_dir)
     os.makedirs(args.output_dir, exist_ok=True)
     if not args.name:
         args.name = str(datetime.now())
     args.summary_dir = os.path.join(args.output_dir, args.name)
-    if os.path.exists(args.summary_dir):
-        shutil.rmtree(args.summary_dir)
-    os.makedirs(args.summary_dir)
+    if mode.lower() == "train": #  清空模型目录
+        if os.path.exists(args.summary_dir):
+            shutil.rmtree(args.summary_dir)
+        os.makedirs(args.summary_dir)
     data_config_file = os.path.join(args.output_dir, 'data_config.json5')
     if os.path.exists(data_config_file):
         with open(data_config_file) as f:

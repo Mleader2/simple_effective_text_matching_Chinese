@@ -211,7 +211,7 @@ class Model:
     def save(self, states, name=None):
         model_file = os.path.join(self.args.summary_dir, self.prefix)
         self.saver.save(self.sess, model_file, global_step=self.updates)
-        print(curLine(), "have saved model to %s" % model_file)
+        print(curLine(), "have saved model to %s-%d" % (model_file, self.updates))
         if not name:
             name = str(self.updates)
         # noinspection PyTypeChecker

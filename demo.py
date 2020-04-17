@@ -12,21 +12,17 @@ from curLine_file import curLine
 def main():
     argv = sys.argv
     host_name = sys.argv[2]
-    model_id = sys.argv[3] # "benchmark-0"
+    model_id = sys.argv[3]
     out_dir = "/home/%s/Mywork/corpus/Chinese_QA/" % host_name
-    # checkpoint_dir = "./models/chat_courpus/%s" % (model_id)
-    checkpoint_dir = "/home/%s/Mywork/model/qa_model_dir/chat_courpus/%s" % (host_name, model_id) # --good
+    checkpoint_dir = "/home/%s/Mywork/model/qa_model_dir/chat_corpus_all/%s" % (host_name, model_id) # --good
     print(curLine(), "argv:", argv)
 
-    arg_groups = params.parse(sys.argv[1], host_name)
+    arg_groups = params.parse(sys.argv[1], host_name, mode="test")
 
     args, config = arg_groups[0]
-    print(curLine(), args, "config:", config)
-
     args.data_dir = os.path.join(out_dir, args.data_dir)
-
-    args.pretrained_embeddings = os.path.join("/home/%s/Word2Vector/Chinese" % host_name,
-                                              args.pretrained_embeddings)
+    # args.pretrained_embeddings = os.path.join("/home/%s/Word2Vector/Chinese" % host_name,
+    #                                           args.pretrained_embeddings)
     demoer = Demoer(args, checkpoint_dir)
     sample = {'text1':"请问谁有狂三这张高清的电影资源？", 'text2': '这张高清图，谁有狂三这张高清的请问谁有狂三这张高清的电影资源？'}
     predictions, probabilities, inference_time = demoer.serve(dev=[sample])

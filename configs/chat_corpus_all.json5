@@ -2,12 +2,11 @@
     data_dir: '/home/host_name/Mywork/corpus/Chinese_QA/chat_corpus_all',
     output_dir: '/home/host_name/Mywork/model/qa_model_dir/chat_corpus_all',
     metric: 'acc',
-
     model: {
         alignment: 'identity',
         enc_layers: 2,
         blocks: 1,
-        hidden_size: 300,
+        hidden_size: 200,
     },
 
     routine: {
