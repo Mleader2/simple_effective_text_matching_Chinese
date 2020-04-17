@@ -83,7 +83,7 @@ def test(args, config, demoer):
         if metric not in states:  # multiple metrics could be computed by the same function
             states.update(metrics[metric](outputs))
     print(curLine(), "stats:", states)
-    with open('models/log.jsonl', 'a') as f:
+    with open('%s/log.jsonl'%args.output_dir, 'a') as f:
         f.write(json5.dumps({
             'data': os.path.basename(args.data_dir),
             'params': config,

@@ -52,6 +52,7 @@ def _parse_args(root, config, host_name):
         _add_param(args, parent)
     args.output_dir = args.output_dir.replace("host_name", host_name)
     args.data_dir = args.data_dir.replace("host_name", host_name)
+    # print(curLine(), "args.data_dir:%s, args.output_dir:%s" % (args.data_dir, args.output_dir))
     _add_param(args, config)
     _post_process(args)
     return args
