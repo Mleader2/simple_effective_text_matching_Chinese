@@ -69,7 +69,8 @@ class Trainer:
                                 model.save(states, name='last')
                             if model.updates - states['best_step'] > self.args.early_stopping \
                                     and model.updates > self.args.min_steps:
-                                print(curLine(), "Tolerance reached. Training is stopped early.")
+                                print(curLine(), "Tolerance reached. Training is stopped early. %d > %d"
+                                      % (model.updates - states['best_step'], self.args.early_stopping))
                                 break_flag = True
                                 break
                         if stats['loss'] > self.args.max_loss:

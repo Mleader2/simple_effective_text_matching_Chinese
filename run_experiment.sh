@@ -8,6 +8,6 @@ CUDA_VISIBLE_DEVICES=${gpu} nohup python -u train.py ${config_json} ${host_name}
 tail -f chat_corpus_log.txt
 
 
-#### python demo.py configs/main.json5  cloudminds  benchmark-0
+#### python demo.py configs/main.json5  cloudminds  benchmark-1
 
 

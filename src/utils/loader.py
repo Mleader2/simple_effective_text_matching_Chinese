@@ -11,6 +11,7 @@ def load_data(data_dir, split=None):
         if not split.endswith('.txt'):
             split += '.txt'
         files = [os.path.join(data_dir, f'{split}')]
+    print("%s read files:" % curLine(), files)
     for file in files:
         with open(file) as f:
             for line in f:

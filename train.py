@@ -40,7 +40,7 @@ def main():
                     'state': states,
                 }))
                 f.write('\n')
-            print(curLine(), "eval_score_list:", eval_score_list, eval_score_list.index(max_test_score))
+            print(curLine(), "eval_score_list:", eval_score_list, eval_score_list.index(max_test_score), "\n")
     else:
         print(curLine(), 'Usage: "python train.py configs/xxx.json5 host_name"')
 

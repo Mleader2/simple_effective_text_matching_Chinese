@@ -56,12 +56,12 @@
         // available metrics: acc, auc, f1, map, mrr
         metric: 'acc', // for early stopping
         watch_metrics: ['auc', 'f1'], // shown in logs
-        eval_file: 'dev',
+        eval_file: 'test',
         eval_per_samples: 6400,
         eval_per_samples_warmup: 40000,
         eval_warmup_samples: 0, // after this many steps warmup mode for eval ends
         min_samples: 0, // train at least these many steps, not affected by early stopping
-        tolerance_samples: 400000, // early stopping
+        tolerance_samples: 800000, // early stopping
         eval_epoch: true, // eval after epoch
     },
 

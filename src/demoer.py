@@ -30,7 +30,6 @@ class Demoer:
                 else:
                     file_name = ckpt.model_checkpoint_path.split("/")[-1]
                     model_checkpoint_file = os.path.join(checkpoint_dir, file_name)
-                    # ckpt.model_checkpoint_path = ckpt.model_checkpoint_path.replace("wzk", host_name)
                     print(curLine(), "restore from %s" % model_checkpoint_file)
                     # saver = tf.train.import_meta_graph("{}.meta".format(ckpt.model_checkpoint_path)) # 用这个saver比self.model.saver推理更慢
                     self.model.saver.restore(self.sess, model_checkpoint_file)
@@ -43,10 +42,6 @@ class Demoer:
         with self.sess.as_default():
             for batch in dev_batches:
                 feed_dict = self.model.process_data(batch, training=False)
-                # infer_flag = self.sess.run(
-                #     [self.model.network.infer_flag],
-                #     feed_dict=feed_dict)
-                # print(curLine(), "infer_flag:", infer_flag)
                 start_time = time.time()
                 pred, prob = self.sess.run(
                     [self.model.pred, self.model.prob],

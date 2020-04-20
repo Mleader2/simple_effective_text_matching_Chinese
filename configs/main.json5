@@ -16,7 +16,7 @@
             'chat_corpus_all',
         ],
         language: 'chinese',
-        __repeat__: 5,
+        __repeat__: 10,
         eval_file: 'test',
     }
 ]
