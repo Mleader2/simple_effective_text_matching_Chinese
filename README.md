@@ -1,5 +1,7 @@
-#为提高推理速度优化代码，并在中文语料上复现RE2模型
-#目前是以point—wise的方式训练的，适合召回；如果想用于重排序，最好用pair-wise方式训练模型。
+#为提高推理速度优化代码，并在中文语料上复现RE2模型  
+#目前是以point—wise的方式训练的，适合召回；如果想用于重排序，最好用pair-wise方式训练模型。  
+#目前是在同一个超参数下，自动训练10次，想要较长时间。如果想要快速结束，可以修改configs/main.json5中的"__repeat__"参数  
+#本模型在准确率上不如BERT等预训练模型，但不需要GPU且推理延迟低，预测速度快，更适合产业应用  
 
 This is the Tensorflow implementation for Chinese corpus of the ACL 2019 paper [Simple and Effective Text Matching with Richer Alignment Features](https://www.aclweb.org/anthology/P19-1465). Pytorch implementation: https://github.com/alibaba-edu/simple-effective-text-matching-pytorch.
 Up to now, based on Chinese corpus LCQMC. Use Chinese character vector.
