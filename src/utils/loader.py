@@ -1,7 +1,7 @@
 # coding=utf-8
 import os, json
 import numpy as np
-from curLine_file import curLine
+from curLine_file import curLine, normal_transformer
 
 def load_data(data_dir, split=None):
     data = []
@@ -15,7 +15,7 @@ def load_data(data_dir, split=None):
     for file in files:
         with open(file) as f:
             for line in f:
-                text1, text2, label = line.rstrip().split('\t')
+                text1, text2, label = line.rstrip().split('\t')[:3]
                 data.append({
                     'text1': text1,
                     'text2': text2,
@@ -30,15 +30,19 @@ def load_embeddings_Chinese(folder, vocab, dim, lower, mode='freq'): #  中文�
     vocab_file = os.path.join(folder, "char2idChinese_DbqaSmpLog.json")
     with open(vocab_file, "r") as fr:
         vocab_map = json.load(fr)
-    # OOV 初始化为零向量
-    embedding = np.zeros((len(vocab), dim))
+    # 初始化字向量
+    # embedding = np.zeros((len(vocab), dim))
+    embedding = np.random.normal(loc=0.0, scale=1.0e-3, size=(len(vocab), dim))
+    # init_boundary = 0.1
+    # embedding = np.random.uniform(low=-init_boundary, high=init_boundary, size=(len(vocab), dim))
+
     count = np.zeros((len(vocab), 1))
     for token,index in vocab_map.items():
         if lower and mode != 'strict':
             token = token.lower()
         if token in vocab:
             index = vocab.index(token)
-            vector = embedding_npy[index]  # [float(x) for x in elems[1:]]
+            vector = embedding_npy[index]
             if mode == 'freq' or mode == 'strict':
                 if not count[index]:
                     embedding[index] = vector
@@ -55,8 +59,6 @@ def load_embeddings_Chinese(folder, vocab, dim, lower, mode='freq'): #  中文�
         inverse_mask = np.where(count == 0, 1., 0.)
         embedding /= count + inverse_mask
     embedding = embedding.tolist()
-    # vector = embedding[0]
-    # print(curLine(), len(vector), "vector:", type(vector), vector)
     return embedding
 
 def load_embeddings_English(file, vocab, dim, lower, mode='freq'): #  glove的英文词向量

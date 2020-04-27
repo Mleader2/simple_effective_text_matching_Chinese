@@ -4,9 +4,9 @@
     metric: 'acc',
     model: {
         alignment: 'identity',
-        enc_layers: 2,
+        enc_layers: 1,
         blocks: 1,
-        hidden_size: 300,
+        hidden_size: 100,
     },
 
     routine: {

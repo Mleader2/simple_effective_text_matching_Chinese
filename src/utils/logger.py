@@ -41,7 +41,7 @@ class Logger:
         self.best_eval_str = ''
 
     def set_epoch(self, epoch):
-        self(f'Epoch: {epoch}')
+        # self(f'Epoch: {epoch}')
         self.epoch = epoch
 
     @staticmethod

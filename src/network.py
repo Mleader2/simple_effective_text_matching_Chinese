@@ -50,6 +50,8 @@ class Network:
                         true_fn=lambda:tf.tile(a, multiples=multiples),  # 将a的向量复制扩展
                         false_fn=lambda:tf.identity(a))
             # a,b的交互
+            mask_a = tf.cond(pred=infer_flag,
+                        true_fn=lambda:tf.tile(mask_a, multiples=multiples), false_fn=lambda:tf.identity(mask_a))
             align_a, align_b = self.first_block['alignment'](a, b, mask_a, mask_b, dropout_keep_prob)
             # 并行编码
             align_c = tf.concat([align_a, align_b], axis=0)
@@ -58,11 +60,10 @@ class Network:
                         true_fn=lambda:tf.concat([a, b], axis=0), false_fn=lambda:tf.identity(c))
             c = self.first_block['fusion'](c, align_c, dropout_keep_prob)
         mask_c = tf.cond(pred=infer_flag,
-                         true_fn=lambda: tf.concat([tf.tile(mask_a, multiples=multiples), mask_b], axis=0),
+                         true_fn=lambda: tf.concat([mask_a, mask_b], axis=0),
                          false_fn=lambda:tf.identity(mask_c))
         if len(self.blocks)>0:  #  如果不止一个block
             # 如果是线上推理模式，对mask_a进行复制扩展
-
             for i, block in enumerate(self.blocks, start=1):
                 res_c = c
                 with tf.variable_scope('block-{}'.format(i), reuse=tf.AUTO_REUSE):

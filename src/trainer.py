@@ -58,12 +58,12 @@ class Trainer:
                             score, dev_stats = model.evaluate(sess, dev_batches)
                             cost_minutes = (time.time()-startTime)/60.0
                             dev_stats["cost_time"] =cost_minutes
+                            self.log.log_eval(dev_stats)
                             if score > states['best_eval']:
                                 states['best_eval'], states['best_epoch'], states['best_step'] = \
                                     score, epoch, model.updates
                                 if self.args.save:
                                     model.save(states, name=model.best_model_name)
-                            self.log.log_eval(dev_stats)
                             if self.args.save_all:
                                 model.save(states)
                                 model.save(states, name='last')

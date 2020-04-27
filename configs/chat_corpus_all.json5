@@ -6,7 +6,7 @@
         alignment: 'identity',
         enc_layers: 1,
         blocks: 1,
-        hidden_size: 150,
+        hidden_size: 100,
     },
 
     routine: {
@@ -16,7 +16,7 @@
     },
 
     optim: {
-        lr: 0.005,
+        lr: 0.008,
         min_lr: 6e-5,
         lr_decay_samples: 256000,
         batch_size: 256,

@@ -4,7 +4,7 @@ import random
 import msgpack
 from .utils.vocab import Vocab, Indexer
 from .utils.loader import load_data, load_embeddings_English, load_embeddings_Chinese
-from curLine_file import curLine
+from curLine_file import curLine, normal_transformer
 
 class Interface:
     def __init__(self, args, log=None):
@@ -62,12 +62,18 @@ class Interface:
             batch_result = []
             for sample in data:
                 processed_text1, processed_len1 = self.process_sample(sample["text1"])
+                if processed_len1 < 1:
+                    continue
                 processed_text2_list = []
                 processed_len2_list = []
                 for text2 in sample["text2_list"]:
                     processed_text2, processed_len2 = self.process_sample(text2)
+                    if processed_len2 < 1:
+                        continue
                     processed_text2_list.append(processed_text2)
                     processed_len2_list.append(processed_len2)
+                if len(processed_len2_list) < 1:
+                    continue
                 process_sample_dict = {"text1": [processed_text1], "len1": [processed_len1],
                                        "text2":processed_text2_list, "len2": processed_len2_list}
                 min_len = max(processed_len1, max(processed_len2_list))
@@ -78,8 +84,10 @@ class Interface:
             result = []
             for sample in data:
                 processed_text1, processed_len1 = self.process_sample(sample["text1"])
-
                 processed_text2, processed_len2 = self.process_sample(sample["text2"])
+                if processed_len1<1 or processed_len2 < 1:
+                    print(curLine(), "ignore processed_text1:",processed_text1, ",processed_text2:", processed_text2)
+                    continue
                 process_sample_dict = {"text1": processed_text1, "len1": processed_len1,
                                        "text2":processed_text2, "len2": processed_len2}
                 if 'target' in sample:
@@ -97,9 +105,10 @@ class Interface:
             batch_result = [self.make_batch(result[i:i + batch_size]) for i in range(0, len(data), batch_size)]
         return batch_result
 
-    def process_sample(self, text):
-        if self.args.lower_case:
-            text = text.lower()
+    def process_sample(self, text1):
+        text = normal_transformer(text1)
+        if len(text) < 1:
+            print(curLine(), "text:%s, text1:%s" % (text, text1))
         if self.args.language.lower() == "chinese":
             processed_text = [self.vocab.index(w) for w in list(text)[:self.args.max_len]]
         else:

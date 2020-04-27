@@ -57,7 +57,7 @@ class Model:
             splits = 1
         else:
             splits = [tf.shape(self.q1)[0] // len(devices)] * (len(devices) - 1) + [-1]  # handle uneven split
-        print(curLine(), type(devices), "devices:", devices, "splits:", splits)
+
         q1 = tf.split(self.q1, splits)
         q2 = tf.split(self.q2, splits)
         q1_mask = tf.split(q1_mask, splits)
@@ -211,7 +211,7 @@ class Model:
     def save(self, states, name=None):
         model_file = os.path.join(self.args.summary_dir, self.prefix)
         self.saver.save(self.sess, model_file, global_step=self.updates)
-        print(curLine(), "have saved model to %s-%d" % (model_file, self.updates))
+        print(curLine(), "have saved model: %s-%d" % (model_file, self.updates))
         if not name:
             name = str(self.updates)
         # noinspection PyTypeChecker
@@ -248,8 +248,7 @@ class Model:
         num_params = int(np.sum([np.prod(v.shape.as_list()) for v in tf.trainable_variables()]))
         if exclude_embed:
             emb_params = int(np.sum([np.prod(v.shape.as_list())
-                                     for v in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES,
-                                                                scope='embedding')]))
+                        for v in tf.get_collection(tf.GraphKeys.TRAINABLE_VARIABLES, scope='embedding')]))
             num_params -= emb_params
         return num_params
 

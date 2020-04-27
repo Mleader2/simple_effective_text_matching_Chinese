@@ -26,7 +26,7 @@ class Demoer:
                 self.model, self.interface, self.states = self.build_model(self.sess)
                 ckpt = tf.train.get_checkpoint_state(checkpoint_dir)  # self.model_path)
                 if ckpt is None:
-                    print(curLine(), "%s中没有模型" % checkpoint_dir)
+                    print(curLine(), "there is no model in %s" % checkpoint_dir)
                 else:
                     file_name = ckpt.model_checkpoint_path.split("/")[-1]
                     model_checkpoint_file = os.path.join(checkpoint_dir, file_name)
@@ -49,6 +49,7 @@ class Demoer:
                 inference_time = (time.time() - start_time) * 1000.0
                 predictions.extend(pred.tolist())
                 probabilities.extend(prob.tolist())
+                # print(curLine(), prob.tolist())
                 total_inference_time += inference_time
         return predictions, probabilities, total_inference_time
 
