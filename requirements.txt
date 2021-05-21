@@ -5,4 +5,4 @@ scikit-learn
 msgpack-python
 tensorboardX
 json5
-tensorflow==1.15
+tensorflow==2.5.0
