@@ -32,7 +32,7 @@ class Network:
         # 将a,b合并为一个tensor，起到并行计算的效果
         c=tf.concat([a,b], axis=0)
         mask_c = tf.concat([mask_a, mask_b], axis=0)
-        c = self.embedding(c, dropout_keep_prob)
+        res_c = self.embedding(c, dropout_keep_prob)
         # infer_flag为True代表为线上推理模式，即对于一个text1(a) ，预测它与batchsize_b个text2(b)之间的相似度
         infer_flag = batchsize_b>batchsize_a
         multiples = tf.stack([batchsize_b, tf.constant(1), tf.constant(1)])
@@ -40,8 +40,8 @@ class Network:
         # 第一个block要特殊处理
         with tf.variable_scope('first_block', reuse=tf.AUTO_REUSE):
             # 并行编码
-            c_enc = self.first_block['encoder'](c, mask_c, dropout_keep_prob)
-            c = tf.concat([c, c_enc], axis=-1)
+            c_enc = self.first_block['encoder'](res_c, mask_c, dropout_keep_prob)
+            c = tf.concat([res_c, c_enc], axis=-1)
             # 将a,b从c中切取出来，为交互模块做准备
             b = c[batchsize_a:]
             a = c[:batchsize_a]
@@ -65,7 +65,6 @@ class Network:
         if len(self.blocks)>0:  #  如果不止一个block
             # 如果是线上推理模式，对mask_a进行复制扩展
             for i, block in enumerate(self.blocks, start=1):
-                res_c = c
                 with tf.variable_scope('block-{}'.format(i), reuse=tf.AUTO_REUSE):
                     c = self.connection(c, res_c, i)
                     c_enc = block['encoder'](c, mask_c, dropout_keep_prob)
